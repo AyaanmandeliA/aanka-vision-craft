@@ -155,32 +155,32 @@ function AboutPage() {
               className="reveal col-span-12 md:col-span-6 md:col-start-7"
               style={{ transitionDelay: "120ms" }}
             >
-              <h2 className="font-serif text-3xl font-light leading-[1.1] tracking-tight md:text-5xl">
-                Built with <em className="italic">passion.</em>
+              <h2 className="display-md text-obsidian">
+                Built with <em className="italic">vision.</em>
                 <br />
-                Growing with <em className="italic">purpose.</em>
+                Grown with <em className="italic">purpose.</em>
               </h2>
 
-              <div className="mt-10 space-y-6 font-serif text-lg font-light leading-relaxed text-obsidian/80">
+              <div className="mt-10 measure space-y-6 body-lead text-obsidian/85">
                 <p>
-                  Aanka Group was founded on a quiet conviction: that the businesses worth
-                  building are the ones people genuinely want to come back to. Not louder
-                  brands — better ones. Not more outlets — better experiences in every one.
+                  Aanka Group started with a simple bet: that in a market crowded
+                  with concepts, the businesses worth building are the ones people
+                  quietly choose to return to.
                 </p>
                 <p>
-                  From a single first venture, the group has grown into a multi-vertical
-                  holding spanning food, wellness, beauty, and design. Every brand under
-                  the Aanka umbrella is built with the same instinct: understand the guest
-                  deeply, design for the long term, and let craft do the marketing.
+                  From a first venture in food, the group has grown into a six-brand
+                  portfolio across hospitality, wellness, beauty, and design — each
+                  one founded, financed, and operated by us. No franchises bought
+                  in. No shortcuts. Six brands. One standard.
                 </p>
               </div>
 
-              <blockquote className="mt-10 border-l-2 border-bronze pl-6">
-                <p className="font-serif text-xl italic leading-relaxed text-obsidian/85 md:text-2xl">
-                  “We don't chase trends. We build brands that earn return visits — and
-                  we build them to last.”
+              <blockquote className="mt-12 border-l-2 border-bronze pl-6 measure">
+                <p className="font-serif text-xl italic leading-relaxed text-obsidian/90 md:text-2xl">
+                  “We're not in the restaurant business or the salon business.
+                  We're in the business of building brands worth returning to.”
                 </p>
-                <footer className="mt-4 font-sans text-[10px] uppercase tracking-luxury text-bronze">
+                <footer className="mt-5 font-sans text-[10px] uppercase tracking-luxury text-bronze">
                   — Aanand Mandelia &amp; Priyanka Agarwal, Founders
                 </footer>
               </blockquote>
