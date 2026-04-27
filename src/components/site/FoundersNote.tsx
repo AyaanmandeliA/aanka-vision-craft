@@ -35,15 +35,14 @@ export function FoundersNote() {
 
           {/* Pull quote */}
           <blockquote className="reveal col-span-12 md:col-span-8 md:col-start-5">
-            <p className="font-serif text-2xl font-light leading-[1.35] tracking-tight text-obsidian md:text-3xl lg:text-4xl">
+            <p className="display-md text-obsidian">
               <span className="font-serif italic text-bronze">“</span>
-              Aanka Group began as a simple idea — that hospitality, in all its
-              forms, is really about people. Every brand we've built since is an
-              attempt to honour that: to create places that feel cared for, run
-              with intention, and worth returning to.
+              We didn't set out to run restaurants, salons, or studios. We set
+              out to build brands worth returning to — and a group disciplined
+              enough to keep that promise across every category we enter.
               <span className="font-serif italic text-bronze">”</span>
             </p>
-            <footer className="mt-10 flex flex-wrap items-baseline gap-x-6 gap-y-2 border-t border-platinum/60 pt-6">
+            <footer className="mt-12 flex flex-wrap items-baseline gap-x-6 gap-y-2 border-t border-platinum/60 pt-6">
               <span className="font-serif text-lg font-light text-obsidian">
                 Aanand Mandelia &amp; Priyanka Agarwal
               </span>
