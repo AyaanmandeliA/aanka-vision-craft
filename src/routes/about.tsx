@@ -38,17 +38,17 @@ const tenets = [
   {
     h: "Our Vision",
     img: zaikaInterior,
-    p: "To build a portfolio of memorable lifestyle brands that shape how people dine, unwind, groom, and live — anchored in hospitality, designed for return.",
+    p: "To build a UAE lifestyle group whose brands shape how a generation eats, unwinds, grooms, and lives — and whose name is shorthand for a standard.",
   },
   {
     h: "Our Mission",
     img: deco,
-    p: "To create customer-centric businesses across food, wellness, beauty, and design — guided by quality, consistency, and the kind of thoughtful growth that compounds over time.",
+    p: "To run customer-first businesses where craft, consistency, and warmth aren't features — they're the operating system.",
   },
   {
     h: "Our Philosophy",
     img: gents,
-    p: "Hospitality. Experience. Lifestyle. Three ideas that shape every brand, every space, and every customer touchpoint we put our name on.",
+    p: "Hospitality is not a department. It's the whole product. Every space, every service, every detail is judged by what it feels like to be served.",
   },
 ];
 
