@@ -74,11 +74,11 @@ const items = [
 ];
 
 const categories = [
-  "Store and outlet openings",
-  "Brand launches and new milestones",
-  "Influencer visits and special events",
-  "Press mentions and media-worthy updates",
-  "Key moments across the Aanka Group portfolio",
+  { label: "Store and outlet openings", img: gents },
+  { label: "Brand launches and milestones", img: zaikaInterior },
+  { label: "Influencer visits and special events", img: zaika2 },
+  { label: "Press mentions and editorial features", img: ladies },
+  { label: "Key moments across the portfolio", img: khau },
 ];
 
 function MediaPage() {
@@ -89,20 +89,45 @@ function MediaPage() {
         eyebrow="01 / Media"
         title={
           <>
-            Moments That Shape <br />
-            the <em className="italic">Aanka Journey</em>
+            Moments that shape <br />
+            the <em className="italic">Aanka journey.</em>
           </>
         }
-        intro="From launches and milestones to events and brand highlights, this section captures the moments that continue to shape the Aanka Group story."
+        intro="From launches and milestones to events and brand highlights, this section captures the moments that continue to shape the Aanka Group story across the UAE."
+        media={{
+          src: deco,
+          alt: "Aanka Group editorial moment",
+          caption: "Press · Launches · Milestones",
+          ratio: "portrait",
+        }}
       />
 
-      {/* Categories */}
+      {/* Categories — image-backed cells */}
       <section className="bg-alabaster text-obsidian">
-        <div className="mx-auto max-w-[1440px] px-6 pb-20 md:px-12 md:pb-28">
-          <ul className="reveal grid grid-cols-1 gap-px bg-platinum/60 md:grid-cols-5">
-            {categories.map((c) => (
-              <li key={c} className="bg-alabaster p-6 font-sans text-[12px] uppercase tracking-wider-2 text-obsidian/70">
-                {c}
+        <div className="mx-auto max-w-[1440px] px-6 pb-20 md:px-12 md:pb-24">
+          <ul className="grid grid-cols-2 gap-px bg-platinum/60 md:grid-cols-5">
+            {categories.map((c, i) => (
+              <li
+                key={c.label}
+                className="reveal relative aspect-[4/5] overflow-hidden bg-obsidian md:aspect-[3/4]"
+                style={{ transitionDelay: `${i * 60}ms` }}
+              >
+                <img
+                  src={c.img}
+                  alt=""
+                  aria-hidden
+                  loading="lazy"
+                  className="img-scale absolute inset-0 h-full w-full object-cover opacity-70 grayscale"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/40 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 px-5 pb-5">
+                  <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <p className="mt-2 font-serif text-base font-light leading-tight text-alabaster md:text-lg">
+                    {c.label}
+                  </p>
+                </div>
               </li>
             ))}
           </ul>
