@@ -37,12 +37,12 @@ export function PageHeader({ eyebrow, title, intro, media }: PageHeaderProps) {
                 : "col-span-12"
             }
           >
-            <h1 className="reveal font-serif text-4xl font-light leading-[1.05] tracking-tight md:text-6xl lg:text-7xl">
+            <h1 className="reveal display-lg text-obsidian">
               {title}
             </h1>
             {intro ? (
               <p
-                className="reveal mt-10 max-w-2xl font-serif text-lg font-light leading-relaxed text-obsidian/70 md:text-xl"
+                className="reveal measure-wide mt-10 body-lead text-obsidian/75"
                 style={{ transitionDelay: "120ms" }}
               >
                 {intro}
