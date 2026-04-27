@@ -13,14 +13,15 @@ export function Ecosystem() {
           <span className="h-px flex-1 bg-platinum/60" />
         </div>
 
-        <div className="reveal mb-16 grid grid-cols-12 gap-6">
-          <h2 className="col-span-12 font-serif text-3xl font-light leading-[1.15] tracking-tight md:col-span-8 md:text-5xl lg:text-6xl">
-            Six brands, one <br />
-            <em className="italic">standard</em> of care.
+        <div className="reveal mb-20 grid grid-cols-12 gap-6 md:mb-24">
+          <h2 className="col-span-12 display-lg md:col-span-8">
+            Six brands. <br />
+            One <em className="italic">standard</em> of care.
           </h2>
-          <p className="col-span-12 font-sans text-[14px] leading-relaxed text-obsidian/65 md:col-span-3 md:col-start-10">
-            Each brand has its own identity and audience — held together by a
-            shared sense of hospitality, craft, and detail.
+          <p className="col-span-12 measure-narrow self-end font-serif text-base font-light leading-relaxed text-obsidian/70 md:col-span-3 md:col-start-10 md:text-lg">
+            Each brand has its own identity, its own audience, and its own
+            kitchen, chair, or studio — held together by a single operating
+            standard.
           </p>
         </div>
 

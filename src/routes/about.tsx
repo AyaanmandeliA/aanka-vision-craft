@@ -38,17 +38,17 @@ const tenets = [
   {
     h: "Our Vision",
     img: zaikaInterior,
-    p: "To build a portfolio of memorable lifestyle brands that shape how people dine, unwind, groom, and live — anchored in hospitality, designed for return.",
+    p: "To build a UAE lifestyle group whose brands shape how a generation eats, unwinds, grooms, and lives — and whose name is shorthand for a standard.",
   },
   {
     h: "Our Mission",
     img: deco,
-    p: "To create customer-centric businesses across food, wellness, beauty, and design — guided by quality, consistency, and the kind of thoughtful growth that compounds over time.",
+    p: "To run customer-first businesses where craft, consistency, and warmth aren't features — they're the operating system.",
   },
   {
     h: "Our Philosophy",
     img: gents,
-    p: "Hospitality. Experience. Lifestyle. Three ideas that shape every brand, every space, and every customer touchpoint we put our name on.",
+    p: "Hospitality is not a department. It's the whole product. Every space, every service, every detail is judged by what it feels like to be served.",
   },
 ];
 
@@ -82,20 +82,20 @@ const timeline = [
 
 const differences = [
   {
-    h: "A multi-brand mindset",
-    p: "We build brands that share a philosophy — not a template. Each one is allowed its own identity, audience, and tone.",
+    h: "Founder-Operated, Not Franchised In",
+    p: "Every brand under Aanka was built by us, financed by us, and is operated by us. The standard isn't outsourced — it lives in the room.",
   },
   {
-    h: "Customer experience at the core",
-    p: "Every operational decision is measured against a single question: does this make the guest's experience better?",
+    h: "One Operating Standard, Six Brands",
+    p: "Different categories, different audiences, one set of non-negotiables: hospitality, hygiene, design, and the long view.",
   },
   {
-    h: "Practical, intentional growth",
-    p: "Expansion happens when the brand, the team, and the unit economics are ready — not when the calendar says so.",
+    h: "Capital Discipline",
+    p: "We open when the unit economics work, the team is trained, and the brand is ready — not when a deck says we should.",
   },
   {
-    h: "Memorable, scalable, relevant",
-    p: "We invest in concepts with cultural longevity — brands designed to travel and to mean something in every market they enter.",
+    h: "Designed to Travel",
+    p: "Concepts engineered for portability — playbooks, supply chains, and identities that hold up in any market we choose to enter.",
   },
 ];
 
@@ -113,16 +113,14 @@ function AboutPage() {
         eyebrow="01 / About"
         title={
           <>
-            The name behind <em className="italic">memorable</em>
-            <br />
-            lifestyle brands.
+            A UAE lifestyle group, <em className="italic">built brand by brand.</em>
           </>
         }
-        intro="Aanka Group was built with a vision to create brands that people remember, return to, and trust. What began as an entrepreneurial journey has evolved into a growing multi-brand group spanning hospitality, wellness, beauty, and design — all run with the same operational discipline and the same regard for the guest."
+        intro="Aanka Group is a founder-led portfolio of six lifestyle brands across food, wellness, beauty, and design. We don't operate venues — we build brands designed for return, run with one shared standard of care."
         media={{
           src: leader1,
           alt: "Founders of Aanka Group",
-          caption: "Dubai, UAE — Founded by Aanand Mandelia & Priyanka Agarwal",
+          caption: "Founded in Dubai by Aanand Mandelia & Priyanka Agarwal",
           ratio: "portrait",
         }}
       />
@@ -157,32 +155,32 @@ function AboutPage() {
               className="reveal col-span-12 md:col-span-6 md:col-start-7"
               style={{ transitionDelay: "120ms" }}
             >
-              <h2 className="font-serif text-3xl font-light leading-[1.1] tracking-tight md:text-5xl">
-                Built with <em className="italic">passion.</em>
+              <h2 className="display-md text-obsidian">
+                Built with <em className="italic">vision.</em>
                 <br />
-                Growing with <em className="italic">purpose.</em>
+                Grown with <em className="italic">purpose.</em>
               </h2>
 
-              <div className="mt-10 space-y-6 font-serif text-lg font-light leading-relaxed text-obsidian/80">
+              <div className="mt-10 measure space-y-6 body-lead text-obsidian/85">
                 <p>
-                  Aanka Group was founded on a quiet conviction: that the businesses worth
-                  building are the ones people genuinely want to come back to. Not louder
-                  brands — better ones. Not more outlets — better experiences in every one.
+                  Aanka Group started with a simple bet: that in a market crowded
+                  with concepts, the businesses worth building are the ones people
+                  quietly choose to return to.
                 </p>
                 <p>
-                  From a single first venture, the group has grown into a multi-vertical
-                  holding spanning food, wellness, beauty, and design. Every brand under
-                  the Aanka umbrella is built with the same instinct: understand the guest
-                  deeply, design for the long term, and let craft do the marketing.
+                  From a first venture in food, the group has grown into a six-brand
+                  portfolio across hospitality, wellness, beauty, and design — each
+                  one founded, financed, and operated by us. No franchises bought
+                  in. No shortcuts. Six brands. One standard.
                 </p>
               </div>
 
-              <blockquote className="mt-10 border-l-2 border-bronze pl-6">
-                <p className="font-serif text-xl italic leading-relaxed text-obsidian/85 md:text-2xl">
-                  “We don't chase trends. We build brands that earn return visits — and
-                  we build them to last.”
+              <blockquote className="mt-12 border-l-2 border-bronze pl-6 measure">
+                <p className="font-serif text-xl italic leading-relaxed text-obsidian/90 md:text-2xl">
+                  “We're not in the restaurant business or the salon business.
+                  We're in the business of building brands worth returning to.”
                 </p>
-                <footer className="mt-4 font-sans text-[10px] uppercase tracking-luxury text-bronze">
+                <footer className="mt-5 font-sans text-[10px] uppercase tracking-luxury text-bronze">
                   — Aanand Mandelia &amp; Priyanka Agarwal, Founders
                 </footer>
               </blockquote>
@@ -219,7 +217,7 @@ function AboutPage() {
             <span className="h-px flex-1 bg-alabaster/15" />
           </div>
 
-          <h2 className="reveal mb-16 font-serif text-3xl font-light leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
+          <h2 className="reveal mb-20 display-lg">
             What we stand <em className="italic">on.</em>
           </h2>
 
@@ -266,10 +264,10 @@ function AboutPage() {
 
           <div className="grid grid-cols-12 gap-x-6 gap-y-12">
             <div className="col-span-12 md:col-span-4">
-              <h2 className="reveal sticky top-28 font-serif text-3xl font-light leading-[1.1] tracking-tight md:text-5xl">
+              <h2 className="reveal sticky top-28 display-md text-obsidian">
                 Our <em className="italic">journey,</em> in five chapters.
               </h2>
-              <p className="reveal mt-8 max-w-md font-serif text-base font-light leading-relaxed text-obsidian/70 md:text-lg">
+              <p className="reveal mt-8 measure-narrow font-serif text-base font-light leading-relaxed text-obsidian/70 md:text-lg">
                 A story written one brand at a time — and one customer at a time.
               </p>
             </div>
@@ -326,15 +324,15 @@ function AboutPage() {
           </div>
 
           <div className="grid grid-cols-12 gap-x-6 gap-y-10">
-            <h2 className="reveal col-span-12 font-serif text-3xl font-light leading-[1.1] tracking-tight md:col-span-6 md:text-5xl">
+            <h2 className="reveal col-span-12 display-lg md:col-span-7">
               What makes <em className="italic">Aanka</em> different.
             </h2>
             <p
-              className="reveal col-span-12 self-end font-serif text-base font-light leading-relaxed text-obsidian/65 md:col-span-5 md:col-start-8 md:text-lg"
+              className="reveal col-span-12 self-end measure font-serif text-base font-light leading-relaxed text-obsidian/70 md:col-span-4 md:col-start-9 md:text-lg"
               style={{ transitionDelay: "100ms" }}
             >
-              Four ideas that show up in every brand, every interior, and every
-              service decision we make.
+              Four operating choices — visible in every brand, every fit-out,
+              and every hire we make.
             </p>
           </div>
 
