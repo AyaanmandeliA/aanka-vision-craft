@@ -115,7 +115,7 @@ function PartnerPage() {
 
       {/* Available brands */}
       <section className="bg-alabaster text-obsidian">
-        <div className="mx-auto max-w-[1440px] px-6 pb-28 md:px-12 md:pb-32">
+        <div className="mx-auto max-w-[1440px] px-6 pb-24 md:px-12 md:pb-32">
           <div className="mb-16 flex items-center gap-6 md:mb-20">
             <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
               02 / Available For Franchise
