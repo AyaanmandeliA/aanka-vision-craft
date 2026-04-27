@@ -54,13 +54,14 @@
   --radius: 0px;
 
   /* Brand palette — warmed for hospitality-forward luxury */
+  /* Brand spec — Obsidian #141414, Alabaster #F4F2ED, Brushed Platinum #B8B8B0, Oxidized Bronze #8C7A6B */
   --alabaster: oklch(0.953 0.005 85);    /* #F4F2ED — primary bg */
   --ivory: oklch(0.97 0.008 80);         /* lighter warm surface tier */
-  --obsidian: oklch(0.18 0.005 60);      /* near-black, slight warmth */
+  --obsidian: oklch(0.16 0.003 50);      /* #141414 */
   --espresso: oklch(0.24 0.012 55);      /* softer dark for second-tier dark sections */
-  --platinum: oklch(0.745 0.005 90);     /* hairlines, secondary text */
-  --bronze: oklch(0.585 0.055 55);       /* warmed bronze accent */
-  --clay: oklch(0.5 0.06 45);            /* hover/active accent, deeper warm */
+  --platinum: oklch(0.755 0.006 85);     /* #B8B8B0 — brushed platinum */
+  --bronze: oklch(0.585 0.045 55);       /* #8C7A6B — oxidized bronze */
+  --clay: oklch(0.5 0.05 45);            /* hover/active accent, deeper warm */
 
   --background: var(--alabaster);
   --foreground: var(--obsidian);

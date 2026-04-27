@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X, Phone, Mail } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import { AankaLogo } from "./AankaLogo";
 
 const links = [
   { label: "Home", to: "/" as const },
@@ -46,9 +47,10 @@ export function Navbar() {
       <div className="mx-auto flex max-w-[1440px] items-center justify-between px-6 py-5 md:px-12 md:py-6">
         <Link
           to="/"
-          className="font-sans text-sm md:text-[15px] font-medium tracking-luxury text-alabaster"
+          aria-label="AANKA Group — Home"
+          className="block"
         >
-          AANKA&nbsp;&nbsp;GROUP
+          <AankaLogo variant="reversed" className="h-7 w-auto md:h-8" />
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">

@@ -2,6 +2,7 @@ import { useReveal } from "@/hooks/use-reveal";
 import { useParallax } from "@/hooks/use-parallax";
 import heroImg from "@/assets/hero.jpg";
 import { Link } from "@tanstack/react-router";
+import { AankaLogo, PulseLine } from "./AankaLogo";
 
 export function Hero() {
   useReveal();
@@ -33,19 +34,26 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-6xl px-6 py-32 text-center md:py-40">
-        <p className="reveal mb-12 font-sans text-[11px] uppercase tracking-luxury text-bronze">
+        <p className="reveal mb-10 font-sans text-[11px] uppercase tracking-luxury text-bronze">
           A UAE Lifestyle Group
         </p>
 
-        <h1 className="reveal display-xl text-alabaster">
+        {/* The AANKA wordmark — centerpiece of the hero */}
+        <div className="reveal mx-auto mb-10 w-full max-w-[640px]" style={{ transitionDelay: "60ms" }}>
+          <AankaLogo variant="reversed" className="mx-auto h-auto w-full" />
+        </div>
+
+        <PulseLine className="reveal mx-auto mb-12 h-4 w-48 opacity-80" />
+
+        <h1 className="reveal display-lg text-alabaster" style={{ transitionDelay: "140ms" }}>
           Built with <em className="italic">vision.</em>
           <br />
           Grown with <em className="italic">purpose.</em>
         </h1>
 
         <p
-          className="reveal measure mx-auto mt-12 font-serif text-lg font-light leading-relaxed text-alabaster/75 md:text-xl"
-          style={{ transitionDelay: "120ms" }}
+          className="reveal measure mx-auto mt-10 font-serif text-lg font-light leading-relaxed text-alabaster/75 md:text-xl"
+          style={{ transitionDelay: "220ms" }}
         >
           A curated portfolio of six lifestyle brands across hospitality,
           wellness, beauty, and design — built in the UAE, designed to last,
