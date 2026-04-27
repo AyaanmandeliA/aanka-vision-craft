@@ -1,8 +1,9 @@
 import { Linkedin, Instagram } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 export function Footer() {
   return (
-    <footer id="contact" className="bg-obsidian text-alabaster">
+    <footer className="bg-obsidian text-alabaster">
       <div className="mx-auto max-w-[1440px] px-6 pt-24 md:px-12 md:pt-32">
         {/* Large statement */}
         <div className="reveal grid grid-cols-12 gap-6 pb-20">
@@ -11,8 +12,8 @@ export function Footer() {
             <br />
             Growing with <em className="italic text-bronze">Purpose.</em>
           </h2>
-          <a
-            href="mailto:contact@aankagroup.com"
+          <Link
+            to="/contact"
             className="col-span-12 self-end md:col-span-3 md:text-right"
           >
             <span className="font-sans text-[11px] uppercase tracking-luxury text-alabaster/60">
@@ -21,16 +22,16 @@ export function Footer() {
             <span className="mt-2 block font-serif text-xl text-alabaster transition-colors hover:text-bronze">
               contact@aankagroup.com →
             </span>
-          </a>
+          </Link>
         </div>
 
         <div className="hairline opacity-15" />
 
         <div className="grid grid-cols-12 gap-6 py-14">
           <div className="col-span-12 md:col-span-4">
-            <div className="font-sans text-sm font-medium tracking-luxury">
+            <Link to="/" className="font-sans text-sm font-medium tracking-luxury">
               AANKA&nbsp;&nbsp;GROUP
-            </div>
+            </Link>
             <p className="mt-4 max-w-xs font-serif text-sm font-light leading-relaxed text-alabaster/55">
               A house of brands across hospitality, wellness, beauty, and design.
             </p>
@@ -56,11 +57,14 @@ export function Footer() {
 
           <div className="col-span-6 md:col-span-3">
             <div className="font-sans text-[10px] uppercase tracking-luxury text-bronze">
-              Headquarters
+              Explore
             </div>
-            <p className="mt-4 font-serif text-base font-light text-alabaster/85">
-              United Arab Emirates
-            </p>
+            <nav className="mt-4 flex flex-col gap-2 font-serif text-base font-light text-alabaster/85">
+              <Link to="/about" className="hover:text-alabaster">About</Link>
+              <Link to="/businesses" className="hover:text-alabaster">Businesses</Link>
+              <Link to="/careers" className="hover:text-alabaster">Careers</Link>
+              <Link to="/partner" className="hover:text-alabaster">Partner With Us</Link>
+            </nav>
           </div>
 
           <div className="col-span-12 md:col-span-2 md:text-right">
