@@ -123,6 +123,43 @@
   .tracking-wider-2 { letter-spacing: 0.18em; }
   .tracking-warm { letter-spacing: 0.14em; }
 
+  /* Editorial display type — clamp-based for fluid authority */
+  .display-xl {
+    font-family: var(--font-serif);
+    font-weight: 300;
+    line-height: 0.98;
+    letter-spacing: -0.022em;
+    font-size: clamp(3.25rem, 7vw, 7.5rem);
+  }
+  .display-lg {
+    font-family: var(--font-serif);
+    font-weight: 300;
+    line-height: 1.02;
+    letter-spacing: -0.018em;
+    font-size: clamp(2.5rem, 5.4vw, 5.5rem);
+  }
+  .display-md {
+    font-family: var(--font-serif);
+    font-weight: 300;
+    line-height: 1.06;
+    letter-spacing: -0.014em;
+    font-size: clamp(2rem, 3.6vw, 3.5rem);
+  }
+
+  /* Disciplined editorial body width — ~62 characters */
+  .measure { max-width: 38rem; }
+  .measure-narrow { max-width: 30rem; }
+  .measure-wide { max-width: 46rem; }
+
+  /* Body copy with proper hierarchy */
+  .body-lead {
+    font-family: var(--font-serif);
+    font-weight: 300;
+    font-size: clamp(1.125rem, 1.4vw, 1.375rem);
+    line-height: 1.65;
+    letter-spacing: -0.005em;
+  }
+
   /* Editorial fade-in on scroll */
   .reveal {
     opacity: 0;
