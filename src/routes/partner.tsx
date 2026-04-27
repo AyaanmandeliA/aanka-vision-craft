@@ -29,6 +29,8 @@ export const Route = createFileRoute("/partner")({
         content:
           "Proven concepts. Operational playbooks. UAE pedigree. Franchise opportunities across hospitality, wellness, and beauty.",
       },
+      { property: "og:image", content: khauThali },
+      { name: "twitter:image", content: khauThali },
     ],
   }),
 });
