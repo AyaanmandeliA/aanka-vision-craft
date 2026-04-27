@@ -293,7 +293,7 @@ function PartnerPage() {
 
       {/* Process */}
       <section className="bg-obsidian text-alabaster">
-        <div className="mx-auto max-w-[1440px] px-6 py-28 md:px-12 md:py-40">
+        <div className="mx-auto max-w-[1440px] px-6 py-24 md:px-12 md:py-32">
           <div className="mb-16 flex items-center gap-6 md:mb-24">
             <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
               05 / Process
