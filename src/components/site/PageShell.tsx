@@ -98,7 +98,7 @@ export function CtaBlock({ eyebrow, heading, body, buttonLabel, to }: CtaBlockPr
           </div>
         ) : null}
         <div className="grid grid-cols-12 gap-x-6 gap-y-10">
-          <h2 className="reveal col-span-12 font-serif text-3xl font-light leading-[1.1] tracking-tight md:col-span-7 md:text-5xl lg:text-6xl">
+          <h2 className="reveal col-span-12 display-lg md:col-span-7">
             {heading}
           </h2>
           <div className="reveal col-span-12 self-end md:col-span-4 md:col-start-9" style={{ transitionDelay: "120ms" }}>
