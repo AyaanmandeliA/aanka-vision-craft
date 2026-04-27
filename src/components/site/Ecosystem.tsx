@@ -1,73 +1,9 @@
-import khauImg from "@/assets/brand-khaugalli.jpg";
-import zaikaImg from "@/assets/brand-zaika.jpg";
-import gentsImg from "@/assets/brand-gents.jpg";
-import ladiesImg from "@/assets/brand-ladies.jpg";
-import decoImg from "@/assets/brand-deco.jpg";
-import constImg from "@/assets/brand-construction.jpg";
-
-type Brand = {
-  num: string;
-  name: string;
-  sector: string;
-  desc: string;
-  img: string;
-  span: string; // bento spans
-};
-
-const brands: Brand[] = [
-  {
-    num: "01",
-    name: "Khau Galli",
-    sector: "Food",
-    desc: "A vibrant food concept serving flavour, familiarity, and comfort.",
-    img: khauImg,
-    span: "lg:col-span-4 lg:row-span-2",
-  },
-  {
-    num: "02",
-    name: "House of Zaika",
-    sector: "Fine Dining",
-    desc: "A Mughlai dining experience rooted in richness, warmth, and memorable taste.",
-    img: zaikaImg,
-    span: "lg:col-span-4",
-  },
-  {
-    num: "03",
-    name: "Cutting Edge Gents",
-    sector: "Grooming",
-    desc: "A modern grooming destination designed for the contemporary gentleman.",
-    img: gentsImg,
-    span: "lg:col-span-4",
-  },
-  {
-    num: "04",
-    name: "Cutting Edge Ladies",
-    sector: "Beauty",
-    desc: "A beauty and self-care brand created for today's confident woman.",
-    img: ladiesImg,
-    span: "lg:col-span-4",
-  },
-  {
-    num: "05",
-    name: "Deco Vibes",
-    sector: "Interior Design",
-    desc: "Interior solutions shaped by design, detail, and functionality.",
-    img: decoImg,
-    span: "lg:col-span-4",
-  },
-  {
-    num: "06",
-    name: "Aanka Constructions",
-    sector: "Construction",
-    desc: "A construction business focused on dependable execution and long-term value.",
-    img: constImg,
-    span: "lg:col-span-4",
-  },
-];
+import { brands, type Brand } from "./brand-data";
+import { ArrowUpRight } from "lucide-react";
 
 export function Ecosystem() {
   return (
-    <section id="brands" className="bg-alabaster text-obsidian">
+    <section className="bg-alabaster text-obsidian">
       <div className="mx-auto max-w-[1440px] px-6 pb-32 md:px-12 md:pb-40">
         <div className="mb-16 flex items-center gap-6 md:mb-20">
           <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
@@ -82,8 +18,7 @@ export function Ecosystem() {
             Across <em className="italic">Industries</em>
           </h2>
           <p className="col-span-12 font-sans text-[14px] leading-relaxed text-obsidian/65 md:col-span-3 md:col-start-10">
-            Six distinct ventures, one shared standard. Each brand operates
-            with autonomy and the conviction of a single house.
+            A growing portfolio of brands, each with its own identity, united by one larger vision.
           </p>
         </div>
 
@@ -99,9 +34,15 @@ export function Ecosystem() {
 }
 
 function BrandCard({ brand, delay }: { brand: Brand; delay: number }) {
+  const Wrapper: React.ElementType = brand.href ? "a" : "article";
+  const wrapperProps = brand.href
+    ? { href: brand.href, target: "_blank", rel: "noopener noreferrer" }
+    : {};
+
   return (
-    <article
-      className={`reveal group relative overflow-hidden bg-obsidian ${brand.span}`}
+    <Wrapper
+      {...wrapperProps}
+      className={`reveal group relative block overflow-hidden bg-obsidian ${brand.span}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       <div className="relative h-full min-h-[320px] w-full">
@@ -123,8 +64,9 @@ function BrandCard({ brand, delay }: { brand: Brand; delay: number }) {
           <span className="font-sans text-[10px] uppercase tracking-luxury text-alabaster/70 num-mono">
             {brand.num}
           </span>
-          <span className="font-sans text-[10px] uppercase tracking-luxury text-alabaster/70">
+          <span className="flex items-center gap-2 font-sans text-[10px] uppercase tracking-luxury text-alabaster/70">
             {brand.sector}
+            {brand.href ? <ArrowUpRight size={12} strokeWidth={1.25} /> : null}
           </span>
         </div>
 
@@ -139,13 +81,13 @@ function BrandCard({ brand, delay }: { brand: Brand; delay: number }) {
                 {brand.desc}
               </p>
               <span className="mt-4 inline-flex items-center gap-3 font-sans text-[10px] uppercase tracking-luxury text-bronze">
-                Discover
+                {brand.href ? "Visit Website" : "Discover"}
                 <span className="block h-px w-6 bg-bronze" />
               </span>
             </div>
           </div>
         </div>
       </div>
-    </article>
+    </Wrapper>
   );
 }
