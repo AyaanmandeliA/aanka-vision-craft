@@ -1,12 +1,12 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Navbar } from "@/components/site/Navbar";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { useReveal } from "@/hooks/use-reveal";
 import { Hero } from "@/components/site/Hero";
 import { Introduction } from "@/components/site/Introduction";
+import { Verticals } from "@/components/site/Verticals";
 import { Ecosystem } from "@/components/site/Ecosystem";
 import { Values } from "@/components/site/Values";
-import { Leadership } from "@/components/site/Leadership";
-import { Footer } from "@/components/site/Footer";
-import { useReveal } from "@/hooks/use-reveal";
+import { Growth } from "@/components/site/Growth";
+import { CtaBlock } from "@/components/site/PageShell";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -31,14 +31,22 @@ export const Route = createFileRoute("/")({
 function Index() {
   useReveal();
   return (
-    <main className="bg-alabaster text-obsidian">
-      <Navbar />
+    <>
       <Hero />
       <Introduction />
+      <Verticals />
       <Ecosystem />
       <Values />
-      <Leadership />
-      <Footer />
-    </main>
+      <Growth />
+      <CtaBlock
+        eyebrow="07 / Collaborate"
+        heading={<>Looking to <em className="italic">Grow</em> With Us?</>}
+        body="Whether you are exploring partnership opportunities, franchise possibilities, or business collaborations, Aanka Group welcomes conversations that align with its vision for growth."
+        buttonLabel="Partner With Us"
+        to="/partner"
+      />
+      {/* Hidden link to keep Link import used for type-safe route ref */}
+      <Link to="/" className="sr-only" aria-hidden>home</Link>
+    </>
   );
 }
