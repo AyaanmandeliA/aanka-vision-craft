@@ -23,7 +23,7 @@ const values = [
 
 export function Values() {
   return (
-    <section className="bg-obsidian text-alabaster">
+    <section className="bg-espresso text-alabaster">
       <div className="mx-auto max-w-[1440px] px-6 py-28 md:px-12 md:py-40">
         <div className="mb-16 flex items-center gap-6 md:mb-24">
           <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
@@ -42,7 +42,7 @@ export function Values() {
           {values.map((v, i) => (
             <div
               key={v.title}
-              className="reveal flex flex-col bg-obsidian p-8 md:p-10"
+              className="reveal flex flex-col bg-espresso p-8 md:p-10"
               style={{ transitionDelay: `${i * 100}ms` }}
             >
               <span className="font-serif text-2xl italic text-bronze num-mono">{v.num}</span>
