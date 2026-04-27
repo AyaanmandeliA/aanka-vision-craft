@@ -113,16 +113,14 @@ function AboutPage() {
         eyebrow="01 / About"
         title={
           <>
-            The name behind <em className="italic">memorable</em>
-            <br />
-            lifestyle brands.
+            A UAE lifestyle group, <em className="italic">built brand by brand.</em>
           </>
         }
-        intro="Aanka Group was built with a vision to create brands that people remember, return to, and trust. What began as an entrepreneurial journey has evolved into a growing multi-brand group spanning hospitality, wellness, beauty, and design — all run with the same operational discipline and the same regard for the guest."
+        intro="Aanka Group is a founder-led portfolio of six lifestyle brands across food, wellness, beauty, and design. We don't operate venues — we build brands designed for return, run with one shared standard of care."
         media={{
           src: leader1,
           alt: "Founders of Aanka Group",
-          caption: "Dubai, UAE — Founded by Aanand Mandelia & Priyanka Agarwal",
+          caption: "Founded in Dubai by Aanand Mandelia & Priyanka Agarwal",
           ratio: "portrait",
         }}
       />
