@@ -264,10 +264,10 @@ function AboutPage() {
 
           <div className="grid grid-cols-12 gap-x-6 gap-y-12">
             <div className="col-span-12 md:col-span-4">
-              <h2 className="reveal sticky top-28 font-serif text-3xl font-light leading-[1.1] tracking-tight md:text-5xl">
+              <h2 className="reveal sticky top-28 display-md text-obsidian">
                 Our <em className="italic">journey,</em> in five chapters.
               </h2>
-              <p className="reveal mt-8 max-w-md font-serif text-base font-light leading-relaxed text-obsidian/70 md:text-lg">
+              <p className="reveal mt-8 measure-narrow font-serif text-base font-light leading-relaxed text-obsidian/70 md:text-lg">
                 A story written one brand at a time — and one customer at a time.
               </p>
             </div>
