@@ -82,20 +82,20 @@ const timeline = [
 
 const differences = [
   {
-    h: "A multi-brand mindset",
-    p: "We build brands that share a philosophy — not a template. Each one is allowed its own identity, audience, and tone.",
+    h: "Founder-Operated, Not Franchised In",
+    p: "Every brand under Aanka was built by us, financed by us, and is operated by us. The standard isn't outsourced — it lives in the room.",
   },
   {
-    h: "Customer experience at the core",
-    p: "Every operational decision is measured against a single question: does this make the guest's experience better?",
+    h: "One Operating Standard, Six Brands",
+    p: "Different categories, different audiences, one set of non-negotiables: hospitality, hygiene, design, and the long view.",
   },
   {
-    h: "Practical, intentional growth",
-    p: "Expansion happens when the brand, the team, and the unit economics are ready — not when the calendar says so.",
+    h: "Capital Discipline",
+    p: "We open when the unit economics work, the team is trained, and the brand is ready — not when a deck says we should.",
   },
   {
-    h: "Memorable, scalable, relevant",
-    p: "We invest in concepts with cultural longevity — brands designed to travel and to mean something in every market they enter.",
+    h: "Designed to Travel",
+    p: "Concepts engineered for portability — playbooks, supply chains, and identities that hold up in any market we choose to enter.",
   },
 ];
 
