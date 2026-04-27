@@ -105,6 +105,12 @@ function PartnerPage() {
           </>
         }
         intro="Aanka Group is opening selective franchise opportunities for its hospitality and wellness brands. If you bring local insight, capital, and a serious commitment to the customer — we'd like to hear from you."
+        media={{
+          src: khauThali,
+          alt: "Khau Galli — a flagship Aanka franchise concept",
+          caption: "Proven in the UAE. Designed to travel.",
+          ratio: "portrait",
+        }}
       />
 
       {/* Available brands */}
