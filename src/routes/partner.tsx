@@ -212,46 +212,84 @@ function PartnerPage() {
 
       {/* Territory availability */}
       <section className="bg-alabaster text-obsidian">
-        <div className="mx-auto max-w-[1440px] px-6 py-28 md:px-12 md:py-40">
-          <div className="mb-16 flex items-center gap-6 md:mb-24">
+        <div className="mx-auto max-w-[1440px] px-6 py-24 md:px-12 md:py-32">
+          <div className="mb-12 flex items-center gap-6 md:mb-16">
             <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
               04 / Territories
             </span>
             <span className="h-px flex-1 bg-platinum/60" />
           </div>
 
-          <div className="grid grid-cols-12 gap-x-6 gap-y-10">
-            <h2 className="reveal col-span-12 font-serif text-3xl font-light leading-[1.1] tracking-tight md:col-span-6 md:text-5xl">
-              Available <em className="italic">territories.</em>
-            </h2>
-            <p className="reveal col-span-12 self-end font-serif text-base font-light leading-relaxed text-obsidian/70 md:col-span-5 md:col-start-8 md:text-lg">
-              We work with a small number of partners per market. Below is an
-              indicative view — final allocation is reviewed brand-by-brand.
-            </p>
-          </div>
+          <div className="grid grid-cols-12 gap-x-6 gap-y-12">
+            <figure className="reveal col-span-12 md:col-span-4">
+              <div className="relative aspect-[4/5] overflow-hidden bg-obsidian">
+                <img
+                  src={hero}
+                  alt="Aanka Group regional ambition"
+                  loading="lazy"
+                  className="img-scale h-full w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-obsidian/20" />
+                <div className="absolute inset-x-0 bottom-0 px-6 pb-6">
+                  <span className="font-sans text-[10px] uppercase tracking-luxury text-alabaster/80">
+                    UAE · GCC · Beyond
+                  </span>
+                </div>
+              </div>
+            </figure>
 
-          <ul className="mt-16 divide-y divide-platinum/60 border-y border-platinum/60">
-            {territories.map((t, i) => (
-              <li
-                key={t.region}
-                className="reveal grid grid-cols-12 items-baseline gap-6 py-6"
-                style={{ transitionDelay: `${i * 50}ms` }}
+            <div className="col-span-12 md:col-span-7 md:col-start-6">
+              <h2 className="reveal font-serif text-3xl font-light leading-[1.1] tracking-tight md:text-5xl">
+                Available <em className="italic">territories.</em>
+              </h2>
+              <p
+                className="reveal mt-8 max-w-md font-serif text-base font-light leading-relaxed text-obsidian/70 md:text-lg"
+                style={{ transitionDelay: "100ms" }}
               >
-                <span className="col-span-1 font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <span className="col-span-7 font-serif text-xl font-light text-obsidian md:col-span-6 md:text-2xl">
-                  {t.region}
-                </span>
-                <span className="col-span-4 inline-flex items-center gap-2 font-sans text-[11px] uppercase tracking-warm text-obsidian/65 md:col-span-5">
-                  <Check size={12} strokeWidth={1.5} className="text-bronze" />
-                  {t.note}
-                </span>
-              </li>
-            ))}
-          </ul>
+                We work with a small number of partners per market. Below is an
+                indicative view — final allocation is reviewed brand-by-brand.
+              </p>
+
+              <ul className="mt-12 divide-y divide-platinum/60 border-y border-platinum/60">
+                {territories.map((t, i) => (
+                  <li
+                    key={t.region}
+                    className="reveal grid grid-cols-12 items-baseline gap-4 py-5"
+                    style={{ transitionDelay: `${i * 50}ms` }}
+                  >
+                    <span className="col-span-2 font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="col-span-10 font-serif text-lg font-light text-obsidian md:col-span-6 md:text-xl">
+                      {t.region}
+                    </span>
+                    <span className="col-span-12 inline-flex items-center gap-2 font-sans text-[11px] uppercase tracking-warm text-obsidian/65 md:col-span-4">
+                      <Check size={12} strokeWidth={1.5} className="text-bronze" />
+                      {t.note}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
+
+      {/* Band image divider before Process */}
+      <div className="reveal relative h-[28vh] min-h-[220px] w-full overflow-hidden bg-obsidian md:h-[35vh]">
+        <img
+          src={zaikaInterior}
+          alt="Aanka Group hospitality"
+          loading="lazy"
+          className="img-scale h-full w-full object-cover opacity-70"
+        />
+        <div className="absolute inset-0 bg-obsidian/40" />
+        <div className="absolute inset-0 mx-auto flex max-w-[1440px] items-end px-6 pb-8 md:px-12 md:pb-10">
+          <p className="font-serif text-xl font-light italic text-alabaster md:text-3xl">
+            From inquiry to opening day — supported end-to-end.
+          </p>
+        </div>
+      </div>
 
       {/* Process */}
       <section className="bg-obsidian text-alabaster">
