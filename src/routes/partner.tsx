@@ -164,8 +164,8 @@ function PartnerPage() {
 
       {/* Pillars */}
       <section className="bg-obsidian text-alabaster">
-        <div className="mx-auto max-w-[1440px] px-6 py-28 md:px-12 md:py-40">
-          <div className="mb-16 flex items-center gap-6 md:mb-24">
+        <div className="mx-auto max-w-[1440px] px-6 py-24 md:px-12 md:py-32">
+          <div className="mb-12 flex items-center gap-6 md:mb-16">
             <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
               03 / Why Aanka
             </span>
@@ -180,18 +180,30 @@ function PartnerPage() {
             {pillars.map((p, i) => (
               <div
                 key={p.h}
-                className="reveal flex flex-col bg-obsidian p-10 md:p-12"
+                className="reveal flex flex-col bg-obsidian"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
-                <span className="font-serif text-2xl italic text-bronze num-mono">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="mt-8 font-serif text-2xl font-light leading-tight md:text-3xl">
-                  {p.h}
-                </h3>
-                <p className="mt-5 max-w-md font-serif text-base font-light leading-relaxed text-alabaster/70 md:text-lg">
-                  {p.p}
-                </p>
+                <div className="relative aspect-[5/3] overflow-hidden bg-obsidian">
+                  <img
+                    src={pillarImages[i % pillarImages.length]}
+                    alt=""
+                    aria-hidden
+                    loading="lazy"
+                    className="img-scale h-full w-full object-cover opacity-50 grayscale"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/55 to-transparent" />
+                </div>
+                <div className="flex flex-1 flex-col p-10 md:p-12">
+                  <span className="font-serif text-2xl italic text-bronze num-mono">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="mt-6 font-serif text-2xl font-light leading-tight md:text-3xl">
+                    {p.h}
+                  </h3>
+                  <p className="mt-5 max-w-md font-serif text-base font-light leading-relaxed text-alabaster/70 md:text-lg">
+                    {p.p}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
