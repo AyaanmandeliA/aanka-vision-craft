@@ -1,5 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { useReveal } from "@/hooks/use-reveal";
+import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "@/components/site/Hero";
 import { Introduction } from "@/components/site/Introduction";
 import { Verticals } from "@/components/site/Verticals";
@@ -29,7 +28,6 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  useReveal();
   return (
     <>
       <Hero />
@@ -45,8 +43,6 @@ function Index() {
         buttonLabel="Partner With Us"
         to="/partner"
       />
-      {/* Hidden link to keep Link import used for type-safe route ref */}
-      <Link to="/" className="sr-only" aria-hidden>home</Link>
     </>
   );
 }
