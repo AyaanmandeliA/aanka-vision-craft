@@ -217,7 +217,7 @@ function AboutPage() {
             <span className="h-px flex-1 bg-alabaster/15" />
           </div>
 
-          <h2 className="reveal mb-16 font-serif text-3xl font-light leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
+          <h2 className="reveal mb-20 display-lg">
             What we stand <em className="italic">on.</em>
           </h2>
 
