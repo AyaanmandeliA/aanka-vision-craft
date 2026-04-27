@@ -71,9 +71,9 @@ const verticals = [
 ];
 
 const portfolioStats = [
-  { k: "06", v: "Active brands" },
-  { k: "04", v: "Verticals" },
   { k: "UAE", v: "Operating market" },
+  { k: "GCC", v: "Designed to travel" },
+  { k: "Founder-led", v: "Built, financed, operated" },
 ];
 
 type BrandHref =
@@ -117,7 +117,7 @@ function BusinessesPage() {
         media={{
           src: zaikaInterior,
           alt: "House of Zaika interior",
-          caption: "Six brands. One philosophy.",
+          caption: "A house of brands. One philosophy.",
           ratio: "portrait",
         }}
       />

@@ -34,7 +34,7 @@ export const Route = createFileRoute("/careers")({
 const reasons = [
   {
     h: "Be part of a growing multi-brand group",
-    p: "Work alongside teams shaping six lifestyle brands under one shared standard — and learn how a multi-vertical group actually runs, day to day.",
+    p: "Work alongside teams shaping a portfolio of lifestyle brands under one shared standard — and learn how a multi-vertical group actually runs, day to day.",
     img: zaikaInterior,
   },
   {

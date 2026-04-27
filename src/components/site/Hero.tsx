@@ -55,7 +55,7 @@ export function Hero() {
           className="reveal measure mx-auto mt-10 font-serif text-lg font-light leading-relaxed text-alabaster/75 md:text-xl"
           style={{ transitionDelay: "220ms" }}
         >
-          A curated portfolio of six lifestyle brands across hospitality,
+          A curated portfolio of lifestyle brands across hospitality,
           wellness, beauty, and design — built in the UAE, designed to last,
           and run with one shared standard of care.
         </p>
@@ -86,7 +86,7 @@ export function Hero() {
         <PulseLine className="h-3 w-full opacity-70" />
         <div className="mx-auto flex max-w-[1440px] items-center justify-between px-6 py-5 font-sans text-[10px] uppercase tracking-luxury text-alabaster/55 md:px-12">
           <span className="num-mono">Aanka Group · 01</span>
-          <span className="hidden md:block">Six brands · One standard</span>
+          <span className="hidden md:block">A house of brands · One standard</span>
           <span className="num-mono">UAE · Est. 2019</span>
         </div>
       </div>

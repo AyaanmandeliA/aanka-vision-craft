@@ -18,7 +18,7 @@ const values = [
   {
     num: "IV",
     title: "A Group, Not a Collection",
-    desc: "Six brands. Four categories. One operating standard — shared playbooks, shared people, shared point of view.",
+    desc: "One operating standard across every brand we build — shared playbooks, shared people, shared point of view.",
   },
 ];
 
@@ -41,7 +41,7 @@ export function Values() {
             className="reveal col-span-12 measure-narrow self-end mb-16 font-serif text-base font-light leading-relaxed text-alabaster/65 md:col-span-3 md:col-start-10 md:text-lg"
             style={{ transitionDelay: "100ms" }}
           >
-            Four operating principles — the same in every brand, every market.
+            The operating principles behind every brand we build — the same in every market.
           </p>
         </div>
 

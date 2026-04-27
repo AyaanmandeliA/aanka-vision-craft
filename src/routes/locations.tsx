@@ -37,7 +37,6 @@ function LocationsPage() {
     return acc;
   }, {});
   const emirateOrder = Array.from(new Set(venues.map((v) => v.emirate)));
-  const uniqueBrands = new Set(venues.map((v) => v.brand)).size;
 
   return (
     <>
@@ -65,9 +64,6 @@ function LocationsPage() {
               02 / Map
             </span>
             <PulseLine className="h-4 flex-1 opacity-70" />
-            <span className="font-sans text-[10px] uppercase tracking-luxury text-alabaster/55">
-              {venues.length} Venues
-            </span>
           </div>
 
           <div className="reveal border border-alabaster/10">
@@ -77,15 +73,6 @@ function LocationsPage() {
           <p className="mt-6 font-sans text-[11px] uppercase tracking-warm text-alabaster/50">
             Hover or focus a pin to reveal the brand and area.
           </p>
-        </div>
-
-        {/* Count band */}
-        <div className="border-t border-alabaster/10">
-          <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-px bg-alabaster/15 px-0 md:grid-cols-3">
-            <CountCell k={String(venues.length).padStart(2, "0")} v="Active venues" />
-            <CountCell k={String(emirateOrder.length).padStart(2, "0")} v="Emirates served" />
-            <CountCell k={String(uniqueBrands).padStart(2, "0")} v="Brands on the ground" />
-          </div>
         </div>
       </section>
 
@@ -173,14 +160,5 @@ function LocationsPage() {
         to="/contact"
       />
     </>
-  );
-}
-
-function CountCell({ k, v }: { k: string; v: string }) {
-  return (
-    <div className="reveal flex items-baseline gap-6 bg-obsidian px-6 py-10 md:px-12 md:py-12">
-      <span className="font-serif text-4xl italic text-bronze num-mono md:text-5xl">{k}</span>
-      <span className="font-sans text-[11px] uppercase tracking-luxury text-alabaster/65">{v}</span>
-    </div>
   );
 }
