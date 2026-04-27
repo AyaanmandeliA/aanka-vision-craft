@@ -324,15 +324,15 @@ function AboutPage() {
           </div>
 
           <div className="grid grid-cols-12 gap-x-6 gap-y-10">
-            <h2 className="reveal col-span-12 font-serif text-3xl font-light leading-[1.1] tracking-tight md:col-span-6 md:text-5xl">
+            <h2 className="reveal col-span-12 display-lg md:col-span-7">
               What makes <em className="italic">Aanka</em> different.
             </h2>
             <p
-              className="reveal col-span-12 self-end font-serif text-base font-light leading-relaxed text-obsidian/65 md:col-span-5 md:col-start-8 md:text-lg"
+              className="reveal col-span-12 self-end measure font-serif text-base font-light leading-relaxed text-obsidian/70 md:col-span-4 md:col-start-9 md:text-lg"
               style={{ transitionDelay: "100ms" }}
             >
-              Four ideas that show up in every brand, every interior, and every
-              service decision we make.
+              Four operating choices — visible in every brand, every fit-out,
+              and every hire we make.
             </p>
           </div>
 
