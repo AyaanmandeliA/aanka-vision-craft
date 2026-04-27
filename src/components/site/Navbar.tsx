@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone, Mail } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 
 const links = [
@@ -18,6 +18,31 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-obsidian text-alabaster">
+      {/* Utility bar */}
+      <div className="hidden border-b border-alabaster/10 md:block">
+        <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-6 px-6 py-2 md:px-12">
+          <span className="font-sans text-[10px] uppercase tracking-luxury text-alabaster/55">
+            United Arab Emirates · EN
+          </span>
+          <div className="flex items-center gap-6">
+            <a
+              href="tel:+971507847968"
+              className="inline-flex items-center gap-2 font-sans text-[10px] uppercase tracking-luxury text-alabaster/65 transition-colors hover:text-bronze"
+            >
+              <Phone size={11} strokeWidth={1.4} />
+              +971 50 784 7968
+            </a>
+            <a
+              href="mailto:contact@aankagroup.com"
+              className="inline-flex items-center gap-2 font-sans text-[10px] uppercase tracking-luxury text-alabaster/65 transition-colors hover:text-bronze"
+            >
+              <Mail size={11} strokeWidth={1.4} />
+              contact@aankagroup.com
+            </a>
+          </div>
+        </div>
+      </div>
+
       <div className="mx-auto flex max-w-[1440px] items-center justify-between px-6 py-5 md:px-12 md:py-6">
         <Link
           to="/"
@@ -62,6 +87,20 @@ export function Navbar() {
                 {l.label}
               </Link>
             ))}
+            <div className="mt-6 border-t border-alabaster/10 pt-6">
+              <a
+                href="tel:+971507847968"
+                className="block py-2 font-sans text-[11px] uppercase tracking-luxury text-alabaster/65"
+              >
+                +971 50 784 7968
+              </a>
+              <a
+                href="mailto:contact@aankagroup.com"
+                className="block py-2 font-sans text-[11px] uppercase tracking-luxury text-alabaster/65"
+              >
+                contact@aankagroup.com
+              </a>
+            </div>
           </nav>
         </div>
       )}

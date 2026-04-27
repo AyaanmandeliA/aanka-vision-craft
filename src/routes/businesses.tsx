@@ -1,7 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useReveal } from "@/hooks/use-reveal";
 import { PageHeader, CtaBlock } from "@/components/site/PageShell";
-import { brands } from "@/components/site/brand-data";
+import { brands, type Brand } from "@/components/site/brand-data";
 import { ArrowUpRight } from "lucide-react";
 
 export const Route = createFileRoute("/businesses")({
@@ -29,31 +29,57 @@ const verticals = [
     code: "I",
     name: "Food & Beverage",
     intro:
-      "From vibrant street food concepts to rich dining experiences, Aanka Group's F&B brands are designed to serve different moods, moments, and customer preferences.",
+      "From vibrant street-food concepts to slow-cooked fine dining, our F&B brands are designed for different moods, moments, and tables.",
     keys: ["Khau Galli", "House of Zaika"],
   },
   {
     code: "II",
     name: "Wellness & Salons",
     intro:
-      "Our salon brands are created around comfort, care, expertise, and confidence — delivering modern grooming and beauty experiences for today's customers.",
+      "Modern grooming and beauty houses built around comfort, expertise, and the small rituals that define how people show up.",
     keys: ["Cutting Edge Gents", "Cutting Edge Ladies"],
   },
   {
     code: "III",
     name: "Interiors & Design",
     intro:
-      "Through design-led thinking and attention to detail, Aanka Group's interiors arm brings functional and aesthetic spaces to life.",
+      "Design-led spaces shaped end-to-end — where function, atmosphere, and detail meet.",
     keys: ["Deco Vibes"],
   },
   {
     code: "IV",
     name: "Construction",
     intro:
-      "Aanka Constructions is a vertical focused on dependable execution, structural quality, and long-term value.",
+      "Reliable execution and structural quality — the quiet backbone behind every space we shape.",
     keys: ["Aanka Constructions"],
   },
 ];
+
+type BrandHref =
+  | "/businesses/khau-galli"
+  | "/businesses/house-of-zaika"
+  | "/businesses/cutting-edge-gents"
+  | "/businesses/cutting-edge-ladies"
+  | "/businesses/deco-vibes"
+  | "/businesses/aanka-constructions";
+
+function brandHrefForSlug(slug: string): BrandHref {
+  switch (slug) {
+    case "khau-galli":
+      return "/businesses/khau-galli";
+    case "house-of-zaika":
+      return "/businesses/house-of-zaika";
+    case "cutting-edge-gents":
+      return "/businesses/cutting-edge-gents";
+    case "cutting-edge-ladies":
+      return "/businesses/cutting-edge-ladies";
+    case "deco-vibes":
+      return "/businesses/deco-vibes";
+    case "aanka-constructions":
+    default:
+      return "/businesses/aanka-constructions";
+  }
+}
 
 function BusinessesPage() {
   useReveal();
@@ -63,10 +89,10 @@ function BusinessesPage() {
         eyebrow="01 / Portfolio"
         title={
           <>
-            Our <em className="italic">Portfolio</em>
+            Our <em className="italic">Family</em> of Brands
           </>
         }
-        intro="Aanka Group brings together brands across food, wellness, beauty, and interior design — each created with a distinct identity, and each contributing to a larger vision of building memorable lifestyle experiences."
+        intro="Aanka Group brings together brands across food, wellness, beauty, and interior design — each with a distinct identity, all held to the same shared standard of hospitality, craft, and care."
       />
 
       {/* Vertical intro */}
@@ -97,7 +123,7 @@ function BusinessesPage() {
 
               <div className="grid grid-cols-12 gap-x-6 gap-y-10">
                 <h3 className="reveal col-span-12 font-serif text-3xl font-light leading-[1.1] tracking-tight md:col-span-5 md:text-5xl">
-                  <span className={`mr-4 font-serif italic ${dark ? "text-bronze" : "text-bronze"} num-mono text-2xl md:text-3xl`}>{v.code}</span>
+                  <span className="mr-4 font-serif italic text-bronze num-mono text-2xl md:text-3xl">{v.code}</span>
                   {v.name}
                 </h3>
                 <p
@@ -122,30 +148,27 @@ function BusinessesPage() {
       <section className="bg-alabaster text-obsidian">
         <div className="mx-auto max-w-[1440px] px-6 py-28 md:px-12 md:py-32">
           <p className="reveal mx-auto max-w-4xl font-serif text-2xl font-light leading-[1.3] tracking-tight text-obsidian/85 md:text-4xl">
-            Together, these businesses reflect the breadth of Aanka Group's ambition and the consistency of its <em className="italic">customer-first approach</em>.
+            Together, these businesses reflect the breadth of Aanka Group's
+            ambition — and the consistency of our <em className="italic">customer-first approach</em>.
           </p>
         </div>
       </section>
 
       <CtaBlock
         eyebrow="06 / Partner"
-        heading={<>Partner With a Group <em className="italic">Built for Growth</em></>}
-        body="Explore franchise opportunities, strategic collaborations, or brand expansion alongside Aanka Group."
-        buttonLabel="Partner With Us"
+        heading={<>Bring an <em className="italic">Aanka brand</em> to your city.</>}
+        body="Explore franchise opportunities for our flagship F&B and wellness brands across the GCC and beyond."
+        buttonLabel="Franchise With Us"
         to="/partner"
       />
     </>
   );
 }
 
-function BrandRow({ brand, dark }: { brand: typeof brands[number]; dark: boolean }) {
-  const Wrapper: React.ElementType = brand.href ? "a" : "div";
-  const props = brand.href
-    ? { href: brand.href, target: "_blank", rel: "noopener noreferrer" }
-    : {};
+function BrandRow({ brand, dark }: { brand: Brand; dark: boolean }) {
   return (
-    <Wrapper
-      {...props}
+    <Link
+      to={brandHrefForSlug(brand.slug)}
       className={`reveal group block overflow-hidden ${dark ? "bg-obsidian" : "bg-alabaster"}`}
     >
       <div className="relative aspect-[16/10] overflow-hidden bg-obsidian">
@@ -160,20 +183,17 @@ function BrandRow({ brand, dark }: { brand: typeof brands[number]; dark: boolean
         <h4 className={`font-serif text-2xl font-light tracking-tight ${dark ? "text-alabaster" : "text-obsidian"}`}>
           {brand.name}
         </h4>
-        {brand.href ? (
-          <span className="inline-flex items-center gap-2 font-sans text-[10px] uppercase tracking-luxury text-bronze">
-            Visit
-            <ArrowUpRight size={14} strokeWidth={1.25} />
-          </span>
-        ) : (
-          <span className={`font-sans text-[10px] uppercase tracking-luxury ${dark ? "text-alabaster/55" : "text-obsidian/50"}`}>
-            {brand.sector}
-          </span>
-        )}
+        <span className="inline-flex items-center gap-2 font-sans text-[10px] uppercase tracking-luxury text-bronze">
+          Discover
+          <ArrowUpRight size={14} strokeWidth={1.25} />
+        </span>
       </div>
       <p className={`mt-5 max-w-md font-serif text-base font-light leading-relaxed md:text-lg ${dark ? "text-alabaster/75" : "text-obsidian/75"}`}>
         {brand.desc}
       </p>
-    </Wrapper>
+      <div className={`mt-4 font-sans text-[10px] uppercase tracking-luxury ${dark ? "text-alabaster/55" : "text-obsidian/50"}`}>
+        {brand.sector}
+      </div>
+    </Link>
   );
 }

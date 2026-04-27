@@ -12,23 +12,24 @@ export function Introduction() {
         <div className="grid grid-cols-12 gap-x-6 gap-y-16">
           <div className="reveal col-span-12 lg:col-span-7">
             <h2 className="font-serif text-3xl font-light leading-[1.15] tracking-tight text-obsidian sm:text-4xl md:text-5xl lg:text-6xl">
-              The Name Behind <br />
-              <em className="italic">Memorable</em> Lifestyle Brands
+              The name behind <br />
+              brands you <em className="italic">return to.</em>
             </h2>
           </div>
 
           <div className="reveal col-span-12 lg:col-span-4 lg:col-start-9" style={{ transitionDelay: "150ms" }}>
             <p className="font-serif text-lg font-light leading-relaxed text-obsidian/80 md:text-xl">
-              Aanka Group is a UAE-based multi-brand business with a growing
-              presence across hospitality, wellness, beauty, and design.
+              Founded in the UAE, Aanka Group is a family-led house of lifestyle
+              brands across hospitality, wellness, beauty, and design — quietly
+              built, openly hospitable.
             </p>
             <p className="mt-6 font-sans text-[14px] leading-relaxed text-obsidian/65">
-              Through each of its ventures, the group is focused on building
-              customer-centric brands that bring together quality, experience,
-              and long-term value.
+              Each venture is shaped around the same belief: that great brands
+              are made of small, repeatable acts of care, served with intent and
+              the long view.
             </p>
 
-            <dl className="mt-12 grid grid-cols-2 gap-8 border-t border-platinum/60 pt-8">
+            <dl className="mt-12 grid grid-cols-3 gap-6 border-t border-platinum/60 pt-8">
               <div>
                 <dt className="font-sans text-[10px] uppercase tracking-luxury text-bronze">
                   Brands
@@ -40,6 +41,12 @@ export function Introduction() {
                   Sectors
                 </dt>
                 <dd className="mt-2 font-serif text-3xl font-light text-obsidian num-mono">04</dd>
+              </div>
+              <div>
+                <dt className="font-sans text-[10px] uppercase tracking-luxury text-bronze">
+                  Footprint
+                </dt>
+                <dd className="mt-2 font-serif text-xl font-light leading-tight text-obsidian">UAE</dd>
               </div>
             </dl>
           </div>

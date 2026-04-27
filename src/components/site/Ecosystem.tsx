@@ -1,5 +1,6 @@
 import { brands, type Brand } from "./brand-data";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 export function Ecosystem() {
   return (
@@ -7,18 +8,19 @@ export function Ecosystem() {
       <div className="mx-auto max-w-[1440px] px-6 pb-32 md:px-12 md:pb-40">
         <div className="mb-16 flex items-center gap-6 md:mb-20">
           <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
-            03 / The Ecosystem
+            03 / The Family
           </span>
           <span className="h-px flex-1 bg-platinum/60" />
         </div>
 
         <div className="reveal mb-16 grid grid-cols-12 gap-6">
           <h2 className="col-span-12 font-serif text-3xl font-light leading-[1.15] tracking-tight md:col-span-8 md:text-5xl lg:text-6xl">
-            A Growing Presence <br />
-            Across <em className="italic">Industries</em>
+            Six brands, one <br />
+            <em className="italic">standard</em> of care.
           </h2>
           <p className="col-span-12 font-sans text-[14px] leading-relaxed text-obsidian/65 md:col-span-3 md:col-start-10">
-            A growing portfolio of brands, each with its own identity, united by one larger vision.
+            Each brand has its own identity and audience — held together by a
+            shared sense of hospitality, craft, and detail.
           </p>
         </div>
 
@@ -34,26 +36,25 @@ export function Ecosystem() {
 }
 
 function BrandCard({ brand, delay }: { brand: Brand; delay: number }) {
-  const Wrapper: React.ElementType = brand.href ? "a" : "article";
-  const wrapperProps = brand.href
-    ? { href: brand.href, target: "_blank", rel: "noopener noreferrer" }
-    : {};
-
   return (
-    <Wrapper
-      {...wrapperProps}
+    <Link
+      // Each brand has its own static route under /businesses/<slug>
+      // so we map slug -> typed `to` value.
+      to={brandHrefForSlug(brand.slug)}
       className={`reveal group relative block overflow-hidden bg-obsidian ${brand.span}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       <div className="relative h-full min-h-[320px] w-full">
-        <img
-          src={brand.img}
-          alt={brand.name}
-          loading="lazy"
-          width={1024}
-          height={1280}
-          className="img-scale absolute inset-0 h-full w-full object-cover opacity-90 transition-opacity duration-700 group-hover:opacity-45"
-        />
+        <div className="mask-reveal absolute inset-0">
+          <img
+            src={brand.img}
+            alt={brand.name}
+            loading="lazy"
+            width={1024}
+            height={1280}
+            className="img-scale absolute inset-0 h-full w-full object-cover opacity-90 transition-opacity duration-700 group-hover:opacity-50"
+          />
+        </div>
         {/* Permanent bottom gradient for legibility */}
         <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/30 to-transparent" />
         {/* Hover full overlay */}
@@ -66,7 +67,7 @@ function BrandCard({ brand, delay }: { brand: Brand; delay: number }) {
           </span>
           <span className="flex items-center gap-2 font-sans text-[10px] uppercase tracking-luxury text-alabaster/70">
             {brand.sector}
-            {brand.href ? <ArrowUpRight size={12} strokeWidth={1.25} /> : null}
+            <ArrowUpRight size={12} strokeWidth={1.25} />
           </span>
         </div>
 
@@ -81,13 +82,39 @@ function BrandCard({ brand, delay }: { brand: Brand; delay: number }) {
                 {brand.desc}
               </p>
               <span className="mt-4 inline-flex items-center gap-3 font-sans text-[10px] uppercase tracking-luxury text-bronze">
-                {brand.href ? "Visit Website" : "Discover"}
+                Discover the brand
                 <span className="block h-px w-6 bg-bronze" />
               </span>
             </div>
           </div>
         </div>
       </div>
-    </Wrapper>
+    </Link>
   );
+}
+
+type BrandHref =
+  | "/businesses/khau-galli"
+  | "/businesses/house-of-zaika"
+  | "/businesses/cutting-edge-gents"
+  | "/businesses/cutting-edge-ladies"
+  | "/businesses/deco-vibes"
+  | "/businesses/aanka-constructions";
+
+function brandHrefForSlug(slug: string): BrandHref {
+  switch (slug) {
+    case "khau-galli":
+      return "/businesses/khau-galli";
+    case "house-of-zaika":
+      return "/businesses/house-of-zaika";
+    case "cutting-edge-gents":
+      return "/businesses/cutting-edge-gents";
+    case "cutting-edge-ladies":
+      return "/businesses/cutting-edge-ladies";
+    case "deco-vibes":
+      return "/businesses/deco-vibes";
+    case "aanka-constructions":
+    default:
+      return "/businesses/aanka-constructions";
+  }
 }

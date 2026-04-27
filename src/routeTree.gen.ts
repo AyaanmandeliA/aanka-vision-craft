@@ -17,6 +17,12 @@ import { Route as CareersRouteImport } from './routes/careers'
 import { Route as BusinessesRouteImport } from './routes/businesses'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BusinessesKhauGalliRouteImport } from './routes/businesses.khau-galli'
+import { Route as BusinessesHouseOfZaikaRouteImport } from './routes/businesses.house-of-zaika'
+import { Route as BusinessesDecoVibesRouteImport } from './routes/businesses.deco-vibes'
+import { Route as BusinessesCuttingEdgeLadiesRouteImport } from './routes/businesses.cutting-edge-ladies'
+import { Route as BusinessesCuttingEdgeGentsRouteImport } from './routes/businesses.cutting-edge-gents'
+import { Route as BusinessesAankaConstructionsRouteImport } from './routes/businesses.aanka-constructions'
 
 const PartnerRoute = PartnerRouteImport.update({
   id: '/partner',
@@ -58,37 +64,88 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BusinessesKhauGalliRoute = BusinessesKhauGalliRouteImport.update({
+  id: '/khau-galli',
+  path: '/khau-galli',
+  getParentRoute: () => BusinessesRoute,
+} as any)
+const BusinessesHouseOfZaikaRoute = BusinessesHouseOfZaikaRouteImport.update({
+  id: '/house-of-zaika',
+  path: '/house-of-zaika',
+  getParentRoute: () => BusinessesRoute,
+} as any)
+const BusinessesDecoVibesRoute = BusinessesDecoVibesRouteImport.update({
+  id: '/deco-vibes',
+  path: '/deco-vibes',
+  getParentRoute: () => BusinessesRoute,
+} as any)
+const BusinessesCuttingEdgeLadiesRoute =
+  BusinessesCuttingEdgeLadiesRouteImport.update({
+    id: '/cutting-edge-ladies',
+    path: '/cutting-edge-ladies',
+    getParentRoute: () => BusinessesRoute,
+  } as any)
+const BusinessesCuttingEdgeGentsRoute =
+  BusinessesCuttingEdgeGentsRouteImport.update({
+    id: '/cutting-edge-gents',
+    path: '/cutting-edge-gents',
+    getParentRoute: () => BusinessesRoute,
+  } as any)
+const BusinessesAankaConstructionsRoute =
+  BusinessesAankaConstructionsRouteImport.update({
+    id: '/aanka-constructions',
+    path: '/aanka-constructions',
+    getParentRoute: () => BusinessesRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/businesses': typeof BusinessesRoute
+  '/businesses': typeof BusinessesRouteWithChildren
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/locations': typeof LocationsRoute
   '/media': typeof MediaRoute
   '/partner': typeof PartnerRoute
+  '/businesses/aanka-constructions': typeof BusinessesAankaConstructionsRoute
+  '/businesses/cutting-edge-gents': typeof BusinessesCuttingEdgeGentsRoute
+  '/businesses/cutting-edge-ladies': typeof BusinessesCuttingEdgeLadiesRoute
+  '/businesses/deco-vibes': typeof BusinessesDecoVibesRoute
+  '/businesses/house-of-zaika': typeof BusinessesHouseOfZaikaRoute
+  '/businesses/khau-galli': typeof BusinessesKhauGalliRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/businesses': typeof BusinessesRoute
+  '/businesses': typeof BusinessesRouteWithChildren
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/locations': typeof LocationsRoute
   '/media': typeof MediaRoute
   '/partner': typeof PartnerRoute
+  '/businesses/aanka-constructions': typeof BusinessesAankaConstructionsRoute
+  '/businesses/cutting-edge-gents': typeof BusinessesCuttingEdgeGentsRoute
+  '/businesses/cutting-edge-ladies': typeof BusinessesCuttingEdgeLadiesRoute
+  '/businesses/deco-vibes': typeof BusinessesDecoVibesRoute
+  '/businesses/house-of-zaika': typeof BusinessesHouseOfZaikaRoute
+  '/businesses/khau-galli': typeof BusinessesKhauGalliRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/businesses': typeof BusinessesRoute
+  '/businesses': typeof BusinessesRouteWithChildren
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/locations': typeof LocationsRoute
   '/media': typeof MediaRoute
   '/partner': typeof PartnerRoute
+  '/businesses/aanka-constructions': typeof BusinessesAankaConstructionsRoute
+  '/businesses/cutting-edge-gents': typeof BusinessesCuttingEdgeGentsRoute
+  '/businesses/cutting-edge-ladies': typeof BusinessesCuttingEdgeLadiesRoute
+  '/businesses/deco-vibes': typeof BusinessesDecoVibesRoute
+  '/businesses/house-of-zaika': typeof BusinessesHouseOfZaikaRoute
+  '/businesses/khau-galli': typeof BusinessesKhauGalliRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -101,6 +158,12 @@ export interface FileRouteTypes {
     | '/locations'
     | '/media'
     | '/partner'
+    | '/businesses/aanka-constructions'
+    | '/businesses/cutting-edge-gents'
+    | '/businesses/cutting-edge-ladies'
+    | '/businesses/deco-vibes'
+    | '/businesses/house-of-zaika'
+    | '/businesses/khau-galli'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -111,6 +174,12 @@ export interface FileRouteTypes {
     | '/locations'
     | '/media'
     | '/partner'
+    | '/businesses/aanka-constructions'
+    | '/businesses/cutting-edge-gents'
+    | '/businesses/cutting-edge-ladies'
+    | '/businesses/deco-vibes'
+    | '/businesses/house-of-zaika'
+    | '/businesses/khau-galli'
   id:
     | '__root__'
     | '/'
@@ -121,12 +190,18 @@ export interface FileRouteTypes {
     | '/locations'
     | '/media'
     | '/partner'
+    | '/businesses/aanka-constructions'
+    | '/businesses/cutting-edge-gents'
+    | '/businesses/cutting-edge-ladies'
+    | '/businesses/deco-vibes'
+    | '/businesses/house-of-zaika'
+    | '/businesses/khau-galli'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  BusinessesRoute: typeof BusinessesRoute
+  BusinessesRoute: typeof BusinessesRouteWithChildren
   CareersRoute: typeof CareersRoute
   ContactRoute: typeof ContactRoute
   LocationsRoute: typeof LocationsRoute
@@ -192,13 +267,77 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/businesses/khau-galli': {
+      id: '/businesses/khau-galli'
+      path: '/khau-galli'
+      fullPath: '/businesses/khau-galli'
+      preLoaderRoute: typeof BusinessesKhauGalliRouteImport
+      parentRoute: typeof BusinessesRoute
+    }
+    '/businesses/house-of-zaika': {
+      id: '/businesses/house-of-zaika'
+      path: '/house-of-zaika'
+      fullPath: '/businesses/house-of-zaika'
+      preLoaderRoute: typeof BusinessesHouseOfZaikaRouteImport
+      parentRoute: typeof BusinessesRoute
+    }
+    '/businesses/deco-vibes': {
+      id: '/businesses/deco-vibes'
+      path: '/deco-vibes'
+      fullPath: '/businesses/deco-vibes'
+      preLoaderRoute: typeof BusinessesDecoVibesRouteImport
+      parentRoute: typeof BusinessesRoute
+    }
+    '/businesses/cutting-edge-ladies': {
+      id: '/businesses/cutting-edge-ladies'
+      path: '/cutting-edge-ladies'
+      fullPath: '/businesses/cutting-edge-ladies'
+      preLoaderRoute: typeof BusinessesCuttingEdgeLadiesRouteImport
+      parentRoute: typeof BusinessesRoute
+    }
+    '/businesses/cutting-edge-gents': {
+      id: '/businesses/cutting-edge-gents'
+      path: '/cutting-edge-gents'
+      fullPath: '/businesses/cutting-edge-gents'
+      preLoaderRoute: typeof BusinessesCuttingEdgeGentsRouteImport
+      parentRoute: typeof BusinessesRoute
+    }
+    '/businesses/aanka-constructions': {
+      id: '/businesses/aanka-constructions'
+      path: '/aanka-constructions'
+      fullPath: '/businesses/aanka-constructions'
+      preLoaderRoute: typeof BusinessesAankaConstructionsRouteImport
+      parentRoute: typeof BusinessesRoute
+    }
   }
 }
+
+interface BusinessesRouteChildren {
+  BusinessesAankaConstructionsRoute: typeof BusinessesAankaConstructionsRoute
+  BusinessesCuttingEdgeGentsRoute: typeof BusinessesCuttingEdgeGentsRoute
+  BusinessesCuttingEdgeLadiesRoute: typeof BusinessesCuttingEdgeLadiesRoute
+  BusinessesDecoVibesRoute: typeof BusinessesDecoVibesRoute
+  BusinessesHouseOfZaikaRoute: typeof BusinessesHouseOfZaikaRoute
+  BusinessesKhauGalliRoute: typeof BusinessesKhauGalliRoute
+}
+
+const BusinessesRouteChildren: BusinessesRouteChildren = {
+  BusinessesAankaConstructionsRoute: BusinessesAankaConstructionsRoute,
+  BusinessesCuttingEdgeGentsRoute: BusinessesCuttingEdgeGentsRoute,
+  BusinessesCuttingEdgeLadiesRoute: BusinessesCuttingEdgeLadiesRoute,
+  BusinessesDecoVibesRoute: BusinessesDecoVibesRoute,
+  BusinessesHouseOfZaikaRoute: BusinessesHouseOfZaikaRoute,
+  BusinessesKhauGalliRoute: BusinessesKhauGalliRoute,
+}
+
+const BusinessesRouteWithChildren = BusinessesRoute._addFileChildren(
+  BusinessesRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  BusinessesRoute: BusinessesRoute,
+  BusinessesRoute: BusinessesRouteWithChildren,
   CareersRoute: CareersRoute,
   ContactRoute: ContactRoute,
   LocationsRoute: LocationsRoute,

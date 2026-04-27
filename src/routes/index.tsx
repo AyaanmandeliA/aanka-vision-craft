@@ -1,9 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "@/components/site/Hero";
+import { FoundersNote } from "@/components/site/FoundersNote";
 import { Introduction } from "@/components/site/Introduction";
 import { Verticals } from "@/components/site/Verticals";
 import { Ecosystem } from "@/components/site/Ecosystem";
+import { BrandMarquee } from "@/components/site/BrandMarquee";
 import { Values } from "@/components/site/Values";
+import { InstagramGrid } from "@/components/site/InstagramGrid";
 import { Growth } from "@/components/site/Growth";
 import { CtaBlock } from "@/components/site/PageShell";
 
@@ -11,17 +14,17 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Aanka Group — A House of Lifestyle Brands" },
+      { title: "Aanka Group — A Family of Lifestyle Brands in the UAE" },
       {
         name: "description",
         content:
-          "Aanka Group is a UAE-based holding building memorable brands across food, wellness, beauty, and interior design.",
+          "Aanka Group is a UAE-based, family-led house of brands across hospitality, wellness, beauty, and design — quietly built, openly hospitable.",
       },
-      { property: "og:title", content: "Aanka Group — A House of Lifestyle Brands" },
+      { property: "og:title", content: "Aanka Group — A Family of Lifestyle Brands" },
       {
         property: "og:description",
         content:
-          "Built with Vision. Growing with Purpose. Six brands across hospitality, wellness, beauty, and design.",
+          "Six brands across hospitality, wellness, beauty, and design — built with vision, growing with purpose.",
       },
     ],
   }),
@@ -31,15 +34,18 @@ function Index() {
   return (
     <>
       <Hero />
+      <FoundersNote />
       <Introduction />
       <Verticals />
       <Ecosystem />
+      <BrandMarquee />
       <Values />
+      <InstagramGrid />
       <Growth />
       <CtaBlock
-        eyebrow="07 / Collaborate"
-        heading={<>Looking to <em className="italic">Grow</em> With Us?</>}
-        body="Whether you are exploring partnership opportunities, franchise possibilities, or business collaborations, Aanka Group welcomes conversations that align with its vision for growth."
+        eyebrow="09 / Collaborate"
+        heading={<>Looking to <em className="italic">grow</em> with us?</>}
+        body="Whether you're exploring a franchise, a partnership, or a creative collaboration, we welcome conversations that share our long view."
         buttonLabel="Partner With Us"
         to="/partner"
       />
