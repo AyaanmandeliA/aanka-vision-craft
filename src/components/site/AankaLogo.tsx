@@ -1,14 +1,16 @@
 /**
  * AANKA brand system — wordmark, brand mark, and signature pulse line.
  *
- * Geometry of the pulse line (per brand board):
- *   • A horizontal bronze line runs at cap-height across the whole word.
- *   • Just before the N, it drops vertically down to the baseline.
- *   • It runs along the baseline UNDER the N.
- *   • Just after the N, it rises vertically back up to cap-height.
- *   • Then continues right.
- * The N itself sits inside this rectangular "well" — its diagonal
- * crosses both horizontal segments, intersecting the line.
+ * Geometry of the pulse line (per the brand board):
+ *   • Bronze line enters from the LEFT at the BASELINE of the letters.
+ *   • Runs along the baseline under A · A.
+ *   • Rises vertically just before the N (at the N's left stem).
+ *   • Runs across the TOP (cap-height) over the N.
+ *   • Drops vertically just after the N (at the N's right stem).
+ *   • Continues along the cap-height over K · A and exits right.
+ *
+ * The N sits inside an inverted "U" carved out of the line — the line
+ * goes UP and OVER the N rather than down and under it.
  *
  * The same shape is reused as the universal divider across the site.
  */
@@ -38,8 +40,8 @@ export function AankaLogo({
   const pulse = "var(--bronze)";
 
   if (markOnly) {
-    // Just the N inside the pulse-line rectangle.
-    // viewBox: 200 wide, 120 tall.  Line at top y=20, bottom y=100, N spans x=70..130.
+    // Just the N inside the inverted-U pulse-line "step".
+    // viewBox 200 × 120.  Baseline y=100, cap-height y=20.  N spans x=70..130.
     return (
       <svg
         viewBox="0 0 200 120"
@@ -48,16 +50,16 @@ export function AankaLogo({
         aria-label={`${title} mark`}
         fill="none"
       >
-        {/* Pulse line — enters left, drops down before N, runs under, rises after N, exits right */}
+        {/* Pulse line — enters left at baseline, rises before N, runs at cap-height over N, drops after, exits right at cap-height */}
         <path
-          d="M0 20 H70 L70 100 H130 L130 20 H200"
+          d="M0 100 H70 L70 20 H200"
           stroke={pulse}
-          strokeWidth="2"
+          strokeWidth="2.4"
           strokeLinecap="butt"
           strokeLinejoin="miter"
           vectorEffect="non-scaling-stroke"
         />
-        {/* The N — serif diagonal sits inside the well */}
+        {/* The N */}
         <text
           x="100"
           y="92"
@@ -74,15 +76,16 @@ export function AankaLogo({
   }
 
   /**
-   * Wordmark layout — 5 letters, evenly spaced on a wide canvas.
-   * viewBox 800 × 200.  Letters baseline at y=140, cap-height at y=40.
-   * N is the 3rd letter, centered at x=400 (with width ~80).
-   * Pulse line: y=40 across, drops at x=360, runs at y=140 under N, rises at x=440.
+   * Wordmark layout — 5 serif glyphs evenly spaced.
+   * viewBox 800 × 200.  Letters baseline y=140, cap-height y=40.
+   * N is the 3rd letter, centered around x=400 with stems at ~370 and ~430.
+   * Pulse line: baseline (y=140) under A·A, rises at x=370,
+   *   runs at cap-height (y=40) over N, drops at x=430, continues over K·A.
    */
-  const lineTop = 40;
-  const lineBottom = 140;
-  const nLeft = 360;
-  const nRight = 440;
+  const lineLow = 140;
+  const lineHigh = 40;
+  const nLeft = 365;
+  const nRight = 432;
   const letterPositions = [120, 240, 400, 560, 680]; // A A N K A
 
   return (
@@ -93,16 +96,16 @@ export function AankaLogo({
       aria-label={title}
       fill="none"
     >
-      {/* Pulse line — drawn first so letters can sit on top */}
+      {/* Pulse line */}
       <path
-        d={`M20 ${lineTop} H${nLeft} L${nLeft} ${lineBottom} H${nRight} L${nRight} ${lineTop} H780`}
+        d={`M20 ${lineLow} H${nLeft} L${nLeft} ${lineHigh} H${nRight} L${nRight} ${lineLow} H${nRight} M${nRight} ${lineHigh} H780`}
         stroke={pulse}
-        strokeWidth="2.2"
+        strokeWidth="2.4"
         strokeLinecap="butt"
         strokeLinejoin="miter"
         vectorEffect="non-scaling-stroke"
       />
-      {/* Letters */}
+      {/* Letters — drawn AFTER the line so the N stems sit on top of the verticals */}
       <g
         fontFamily="'Playfair Display', 'Cormorant Garamond', Georgia, serif"
         fontWeight="400"
@@ -111,7 +114,7 @@ export function AankaLogo({
         textAnchor="middle"
       >
         {LETTERS.map((ch, i) => (
-          <text key={i} x={letterPositions[i]} y={lineBottom}>
+          <text key={i} x={letterPositions[i]} y={lineLow}>
             {ch}
           </text>
         ))}
@@ -121,20 +124,20 @@ export function AankaLogo({
 }
 
 /**
- * Signature pulse line — the universal divider for the site.
- * Same geometry as the logo (line dips under a small N-well in the middle),
- * but stretched wide.  Use anywhere a horizontal rule would normally go.
+ * Signature pulse line — universal divider for the site.
+ * Same "step" geometry as the logo: a horizontal line with a single
+ * inverted-U well in the middle (where the N would sit).
  *
- * Width fills container.  Height is fixed (~32px default via className).
+ * Width fills container.  Height fixed via className (e.g. h-3, h-4).
  *
  * Variants:
- *   "default" — bronze line on light/dark surfaces
+ *   "default" — bronze line (use on light or dark surfaces)
  *   "muted"   — platinum line for subtle in-context dividers
  */
 export function PulseLine({
   className,
   variant = "default",
-  /** When true, omits the N-well dip and renders a perfectly straight line. */
+  /** When true, omits the inverted-U well and renders a plain straight line. */
   flat = false,
 }: {
   className?: string;
@@ -143,11 +146,11 @@ export function PulseLine({
 }) {
   const color = variant === "muted" ? "var(--platinum)" : "var(--bronze)";
 
-  // viewBox 600 × 40.  Line baseline at y=16.
-  // Well sits between x=284..316, drops to y=34.
+  // viewBox 600 × 40.  Lower line at y=28, upper at y=12.
+  // Well sits between x=288..312.
   const path = flat
-    ? "M0 16 H600"
-    : "M0 16 H284 L284 34 H316 L316 16 H600";
+    ? "M0 20 H600"
+    : "M0 28 H288 L288 12 H312 L312 28 H600";
 
   return (
     <svg
