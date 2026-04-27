@@ -11,6 +11,7 @@ import gents from "@/assets/brands/gents.webp";
 import ladies from "@/assets/brands/ladies.jpg";
 import khau from "@/assets/brands/khau-thali.jpg";
 import hero from "@/assets/hero.jpg";
+import { PulseLine } from "@/components/site/AankaLogo";
 
 export const Route = createFileRoute("/about")({
   component: AboutPage,
@@ -132,7 +133,7 @@ function AboutPage() {
             <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
               01b / Origin
             </span>
-            <span className="h-px flex-1 bg-platinum/60" />
+            <PulseLine variant="muted" className="h-4 flex-1" />
           </div>
 
           <div className="grid grid-cols-12 gap-x-6 gap-y-12">
@@ -214,7 +215,7 @@ function AboutPage() {
             <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
               02 / Foundations
             </span>
-            <span className="h-px flex-1 bg-alabaster/15" />
+            <PulseLine className="h-4 flex-1 opacity-70" />
           </div>
 
           <h2 className="reveal mb-20 display-lg">
@@ -259,7 +260,7 @@ function AboutPage() {
             <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
               03 / Journey
             </span>
-            <span className="h-px flex-1 bg-platinum/60" />
+            <PulseLine variant="muted" className="h-4 flex-1" />
           </div>
 
           <div className="grid grid-cols-12 gap-x-6 gap-y-12">
@@ -320,7 +321,7 @@ function AboutPage() {
             <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
               04 / Difference
             </span>
-            <span className="h-px flex-1 bg-platinum/60" />
+            <PulseLine variant="muted" className="h-4 flex-1" />
           </div>
 
           <div className="grid grid-cols-12 gap-x-6 gap-y-10">

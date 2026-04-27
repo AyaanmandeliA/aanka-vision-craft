@@ -4,6 +4,7 @@ import { useReveal } from "@/hooks/use-reveal";
 import { useParallax } from "@/hooks/use-parallax";
 import { CtaBlock } from "@/components/site/PageShell";
 import type { Brand } from "@/components/site/brand-data";
+import { PulseLine } from "./AankaLogo";
 
 export function BrandPageShell({ brand }: { brand: Brand }) {
   useReveal();
@@ -30,7 +31,7 @@ export function BrandPageShell({ brand }: { brand: Brand }) {
             >
               ← All Businesses
             </Link>
-            <span className="h-px flex-1 bg-alabaster/15" />
+            <PulseLine className="h-4 flex-1 opacity-70" />
             <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
               {brand.num} / {brand.sector}
             </span>
@@ -65,7 +66,7 @@ export function BrandPageShell({ brand }: { brand: Brand }) {
             <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
               02 / The Brand
             </span>
-            <span className="h-px flex-1 bg-platinum/60" />
+            <PulseLine variant="muted" className="h-4 flex-1" />
           </div>
           <div className="grid grid-cols-12 gap-x-6 gap-y-10">
             <h2 className="reveal col-span-12 font-serif text-3xl font-light leading-[1.15] tracking-tight md:col-span-5 md:text-5xl">
@@ -119,7 +120,7 @@ export function BrandPageShell({ brand }: { brand: Brand }) {
             <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
               03 / Where to Find Us
             </span>
-            <span className="h-px flex-1 bg-alabaster/15" />
+            <PulseLine className="h-4 flex-1 opacity-70" />
           </div>
 
           <div className="grid grid-cols-12 gap-x-6 gap-y-10">

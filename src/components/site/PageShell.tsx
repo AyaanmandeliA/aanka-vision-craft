@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { PulseLine } from "./AankaLogo";
 
 interface PageHeaderProps {
   eyebrow: string;
@@ -26,7 +27,7 @@ export function PageHeader({ eyebrow, title, intro, media }: PageHeaderProps) {
           <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
             {eyebrow}
           </span>
-          <span className="h-px flex-1 bg-platinum/60" />
+          <PulseLine variant="muted" className="h-4 flex-1" />
         </div>
 
         <div className="grid grid-cols-12 gap-x-6 gap-y-12">
@@ -94,7 +95,7 @@ export function CtaBlock({ eyebrow, heading, body, buttonLabel, to }: CtaBlockPr
             <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
               {eyebrow}
             </span>
-            <span className="h-px flex-1 bg-alabaster/15" />
+            <PulseLine className="h-4 flex-1 opacity-70" />
           </div>
         ) : null}
         <div className="grid grid-cols-12 gap-x-6 gap-y-10">

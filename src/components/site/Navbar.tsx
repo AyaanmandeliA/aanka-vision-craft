@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Menu, X, Phone, Mail } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-import { AankaLogo } from "./AankaLogo";
+import { AankaLogo, PulseLine } from "./AankaLogo";
 
 const links = [
   { label: "Home", to: "/" as const },
@@ -62,7 +62,9 @@ export function Navbar() {
               className="group relative font-sans text-[11px] font-normal uppercase tracking-wider-2 text-alabaster/80 transition-colors hover:text-alabaster data-[status=active]:text-alabaster"
             >
               {l.label}
-              <span className="absolute -bottom-1 left-0 h-px w-0 bg-bronze transition-all duration-500 group-hover:w-full group-data-[status=active]:w-full" />
+              <span className="pointer-events-none absolute -bottom-2 left-0 right-0 h-3 opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-data-[status=active]:opacity-100">
+                <PulseLine className="h-full w-full" />
+              </span>
             </Link>
           ))}
         </nav>

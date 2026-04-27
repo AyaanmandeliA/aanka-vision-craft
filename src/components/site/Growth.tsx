@@ -1,3 +1,4 @@
+import { PulseLine } from "./AankaLogo";
 export function Growth() {
   return (
     <section className="bg-alabaster text-obsidian">
@@ -6,7 +7,7 @@ export function Growth() {
           <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
             06 / Trajectory
           </span>
-          <span className="h-px flex-1 bg-platinum/60" />
+          <PulseLine variant="muted" className="h-4 flex-1" />
         </div>
 
         <div className="grid grid-cols-12 gap-x-6 gap-y-12">

@@ -81,8 +81,9 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Bottom hairline marquee */}
-      <div className="absolute bottom-0 left-0 right-0 border-t border-alabaster/15">
+      {/* Bottom pulse-line marquee */}
+      <div className="absolute bottom-0 left-0 right-0">
+        <PulseLine className="h-3 w-full opacity-70" />
         <div className="mx-auto flex max-w-[1440px] items-center justify-between px-6 py-5 font-sans text-[10px] uppercase tracking-luxury text-alabaster/55 md:px-12">
           <span className="num-mono">Aanka Group · 01</span>
           <span className="hidden md:block">Six brands · One standard</span>
