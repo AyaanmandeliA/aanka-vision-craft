@@ -4,6 +4,7 @@ import { PageHeader, CtaBlock } from "@/components/site/PageShell";
 import { UaeMap } from "@/components/site/UaeMap";
 import { mapPins, venues, type Venue } from "@/components/site/location-data";
 import { MapPin, ArrowUpRight, Phone, Clock } from "lucide-react";
+import hero from "@/assets/hero.jpg";
 
 export const Route = createFileRoute("/locations")({
   component: LocationsPage,
@@ -21,6 +22,8 @@ export const Route = createFileRoute("/locations")({
         content:
           "Find Aanka Group brands across Dubai, Abu Dhabi, Sharjah, and beyond.",
       },
+      { property: "og:image", content: hero },
+      { name: "twitter:image", content: hero },
     ],
   }),
 });
@@ -28,12 +31,12 @@ export const Route = createFileRoute("/locations")({
 function LocationsPage() {
   useReveal();
 
-  // Group venues by emirate, preserving the order they first appear.
   const byEmirate = venues.reduce<Record<string, Venue[]>>((acc, v) => {
     (acc[v.emirate] ||= []).push(v);
     return acc;
   }, {});
   const emirateOrder = Array.from(new Set(venues.map((v) => v.emirate)));
+  const uniqueBrands = new Set(venues.map((v) => v.brand)).size;
 
   return (
     <>
@@ -45,11 +48,17 @@ function LocationsPage() {
           </>
         }
         intro="From DMCC to the wider Emirates, Aanka Group brands continue to grow across destinations that matter. Explore our presence on the map, then drop into the venue nearest to you."
+        media={{
+          src: hero,
+          alt: "The UAE — home to Aanka Group",
+          caption: "Headquartered in Dubai · Growing across the UAE",
+          ratio: "portrait",
+        }}
       />
 
       {/* Map */}
       <section className="bg-obsidian text-alabaster">
-        <div className="mx-auto max-w-[1440px] px-6 pb-20 md:px-12 md:pb-28">
+        <div className="mx-auto max-w-[1440px] px-6 pb-20 md:px-12 md:pb-24">
           <div className="mb-12 flex items-center gap-6">
             <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
               02 / Map
@@ -68,13 +77,22 @@ function LocationsPage() {
             Hover or focus a pin to reveal the brand and area.
           </p>
         </div>
+
+        {/* Count band */}
+        <div className="border-t border-alabaster/10">
+          <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-px bg-alabaster/15 px-0 md:grid-cols-3">
+            <CountCell k={String(venues.length).padStart(2, "0")} v="Active venues" />
+            <CountCell k={String(emirateOrder.length).padStart(2, "0")} v="Emirates served" />
+            <CountCell k={String(uniqueBrands).padStart(2, "0")} v="Brands on the ground" />
+          </div>
+        </div>
       </section>
 
       {/* Venue cards by emirate */}
       <section className="bg-alabaster text-obsidian">
-        <div className="mx-auto max-w-[1440px] px-6 pb-28 md:px-12 md:pb-32">
+        <div className="mx-auto max-w-[1440px] px-6 pb-24 md:px-12 md:pb-32">
           {emirateOrder.map((emirate, eIdx) => (
-            <div key={emirate} className={eIdx > 0 ? "mt-20 md:mt-28" : ""}>
+            <div key={emirate} className={eIdx > 0 ? "mt-20 md:mt-28" : "pt-20 md:pt-24"}>
               <div className="mb-12 flex items-center gap-6 md:mb-16">
                 <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
                   {String(eIdx + 3).padStart(2, "0")} / {emirate}
@@ -86,48 +104,58 @@ function LocationsPage() {
                 {byEmirate[emirate].map((v, i) => (
                   <li
                     key={`${v.brand}-${v.area}-${i}`}
-                    className="reveal flex flex-col bg-alabaster p-10 md:p-12"
+                    className="reveal flex flex-col bg-alabaster"
                     style={{ transitionDelay: `${i * 60}ms` }}
                   >
-                    <div className="flex items-baseline justify-between gap-4 border-b border-platinum/60 pb-5">
-                      <h3 className="font-serif text-2xl font-light tracking-tight md:text-3xl">
-                        {v.brand}
-                      </h3>
-                      <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze">
-                        {v.area}
-                      </span>
+                    <div className="relative aspect-[16/9] overflow-hidden bg-obsidian">
+                      <img
+                        src={v.img}
+                        alt={v.brand}
+                        loading="lazy"
+                        className="img-scale h-full w-full object-cover"
+                      />
                     </div>
+                    <div className="flex flex-1 flex-col p-10 md:p-12">
+                      <div className="flex items-baseline justify-between gap-4 border-b border-platinum/60 pb-5">
+                        <h3 className="font-serif text-2xl font-light tracking-tight md:text-3xl">
+                          {v.brand}
+                        </h3>
+                        <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze">
+                          {v.area}
+                        </span>
+                      </div>
 
-                    <ul className="mt-6 space-y-4 font-serif text-base font-light leading-relaxed text-obsidian/80 md:text-lg">
-                      <li className="flex items-start gap-3">
-                        <MapPin size={16} strokeWidth={1.25} className="mt-1 shrink-0 text-bronze" />
-                        {v.address}
-                      </li>
-                      {v.phone ? (
+                      <ul className="mt-6 space-y-4 font-serif text-base font-light leading-relaxed text-obsidian/80 md:text-lg">
                         <li className="flex items-start gap-3">
-                          <Phone size={16} strokeWidth={1.25} className="mt-1 shrink-0 text-bronze" />
-                          <a href={`tel:${v.phone.replace(/\s/g, "")}`} className="hover:text-obsidian">
-                            {v.phone}
-                          </a>
+                          <MapPin size={16} strokeWidth={1.25} className="mt-1 shrink-0 text-bronze" />
+                          {v.address}
                         </li>
-                      ) : null}
-                      {v.hours ? (
-                        <li className="flex items-start gap-3">
-                          <Clock size={16} strokeWidth={1.25} className="mt-1 shrink-0 text-bronze" />
-                          {v.hours}
-                        </li>
-                      ) : null}
-                    </ul>
+                        {v.phone ? (
+                          <li className="flex items-start gap-3">
+                            <Phone size={16} strokeWidth={1.25} className="mt-1 shrink-0 text-bronze" />
+                            <a href={`tel:${v.phone.replace(/\s/g, "")}`} className="hover:text-obsidian">
+                              {v.phone}
+                            </a>
+                          </li>
+                        ) : null}
+                        {v.hours ? (
+                          <li className="flex items-start gap-3">
+                            <Clock size={16} strokeWidth={1.25} className="mt-1 shrink-0 text-bronze" />
+                            {v.hours}
+                          </li>
+                        ) : null}
+                      </ul>
 
-                    <a
-                      href={v.mapsHref}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-8 inline-flex items-center gap-2 font-sans text-[10px] uppercase tracking-luxury text-obsidian transition-colors hover:text-bronze"
-                    >
-                      Get Directions
-                      <ArrowUpRight size={14} strokeWidth={1.25} />
-                    </a>
+                      <a
+                        href={v.mapsHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-8 inline-flex items-center gap-2 font-sans text-[10px] uppercase tracking-luxury text-obsidian transition-colors hover:text-bronze"
+                      >
+                        Get Directions
+                        <ArrowUpRight size={14} strokeWidth={1.25} />
+                      </a>
+                    </div>
                   </li>
                 ))}
               </ul>
@@ -144,5 +172,14 @@ function LocationsPage() {
         to="/contact"
       />
     </>
+  );
+}
+
+function CountCell({ k, v }: { k: string; v: string }) {
+  return (
+    <div className="reveal flex items-baseline gap-6 bg-obsidian px-6 py-10 md:px-12 md:py-12">
+      <span className="font-serif text-4xl italic text-bronze num-mono md:text-5xl">{k}</span>
+      <span className="font-sans text-[11px] uppercase tracking-luxury text-alabaster/65">{v}</span>
+    </div>
   );
 }
