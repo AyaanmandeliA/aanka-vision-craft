@@ -26,7 +26,7 @@ export function Footer() {
           </Link>
         </div>
 
-        <div className="hairline opacity-15" />
+        <PulseLine className="h-4 w-full opacity-80" />
 
         <div className="grid grid-cols-12 gap-6 py-14">
           <div className="col-span-12 md:col-span-4">
@@ -91,7 +91,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="hairline opacity-15" />
+        <PulseLine className="h-4 w-full opacity-80" />
 
         <div className="flex flex-col items-start justify-between gap-4 py-8 md:flex-row md:items-center">
           <p className="font-sans text-[11px] uppercase tracking-wider-2 text-alabaster/45">
