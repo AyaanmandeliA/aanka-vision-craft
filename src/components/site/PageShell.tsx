@@ -4,9 +4,21 @@ interface PageHeaderProps {
   eyebrow: string;
   title: React.ReactNode;
   intro?: string;
+  /** Optional image displayed to the right of the headline on md+ */
+  media?: {
+    src: string;
+    alt: string;
+    caption?: string;
+    /** "portrait" (4/5) or "landscape" (5/4). Defaults to portrait. */
+    ratio?: "portrait" | "landscape";
+  };
 }
 
-export function PageHeader({ eyebrow, title, intro }: PageHeaderProps) {
+export function PageHeader({ eyebrow, title, intro, media }: PageHeaderProps) {
+  const hasMedia = !!media;
+  const ratioClass =
+    media?.ratio === "landscape" ? "aspect-[5/4]" : "aspect-[4/5]";
+
   return (
     <section className="bg-alabaster text-obsidian">
       <div className="mx-auto max-w-[1440px] px-6 pt-24 pb-16 md:px-12 md:pt-36 md:pb-24">
@@ -18,16 +30,46 @@ export function PageHeader({ eyebrow, title, intro }: PageHeaderProps) {
         </div>
 
         <div className="grid grid-cols-12 gap-x-6 gap-y-12">
-          <h1 className="reveal col-span-12 font-serif text-4xl font-light leading-[1.05] tracking-tight md:col-span-9 md:text-6xl lg:text-7xl">
-            {title}
-          </h1>
-          {intro ? (
-            <p
-              className="reveal col-span-12 font-serif text-lg font-light leading-relaxed text-obsidian/70 md:col-span-7 md:col-start-1 md:text-xl"
-              style={{ transitionDelay: "120ms" }}
+          <div
+            className={
+              hasMedia
+                ? "col-span-12 md:col-span-7"
+                : "col-span-12"
+            }
+          >
+            <h1 className="reveal font-serif text-4xl font-light leading-[1.05] tracking-tight md:text-6xl lg:text-7xl">
+              {title}
+            </h1>
+            {intro ? (
+              <p
+                className="reveal mt-10 max-w-2xl font-serif text-lg font-light leading-relaxed text-obsidian/70 md:text-xl"
+                style={{ transitionDelay: "120ms" }}
+              >
+                {intro}
+              </p>
+            ) : null}
+          </div>
+
+          {hasMedia ? (
+            <figure
+              className="reveal col-span-12 md:col-span-5"
+              style={{ transitionDelay: "160ms" }}
             >
-              {intro}
-            </p>
+              <div className={`relative overflow-hidden bg-obsidian ${ratioClass}`}>
+                <img
+                  src={media!.src}
+                  alt={media!.alt}
+                  loading="eager"
+                  className="img-scale h-full w-full object-cover"
+                />
+                <div className="absolute inset-0 ring-1 ring-inset ring-obsidian/10" />
+              </div>
+              {media!.caption ? (
+                <figcaption className="mt-4 font-sans text-[10px] uppercase tracking-luxury text-obsidian/55">
+                  {media!.caption}
+                </figcaption>
+              ) : null}
+            </figure>
           ) : null}
         </div>
       </div>
@@ -46,7 +88,7 @@ interface CtaBlockProps {
 export function CtaBlock({ eyebrow, heading, body, buttonLabel, to }: CtaBlockProps) {
   return (
     <section className="bg-obsidian text-alabaster">
-      <div className="mx-auto max-w-[1440px] px-6 py-28 md:px-12 md:py-40">
+      <div className="mx-auto max-w-[1440px] px-6 py-24 md:px-12 md:py-32">
         {eyebrow ? (
           <div className="mb-12 flex items-center gap-6 md:mb-16">
             <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
