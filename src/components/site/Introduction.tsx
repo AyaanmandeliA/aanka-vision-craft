@@ -1,12 +1,14 @@
+import { PulseLine } from "./AankaLogo";
+
 export function Introduction() {
   return (
     <section id="about" className="bg-alabaster text-obsidian">
       <div className="mx-auto max-w-[1440px] px-6 py-28 md:px-12 md:py-36">
         <div className="mb-16 flex items-center gap-6 md:mb-20">
-          <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
+          <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono whitespace-nowrap">
             02 / Introduction
           </span>
-          <span className="h-px flex-1 bg-platinum/60" />
+          <PulseLine variant="muted" className="h-4 flex-1" />
         </div>
 
         <div className="grid grid-cols-12 gap-x-6 gap-y-16">
@@ -31,7 +33,9 @@ export function Introduction() {
               brands — and a long-term platform to grow them across the GCC.
             </p>
 
-            <dl className="mt-14 grid grid-cols-3 gap-6 border-t border-platinum/60 pt-8">
+            <div className="mt-14 pt-8 relative">
+              <PulseLine className="absolute inset-x-0 top-0 h-4" />
+              <dl className="grid grid-cols-3 gap-6">
               <div>
                 <dt className="font-sans text-[10px] uppercase tracking-luxury text-bronze">
                   Brands
