@@ -4,6 +4,14 @@ import { PageHeader } from "@/components/site/PageShell";
 import { brands } from "@/components/site/brand-data";
 import { FranchiseForm } from "@/components/site/FranchiseForm";
 import { ArrowUpRight, Check } from "lucide-react";
+import zaikaInterior from "@/assets/brands/zaika-interior.jpg";
+import khauThali from "@/assets/brands/khau-thali.jpg";
+import gents from "@/assets/brands/gents.webp";
+import ladies from "@/assets/brands/ladies.jpg";
+import deco from "@/assets/brands/deco.jpg";
+import hero from "@/assets/hero.jpg";
+
+const pillarImages = [zaikaInterior, gents, ladies, deco];
 
 export const Route = createFileRoute("/partner")({
   component: PartnerPage,
