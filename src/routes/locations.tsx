@@ -5,6 +5,7 @@ import { UaeMap } from "@/components/site/UaeMap";
 import { mapPins, venues, type Venue } from "@/components/site/location-data";
 import { MapPin, ArrowUpRight, Phone, Clock } from "lucide-react";
 import hero from "@/assets/hero.jpg";
+import { PulseLine } from "@/components/site/AankaLogo";
 
 export const Route = createFileRoute("/locations")({
   component: LocationsPage,
@@ -63,7 +64,7 @@ function LocationsPage() {
             <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
               02 / Map
             </span>
-            <span className="h-px flex-1 bg-alabaster/15" />
+            <PulseLine className="h-4 flex-1 opacity-70" />
             <span className="font-sans text-[10px] uppercase tracking-luxury text-alabaster/55">
               {venues.length} Venues
             </span>
@@ -97,7 +98,7 @@ function LocationsPage() {
                 <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
                   {String(eIdx + 3).padStart(2, "0")} / {emirate}
                 </span>
-                <span className="h-px flex-1 bg-platinum/60" />
+                <PulseLine variant="muted" className="h-4 flex-1" />
               </div>
 
               <ul className="grid grid-cols-1 gap-px bg-platinum/60 md:grid-cols-2">

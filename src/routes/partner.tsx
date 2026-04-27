@@ -10,6 +10,7 @@ import gents from "@/assets/brands/gents.webp";
 import ladies from "@/assets/brands/ladies.jpg";
 import deco from "@/assets/brands/deco.jpg";
 import hero from "@/assets/hero.jpg";
+import { PulseLine } from "@/components/site/AankaLogo";
 
 const pillarImages = [zaikaInterior, gents, ladies, deco];
 
@@ -120,7 +121,7 @@ function PartnerPage() {
             <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
               02 / Available For Franchise
             </span>
-            <span className="h-px flex-1 bg-platinum/60" />
+            <PulseLine variant="muted" className="h-4 flex-1" />
           </div>
 
           <div className="grid grid-cols-1 gap-px bg-platinum/60 md:grid-cols-2">
@@ -169,7 +170,7 @@ function PartnerPage() {
             <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
               03 / Why Aanka
             </span>
-            <span className="h-px flex-1 bg-alabaster/15" />
+            <PulseLine className="h-4 flex-1 opacity-70" />
           </div>
 
           <h2 className="reveal mb-16 font-serif text-3xl font-light leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
@@ -217,7 +218,7 @@ function PartnerPage() {
             <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
               04 / Territories
             </span>
-            <span className="h-px flex-1 bg-platinum/60" />
+            <PulseLine variant="muted" className="h-4 flex-1" />
           </div>
 
           <div className="grid grid-cols-12 gap-x-6 gap-y-12">
@@ -298,7 +299,7 @@ function PartnerPage() {
             <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
               05 / Process
             </span>
-            <span className="h-px flex-1 bg-alabaster/15" />
+            <PulseLine className="h-4 flex-1 opacity-70" />
           </div>
 
           <h2 className="reveal mb-16 font-serif text-3xl font-light leading-[1.1] tracking-tight md:text-5xl">
@@ -334,7 +335,7 @@ function PartnerPage() {
             <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
               06 / Inquire
             </span>
-            <span className="h-px flex-1 bg-alabaster/15" />
+            <PulseLine className="h-4 flex-1 opacity-70" />
           </div>
           <div className="grid grid-cols-12 gap-x-6 gap-y-12">
             <div className="col-span-12 md:col-span-5">

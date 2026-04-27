@@ -1,3 +1,4 @@
+import { PulseLine } from "./AankaLogo";
 const verticals = [
   {
     code: "I",
@@ -29,7 +30,7 @@ export function Verticals() {
           <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
             02b / Verticals
           </span>
-          <span className="h-px flex-1 bg-platinum/60" />
+          <PulseLine variant="muted" className="h-4 flex-1" />
         </div>
 
         <div className="reveal mb-20 grid grid-cols-12 gap-x-6 gap-y-10">

@@ -7,6 +7,7 @@ import deco from "@/assets/brands/deco.jpg";
 import ladies from "@/assets/brands/ladies.jpg";
 import khauThali from "@/assets/brands/khau-thali.jpg";
 import leader1 from "@/assets/leader-1.jpg";
+import { PulseLine } from "@/components/site/AankaLogo";
 
 export const Route = createFileRoute("/careers")({
   component: CareersPage,
@@ -81,7 +82,7 @@ function CareersPage() {
             <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
               02 / Why Join
             </span>
-            <span className="h-px flex-1 bg-alabaster/15" />
+            <PulseLine className="h-4 flex-1 opacity-70" />
           </div>
 
           <h2 className="reveal mb-16 font-serif text-3xl font-light leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
@@ -129,7 +130,7 @@ function CareersPage() {
             <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
               03 / Apply
             </span>
-            <span className="h-px flex-1 bg-platinum/60" />
+            <PulseLine variant="muted" className="h-4 flex-1" />
           </div>
 
           <div className="grid grid-cols-12 gap-x-6 gap-y-12">
