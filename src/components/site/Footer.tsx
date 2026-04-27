@@ -1,5 +1,6 @@
 import { Linkedin, Instagram } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import { AankaLogo, PulseLine } from "./AankaLogo";
 
 export function Footer() {
   return (
