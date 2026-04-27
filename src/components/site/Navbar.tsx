@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Menu, X, Phone, Mail } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-import { AankaLogo } from "./AankaLogo";
+import { AankaLogo, PulseLine } from "./AankaLogo";
 
 const links = [
   { label: "Home", to: "/" as const },
