@@ -24,6 +24,8 @@ export const Route = createFileRoute("/media")({
         content:
           "Moments that shape the Aanka journey — from store openings to brand launches across the UAE.",
       },
+      { property: "og:image", content: zaikaInterior },
+      { name: "twitter:image", content: zaikaInterior },
     ],
   }),
 });
