@@ -1,31 +1,31 @@
 const values = [
   {
     num: "I",
-    title: "Experience-Led Thinking",
-    desc: "Every brand is shaped around what people value, remember, and return for.",
+    title: "Built for Return",
+    desc: "Every brand is designed around a single test: would the guest come back, and bring someone with them?",
   },
   {
     num: "II",
-    title: "Purposeful Growth",
-    desc: "Each venture adds to a larger vision built with clarity and long-term intent.",
+    title: "Ambition with Discipline",
+    desc: "We grow when the brand, the team, and the unit economics are ready — never when the calendar says so.",
   },
   {
     num: "III",
-    title: "Customer-Centric Brands",
-    desc: "From service to space to dining, the focus remains on creating meaningful experiences.",
+    title: "Hospitality is the Product",
+    desc: "From dining rooms to grooming chairs to interior projects, the way we treat people is the brand.",
   },
   {
     num: "IV",
-    title: "Multi-Sector Strength",
-    desc: "Aanka Group brings together different industries under one shared standard of quality and execution.",
+    title: "A Group, Not a Collection",
+    desc: "Six brands. Four categories. One operating standard — shared playbooks, shared people, shared point of view.",
   },
 ];
 
 export function Values() {
   return (
     <section className="bg-espresso text-alabaster">
-      <div className="mx-auto max-w-[1440px] px-6 py-28 md:px-12 md:py-40">
-        <div className="mb-16 flex items-center gap-6 md:mb-24">
+      <div className="mx-auto max-w-[1440px] px-6 py-28 md:px-12 md:py-36">
+        <div className="mb-16 flex items-center gap-6 md:mb-20">
           <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
             04 / Principles
           </span>
@@ -33,26 +33,34 @@ export function Values() {
         </div>
 
         <div className="grid grid-cols-12 gap-6 md:gap-10">
-          <h2 className="reveal col-span-12 mb-12 font-serif text-3xl font-light leading-[1.1] tracking-tight md:col-span-8 md:text-5xl lg:text-6xl">
-            What Defines <em className="italic">Aanka Group</em>
+          <h2 className="reveal col-span-12 mb-16 display-lg md:col-span-9">
+            What defines <em className="italic">Aanka Group.</em>
           </h2>
+          <p
+            className="reveal col-span-12 measure-narrow self-end mb-16 font-serif text-base font-light leading-relaxed text-alabaster/65 md:col-span-3 md:col-start-10 md:text-lg"
+            style={{ transitionDelay: "100ms" }}
+          >
+            Four operating principles — the same in every brand, every market.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 gap-px bg-alabaster/15 md:grid-cols-2 lg:grid-cols-4">
           {values.map((v, i) => (
             <div
               key={v.title}
-              className="reveal flex flex-col bg-espresso p-8 md:p-10"
+              className="reveal flex flex-col bg-espresso p-10 md:p-12"
               style={{ transitionDelay: `${i * 100}ms` }}
             >
-              <span className="font-serif text-2xl italic text-bronze num-mono">{v.num}</span>
-              <h3 className="mt-10 font-sans text-[13px] uppercase tracking-wider-2 text-alabaster">
+              <span className="font-serif text-3xl italic text-bronze num-mono md:text-4xl">
+                {v.num}
+              </span>
+              <h3 className="mt-12 font-serif text-2xl font-light leading-tight text-alabaster md:text-[1.7rem]">
                 {v.title}
               </h3>
-              <p className="mt-5 font-serif text-[15px] font-light leading-relaxed text-alabaster/70">
+              <p className="mt-6 measure-narrow font-serif text-base font-light leading-relaxed text-alabaster/75 md:text-lg">
                 {v.desc}
               </p>
-              <span className="mt-10 block h-px w-10 bg-bronze" />
+              <span className="mt-12 block h-px w-10 bg-bronze" />
             </div>
           ))}
         </div>
