@@ -61,8 +61,6 @@ export function Introduction() {
                   UAE &amp; GCC
                 </dd>
               </div>
-                </dd>
-              </div>
             </dl>
             </div>
           </div>

@@ -18,13 +18,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Aanka Group is a UAE lifestyle group — a curated portfolio of six brands across hospitality, wellness, beauty, and design. Built with vision. Grown with purpose.",
+          "Aanka Group is a UAE lifestyle group — a curated portfolio of brands across hospitality, wellness, beauty, and design. Built with vision. Grown with purpose.",
       },
       { property: "og:title", content: "Aanka Group — Built with Vision. Grown with Purpose." },
       {
         property: "og:description",
         content:
-          "A curated portfolio of six lifestyle brands across hospitality, wellness, beauty, and design — built in the UAE, designed to last.",
+          "A curated portfolio of lifestyle brands across hospitality, wellness, beauty, and design — built in the UAE, designed to last.",
       },
     ],
   }),
