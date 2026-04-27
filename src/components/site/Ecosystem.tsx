@@ -16,7 +16,7 @@ export function Ecosystem() {
 
         <div className="reveal mb-20 grid grid-cols-12 gap-6 md:mb-24">
           <h2 className="col-span-12 display-lg md:col-span-8">
-            Six brands. <br />
+            A house of brands. <br />
             One <em className="italic">standard</em> of care.
           </h2>
           <p className="col-span-12 measure-narrow self-end font-serif text-base font-light leading-relaxed text-obsidian/70 md:col-span-3 md:col-start-10 md:text-lg">

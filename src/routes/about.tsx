@@ -87,7 +87,7 @@ const differences = [
     p: "Every brand under Aanka was built by us, financed by us, and is operated by us. The standard isn't outsourced — it lives in the room.",
   },
   {
-    h: "One Operating Standard, Six Brands",
+    h: "One Operating Standard, Every Brand",
     p: "Different categories, different audiences, one set of non-negotiables: hospitality, hygiene, design, and the long view.",
   },
   {
@@ -101,9 +101,9 @@ const differences = [
 ];
 
 const stats = [
-  { k: "06", v: "Active brands" },
-  { k: "04", v: "Lifestyle categories" },
-  { k: "UAE", v: "Headquartered & growing" },
+  { k: "Dubai", v: "Founded & headquartered" },
+  { k: "UAE", v: "Operating market, growing" },
+  { k: "GCC", v: "Designed to travel" },
 ];
 
 function AboutPage() {
@@ -117,7 +117,7 @@ function AboutPage() {
             A UAE lifestyle group, <em className="italic">built brand by brand.</em>
           </>
         }
-        intro="Aanka Group is a founder-led portfolio of six lifestyle brands across food, wellness, beauty, and design. We don't operate venues — we build brands designed for return, run with one shared standard of care."
+        intro="Aanka Group is a founder-led portfolio of lifestyle brands across food, wellness, beauty, and design. We don't operate venues — we build brands designed for return, run with one shared standard of care."
         media={{
           src: leader1,
           alt: "Founders of Aanka Group",
@@ -169,10 +169,10 @@ function AboutPage() {
                   quietly choose to return to.
                 </p>
                 <p>
-                  From a first venture in food, the group has grown into a six-brand
-                  portfolio across hospitality, wellness, beauty, and design — each
-                  one founded, financed, and operated by us. No franchises bought
-                  in. No shortcuts. Six brands. One standard.
+                  From a first venture in food, the group has grown into a
+                  portfolio across hospitality, wellness, beauty, and design —
+                  each brand founded, financed, and operated by us. No
+                  franchises bought in. No shortcuts. One standard.
                 </p>
               </div>
 

@@ -24,9 +24,10 @@ export function Introduction() {
             style={{ transitionDelay: "150ms" }}
           >
             <p className="body-lead measure text-obsidian/85">
-              Aanka Group is a UAE lifestyle group — six brands across food,
-              wellness, beauty, and design, run by founders who believe great
-              businesses are built one returning customer at a time.
+              Aanka Group is a UAE lifestyle group — a portfolio of brands
+              across food, wellness, beauty, and design, run by founders who
+              believe great businesses are built one returning customer at
+              a time.
             </p>
             <p className="mt-6 measure font-sans text-[14px] leading-relaxed text-obsidian/65">
               We don't operate restaurants and salons. We build experience-led
@@ -38,18 +39,18 @@ export function Introduction() {
               <dl className="grid grid-cols-3 gap-6">
               <div>
                 <dt className="font-sans text-[10px] uppercase tracking-luxury text-bronze">
-                  Brands
+                  Founded
                 </dt>
-                <dd className="mt-3 font-serif text-4xl font-light text-obsidian num-mono md:text-5xl">
-                  06
+                <dd className="mt-3 font-serif text-2xl font-light leading-tight text-obsidian md:text-3xl">
+                  Dubai, UAE
                 </dd>
               </div>
               <div>
                 <dt className="font-sans text-[10px] uppercase tracking-luxury text-bronze">
                   Sectors
                 </dt>
-                <dd className="mt-3 font-serif text-4xl font-light text-obsidian num-mono md:text-5xl">
-                  04
+                <dd className="mt-3 font-serif text-2xl font-light leading-tight text-obsidian md:text-3xl">
+                  Hospitality · Wellness · Beauty · Design
                 </dd>
               </div>
               <div>
@@ -57,7 +58,9 @@ export function Introduction() {
                   Market
                 </dt>
                 <dd className="mt-3 font-serif text-2xl font-light leading-tight text-obsidian md:text-3xl">
-                  UAE
+                  UAE &amp; GCC
+                </dd>
+              </div>
                 </dd>
               </div>
             </dl>
