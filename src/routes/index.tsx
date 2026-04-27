@@ -14,17 +14,17 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Aanka Group — A Family of Lifestyle Brands in the UAE" },
+      { title: "Aanka Group — A UAE Lifestyle Group" },
       {
         name: "description",
         content:
-          "Aanka Group is a UAE-based, family-led house of brands across hospitality, wellness, beauty, and design — quietly built, openly hospitable.",
+          "Aanka Group is a UAE lifestyle group — a curated portfolio of six brands across hospitality, wellness, beauty, and design. Built with vision. Grown with purpose.",
       },
-      { property: "og:title", content: "Aanka Group — A Family of Lifestyle Brands" },
+      { property: "og:title", content: "Aanka Group — Built with Vision. Grown with Purpose." },
       {
         property: "og:description",
         content:
-          "Six brands across hospitality, wellness, beauty, and design — built with vision, growing with purpose.",
+          "A curated portfolio of six lifestyle brands across hospitality, wellness, beauty, and design — built in the UAE, designed to last.",
       },
     ],
   }),
@@ -45,7 +45,7 @@ function Index() {
       <CtaBlock
         eyebrow="09 / Collaborate"
         heading={<>Looking to <em className="italic">grow</em> with us?</>}
-        body="Whether you're exploring a franchise, a partnership, or a creative collaboration, we welcome conversations that share our long view."
+        body="Whether you're exploring a franchise, a partnership, or a creative collaboration — we welcome conversations from operators who share our long view."
         buttonLabel="Partner With Us"
         to="/partner"
       />
