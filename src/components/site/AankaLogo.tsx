@@ -1,31 +1,45 @@
 /**
- * AANKA wordmark with the signature bronze "pulse line" that travels
- * across the top of the word, dips through the N, and exits to the right.
- * SVG is built to scale fluidly — set width via className.
+ * AANKA brand system — wordmark, brand mark, and signature pulse line.
+ *
+ * Geometry of the pulse line (per brand board):
+ *   • A horizontal bronze line runs at cap-height across the whole word.
+ *   • Just before the N, it drops vertically down to the baseline.
+ *   • It runs along the baseline UNDER the N.
+ *   • Just after the N, it rises vertically back up to cap-height.
+ *   • Then continues right.
+ * The N itself sits inside this rectangular "well" — its diagonal
+ * crosses both horizontal segments, intersecting the line.
+ *
+ * The same shape is reused as the universal divider across the site.
  */
-type Props = {
+
+type LogoProps = {
   className?: string;
   variant?: "primary" | "reversed" | "warm";
-  /** Render only the brand-mark (the N + pulse), no AANKA wordmark. */
+  /** Render only the brand mark (the N inside the pulse rectangle). */
   markOnly?: boolean;
   title?: string;
 };
+
+const LETTERS = ["A", "A", "N", "K", "A"] as const;
 
 export function AankaLogo({
   className,
   variant = "primary",
   markOnly = false,
   title = "AANKA",
-}: Props) {
+}: LogoProps) {
   const wordColor =
     variant === "reversed"
       ? "var(--alabaster)"
       : variant === "warm"
         ? "var(--platinum)"
         : "var(--obsidian)";
-  const pulseColor = "var(--bronze)";
+  const pulse = "var(--bronze)";
 
   if (markOnly) {
+    // Just the N inside the pulse-line rectangle.
+    // viewBox: 200 wide, 120 tall.  Line at top y=20, bottom y=100, N spans x=70..130.
     return (
       <svg
         viewBox="0 0 200 120"
@@ -34,70 +48,107 @@ export function AankaLogo({
         aria-label={`${title} mark`}
         fill="none"
       >
-        {/* pulse line: enters left, drops, then exits right */}
+        {/* Pulse line — enters left, drops down before N, runs under, rises after N, exits right */}
         <path
-          d="M0 38 H72 L72 92 L128 28 L128 82 H200"
-          stroke={pulseColor}
-          strokeWidth="2.2"
-          strokeLinecap="square"
+          d="M0 20 H70 L70 100 H130 L130 20 H200"
+          stroke={pulse}
+          strokeWidth="2"
+          strokeLinecap="butt"
           strokeLinejoin="miter"
+          vectorEffect="non-scaling-stroke"
         />
-        {/* The N stroke (diagonal) drawn over to suggest the letter */}
-        <path
-          d="M72 92 L128 28"
-          stroke={wordColor}
-          strokeWidth="6"
-          strokeLinecap="square"
-        />
+        {/* The N — serif diagonal sits inside the well */}
+        <text
+          x="100"
+          y="92"
+          textAnchor="middle"
+          fontFamily="'Playfair Display', 'Cormorant Garamond', Georgia, serif"
+          fontWeight="400"
+          fontSize="92"
+          fill={wordColor}
+        >
+          N
+        </text>
       </svg>
     );
   }
 
+  /**
+   * Wordmark layout — 5 letters, evenly spaced on a wide canvas.
+   * viewBox 800 × 200.  Letters baseline at y=140, cap-height at y=40.
+   * N is the 3rd letter, centered at x=400 (with width ~80).
+   * Pulse line: y=40 across, drops at x=360, runs at y=140 under N, rises at x=440.
+   */
+  const lineTop = 40;
+  const lineBottom = 140;
+  const nLeft = 360;
+  const nRight = 440;
+  const letterPositions = [120, 240, 400, 560, 680]; // A A N K A
+
   return (
     <svg
-      viewBox="0 0 760 180"
+      viewBox="0 0 800 200"
       className={className}
       role="img"
       aria-label={title}
       fill="none"
     >
-      {/* Pulse line — runs across the top, dips through the N, exits right */}
+      {/* Pulse line — drawn first so letters can sit on top */}
       <path
-        d="M20 60 H332 L332 150 L428 28 L428 122 H740"
-        stroke={pulseColor}
-        strokeWidth="2.4"
-        strokeLinecap="square"
+        d={`M20 ${lineTop} H${nLeft} L${nLeft} ${lineBottom} H${nRight} L${nRight} ${lineTop} H780`}
+        stroke={pulse}
+        strokeWidth="2.2"
+        strokeLinecap="butt"
         strokeLinejoin="miter"
+        vectorEffect="non-scaling-stroke"
       />
-      {/* AANKA wordmark — Playfair-like serif via system fallback */}
-      <text
-        x="50%"
-        y="118"
-        textAnchor="middle"
+      {/* Letters */}
+      <g
         fontFamily="'Playfair Display', 'Cormorant Garamond', Georgia, serif"
         fontWeight="400"
-        fontSize="118"
-        letterSpacing="22"
+        fontSize="128"
         fill={wordColor}
+        textAnchor="middle"
       >
-        AANKA
-      </text>
+        {LETTERS.map((ch, i) => (
+          <text key={i} x={letterPositions[i]} y={lineBottom}>
+            {ch}
+          </text>
+        ))}
+      </g>
     </svg>
   );
 }
 
 /**
- * Standalone signature pulse line — for section dividers / nav hover / breaks.
- * Width fills container; height is fixed.
+ * Signature pulse line — the universal divider for the site.
+ * Same geometry as the logo (line dips under a small N-well in the middle),
+ * but stretched wide.  Use anywhere a horizontal rule would normally go.
+ *
+ * Width fills container.  Height is fixed (~32px default via className).
+ *
+ * Variants:
+ *   "default" — bronze line on light/dark surfaces
+ *   "muted"   — platinum line for subtle in-context dividers
  */
 export function PulseLine({
   className,
   variant = "default",
+  /** When true, omits the N-well dip and renders a perfectly straight line. */
+  flat = false,
 }: {
   className?: string;
   variant?: "default" | "muted";
+  flat?: boolean;
 }) {
   const color = variant === "muted" ? "var(--platinum)" : "var(--bronze)";
+
+  // viewBox 600 × 40.  Line baseline at y=16.
+  // Well sits between x=284..316, drops to y=34.
+  const path = flat
+    ? "M0 16 H600"
+    : "M0 16 H284 L284 34 H316 L316 16 H600";
+
   return (
     <svg
       viewBox="0 0 600 40"
@@ -108,10 +159,10 @@ export function PulseLine({
       fill="none"
     >
       <path
-        d="M0 20 H276 L276 36 L292 6 L292 26 H600"
+        d={path}
         stroke={color}
         strokeWidth="1.4"
-        strokeLinecap="square"
+        strokeLinecap="butt"
         strokeLinejoin="miter"
         vectorEffect="non-scaling-stroke"
       />
