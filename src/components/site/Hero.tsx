@@ -1,4 +1,5 @@
 import heroImg from "@/assets/hero.jpg";
+import { Link } from "@tanstack/react-router";
 
 export function Hero() {
   return (
@@ -38,23 +39,30 @@ export function Hero() {
         </h1>
 
         <p
-          className="reveal mx-auto mt-10 max-w-md font-sans text-[11px] uppercase tracking-luxury text-alabaster/70"
+          className="reveal mx-auto mt-10 max-w-xl font-serif text-lg font-light leading-relaxed text-alabaster/75"
           style={{ transitionDelay: "120ms" }}
         >
-          Built with Vision · Growing with Purpose
+          Aanka Group is the name behind a growing portfolio of lifestyle brands shaping memorable customer experiences across the UAE.
         </p>
 
         <div
-          className="reveal mt-14 flex items-center justify-center"
+          className="reveal mt-14 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6"
           style={{ transitionDelay: "240ms" }}
         >
-          <a
-            href="#brands"
+          <Link
+            to="/businesses"
             className="group inline-flex items-center gap-4 bg-alabaster px-8 py-4 font-sans text-[11px] uppercase tracking-luxury text-obsidian transition-colors duration-500 hover:bg-bronze hover:text-alabaster"
           >
             Explore Our Brands
             <span className="block h-px w-8 bg-obsidian transition-all duration-500 group-hover:w-12 group-hover:bg-alabaster" />
-          </a>
+          </Link>
+          <Link
+            to="/partner"
+            className="group inline-flex items-center gap-4 border border-alabaster/60 px-8 py-4 font-sans text-[11px] uppercase tracking-luxury text-alabaster transition-colors duration-500 hover:border-bronze hover:text-bronze"
+          >
+            Partner With Us
+            <span className="block h-px w-8 bg-alabaster transition-all duration-500 group-hover:w-12 group-hover:bg-bronze" />
+          </Link>
         </div>
       </div>
 
