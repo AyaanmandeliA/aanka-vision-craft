@@ -2,6 +2,15 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useReveal } from "@/hooks/use-reveal";
 import { PageHeader, CtaBlock } from "@/components/site/PageShell";
 import { Leadership } from "@/components/site/Leadership";
+import { FoundersNote } from "@/components/site/FoundersNote";
+import leader1 from "@/assets/leader-1.jpg";
+import leader2 from "@/assets/leader-2.jpg";
+import zaikaInterior from "@/assets/brands/zaika-interior.jpg";
+import deco from "@/assets/brands/deco.jpg";
+import gents from "@/assets/brands/gents.webp";
+import ladies from "@/assets/brands/ladies.jpg";
+import khau from "@/assets/brands/khau-thali.jpg";
+import hero from "@/assets/hero.jpg";
 
 export const Route = createFileRoute("/about")({
   component: AboutPage,
@@ -11,7 +20,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "The vision, mission, and philosophy behind Aanka Group — a UAE-based holding building memorable lifestyle brands.",
+          "The vision, mission, and philosophy behind Aanka Group — a UAE-based holding building memorable lifestyle brands across hospitality, wellness, beauty, and design.",
       },
       { property: "og:title", content: "About — Aanka Group" },
       {
@@ -19,6 +28,8 @@ export const Route = createFileRoute("/about")({
         content:
           "Built with passion. Growing with purpose. The story of Aanka Group's portfolio across hospitality, wellness, beauty, and design.",
       },
+      { property: "og:image", content: hero },
+      { name: "twitter:image", content: hero },
     ],
   }),
 });
@@ -26,31 +37,72 @@ export const Route = createFileRoute("/about")({
 const tenets = [
   {
     h: "Our Vision",
-    p: "To build a portfolio of memorable lifestyle brands that shape how people dine, unwind, groom, and live.",
+    img: zaikaInterior,
+    p: "To build a portfolio of memorable lifestyle brands that shape how people dine, unwind, groom, and live — anchored in hospitality, designed for return.",
   },
   {
     h: "Our Mission",
-    p: "To create customer-centric businesses across food, wellness, beauty, and design — guided by quality, consistency, and thoughtful growth.",
+    img: deco,
+    p: "To create customer-centric businesses across food, wellness, beauty, and design — guided by quality, consistency, and the kind of thoughtful growth that compounds over time.",
   },
   {
     h: "Our Philosophy",
-    p: "Hospitality. Experience. Lifestyle. These three ideas continue to shape every brand, every space, and every customer touchpoint under Aanka Group.",
+    img: gents,
+    p: "Hospitality. Experience. Lifestyle. Three ideas that shape every brand, every space, and every customer touchpoint we put our name on.",
   },
 ];
 
 const timeline = [
-  { year: "I", t: "Beginning of the entrepreneurial journey" },
-  { year: "II", t: "Launch of the first customer-facing brand and outlet" },
-  { year: "III", t: "Expansion into multiple lifestyle categories" },
-  { year: "IV", t: "Development of a growing portfolio across the UAE" },
-  { year: "V", t: "Continued scale across brands, locations, and opportunities" },
+  {
+    year: "I",
+    t: "An entrepreneurial beginning",
+    p: "A first investment of belief, capital, and curiosity — choosing to build, not just observe.",
+  },
+  {
+    year: "II",
+    t: "Our first customer-facing brand",
+    p: "The opening of our first outlet — and the lessons that come from serving real guests, every single day.",
+  },
+  {
+    year: "III",
+    t: "Expansion into new categories",
+    p: "From food into wellness, beauty, and design — a deliberate move from a single brand into a multi-vertical group.",
+  },
+  {
+    year: "IV",
+    t: "A growing UAE-wide footprint",
+    p: "Multiple destinations, a maturing portfolio, and the quiet operating muscle that comes with running brands at scale.",
+  },
+  {
+    year: "V",
+    t: "The next chapter",
+    p: "Selective franchising, regional expansion, and continued investment in talent, systems, and standards.",
+  },
 ];
 
 const differences = [
-  "A multi-brand mindset with customer experience at the core",
-  "A portfolio that spans complementary lifestyle categories",
-  "A practical approach to growth — built with intent, not randomness",
-  "A focus on building brands that are memorable, relevant, and scalable",
+  {
+    h: "A multi-brand mindset",
+    p: "We build brands that share a philosophy — not a template. Each one is allowed its own identity, audience, and tone.",
+  },
+  {
+    h: "Customer experience at the core",
+    p: "Every operational decision is measured against a single question: does this make the guest's experience better?",
+  },
+  {
+    h: "Practical, intentional growth",
+    p: "Expansion happens when the brand, the team, and the unit economics are ready — not when the calendar says so.",
+  },
+  {
+    h: "Memorable, scalable, relevant",
+    p: "We invest in concepts with cultural longevity — brands designed to travel and to mean something in every market they enter.",
+  },
+];
+
+const stats = [
+  { k: "06", v: "Active brands" },
+  { k: "04", v: "Lifestyle categories" },
+  { k: "UAE", v: "Headquartered & growing" },
 ];
 
 function AboutPage() {
@@ -61,126 +113,299 @@ function AboutPage() {
         eyebrow="01 / About"
         title={
           <>
-            The Name Behind <em className="italic">Memorable</em>
+            The name behind <em className="italic">memorable</em>
             <br />
-            Lifestyle Brands
+            lifestyle brands.
           </>
         }
-        intro="Aanka Group was built with a vision to create brands that people remember, return to, and trust. What began as an entrepreneurial journey has evolved into a growing multi-brand group spanning hospitality, wellness, beauty, and design."
+        intro="Aanka Group was built with a vision to create brands that people remember, return to, and trust. What began as an entrepreneurial journey has evolved into a growing multi-brand group spanning hospitality, wellness, beauty, and design — all run with the same operational discipline and the same regard for the guest."
+        media={{
+          src: leader1,
+          alt: "Founders of Aanka Group",
+          caption: "Dubai, UAE — Founded by Aanand Mandelia & Priyanka Agarwal",
+          ratio: "portrait",
+        }}
       />
 
-      {/* Founder story */}
+      {/* Founder story — image + expanded narrative */}
       <section className="bg-alabaster text-obsidian">
-        <div className="mx-auto grid max-w-[1440px] grid-cols-12 gap-x-6 gap-y-12 px-6 pb-28 md:px-12 md:pb-40">
-          <h2 className="reveal col-span-12 font-serif text-3xl font-light leading-[1.1] tracking-tight md:col-span-6 md:text-5xl">
-            Built with <em className="italic">Passion.</em>
-            <br />
-            Growing with <em className="italic">Purpose.</em>
-          </h2>
-          <p className="reveal col-span-12 self-end font-serif text-lg font-light leading-relaxed text-obsidian/75 md:col-span-5 md:col-start-8">
-            Driven by a shared ambition to build meaningful businesses, the founders of Aanka Group set out to create brands that combine relevance, experience, and long-term value. Their journey reflects an understanding of what modern customers seek — not just products or services, but spaces and experiences they genuinely connect with.
-          </p>
-        </div>
-      </section>
-
-      {/* Tenets */}
-      <section className="bg-obsidian text-alabaster">
-        <div className="mx-auto max-w-[1440px] px-6 py-28 md:px-12 md:py-40">
-          <div className="mb-16 flex items-center gap-6 md:mb-24">
+        <div className="mx-auto max-w-[1440px] px-6 pb-24 md:px-12 md:pb-32">
+          <div className="mb-12 flex items-center gap-6 md:mb-16">
             <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
-              02 / Foundations
+              01b / Origin
             </span>
-            <span className="h-px flex-1 bg-alabaster/15" />
+            <span className="h-px flex-1 bg-platinum/60" />
           </div>
 
-          <div className="grid grid-cols-1 gap-px bg-alabaster/15 md:grid-cols-3">
-            {tenets.map((t, i) => (
-              <div
-                key={t.h}
-                className="reveal flex flex-col bg-obsidian p-10 md:p-14"
-                style={{ transitionDelay: `${i * 100}ms` }}
-              >
-                <span className="font-sans text-[11px] uppercase tracking-luxury text-bronze">
-                  {t.h}
-                </span>
-                <p className="mt-10 font-serif text-xl font-light leading-relaxed text-alabaster/85 md:text-2xl">
-                  {t.p}
+          <div className="grid grid-cols-12 gap-x-6 gap-y-12">
+            <figure className="reveal col-span-12 md:col-span-5">
+              <div className="relative aspect-[4/5] overflow-hidden bg-obsidian">
+                <img
+                  src={leader2}
+                  alt="A founder of Aanka Group"
+                  loading="lazy"
+                  className="img-scale h-full w-full object-cover grayscale"
+                />
+                <div className="absolute inset-0 ring-1 ring-inset ring-obsidian/10" />
+              </div>
+              <figcaption className="mt-4 font-sans text-[10px] uppercase tracking-luxury text-obsidian/55">
+                Built in the UAE — designed to travel.
+              </figcaption>
+            </figure>
+
+            <div
+              className="reveal col-span-12 md:col-span-6 md:col-start-7"
+              style={{ transitionDelay: "120ms" }}
+            >
+              <h2 className="font-serif text-3xl font-light leading-[1.1] tracking-tight md:text-5xl">
+                Built with <em className="italic">passion.</em>
+                <br />
+                Growing with <em className="italic">purpose.</em>
+              </h2>
+
+              <div className="mt-10 space-y-6 font-serif text-lg font-light leading-relaxed text-obsidian/80">
+                <p>
+                  Aanka Group was founded on a quiet conviction: that the businesses worth
+                  building are the ones people genuinely want to come back to. Not louder
+                  brands — better ones. Not more outlets — better experiences in every one.
                 </p>
+                <p>
+                  From a single first venture, the group has grown into a multi-vertical
+                  holding spanning food, wellness, beauty, and design. Every brand under
+                  the Aanka umbrella is built with the same instinct: understand the guest
+                  deeply, design for the long term, and let craft do the marketing.
+                </p>
+              </div>
+
+              <blockquote className="mt-10 border-l-2 border-bronze pl-6">
+                <p className="font-serif text-xl italic leading-relaxed text-obsidian/85 md:text-2xl">
+                  “We don't chase trends. We build brands that earn return visits — and
+                  we build them to last.”
+                </p>
+                <footer className="mt-4 font-sans text-[10px] uppercase tracking-luxury text-bronze">
+                  — Aanand Mandelia &amp; Priyanka Agarwal, Founders
+                </footer>
+              </blockquote>
+            </div>
+          </div>
+
+          {/* Stat strip */}
+          <div className="mt-20 grid grid-cols-1 gap-px bg-platinum/60 md:grid-cols-3">
+            {stats.map((s, i) => (
+              <div
+                key={s.v}
+                className="reveal flex items-baseline gap-6 bg-alabaster p-8 md:p-10"
+                style={{ transitionDelay: `${i * 80}ms` }}
+              >
+                <span className="font-serif text-4xl italic text-bronze num-mono md:text-5xl">
+                  {s.k}
+                </span>
+                <span className="font-sans text-[11px] uppercase tracking-luxury text-obsidian/65">
+                  {s.v}
+                </span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Timeline */}
+      {/* Tenets — image-backed dark cards */}
+      <section className="bg-obsidian text-alabaster">
+        <div className="mx-auto max-w-[1440px] px-6 py-24 md:px-12 md:py-32">
+          <div className="mb-12 flex items-center gap-6 md:mb-16">
+            <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
+              02 / Foundations
+            </span>
+            <span className="h-px flex-1 bg-alabaster/15" />
+          </div>
+
+          <h2 className="reveal mb-16 font-serif text-3xl font-light leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
+            What we stand <em className="italic">on.</em>
+          </h2>
+
+          <div className="grid grid-cols-1 gap-px bg-alabaster/15 md:grid-cols-3">
+            {tenets.map((t, i) => (
+              <div
+                key={t.h}
+                className="reveal flex flex-col bg-obsidian"
+                style={{ transitionDelay: `${i * 100}ms` }}
+              >
+                <div className="relative aspect-[5/3] overflow-hidden bg-obsidian">
+                  <img
+                    src={t.img}
+                    alt=""
+                    aria-hidden
+                    loading="lazy"
+                    className="img-scale h-full w-full object-cover opacity-55 grayscale"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/55 to-transparent" />
+                </div>
+                <div className="flex flex-1 flex-col p-10 md:p-12">
+                  <span className="font-sans text-[11px] uppercase tracking-luxury text-bronze">
+                    {t.h}
+                  </span>
+                  <p className="mt-8 font-serif text-xl font-light leading-relaxed text-alabaster/85 md:text-2xl">
+                    {t.p}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Journey — sticky heading + expanded timeline + band image */}
       <section className="bg-alabaster text-obsidian">
-        <div className="mx-auto max-w-[1440px] px-6 py-28 md:px-12 md:py-40">
-          <div className="mb-16 flex items-center gap-6 md:mb-24">
+        <div className="mx-auto max-w-[1440px] px-6 py-24 md:px-12 md:py-32">
+          <div className="mb-12 flex items-center gap-6 md:mb-16">
             <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
               03 / Journey
             </span>
             <span className="h-px flex-1 bg-platinum/60" />
           </div>
 
-          <div className="grid grid-cols-12 gap-x-6 gap-y-10 mb-20">
-            <h2 className="col-span-12 font-serif text-3xl font-light leading-[1.1] tracking-tight md:col-span-7 md:text-5xl">
-              Our <em className="italic">Journey</em>
-            </h2>
-          </div>
-
-          <ol className="space-y-px bg-platinum/60">
-            {timeline.map((step, i) => (
-              <li
-                key={step.t}
-                className="reveal grid grid-cols-12 gap-6 bg-alabaster py-8 md:py-10"
-                style={{ transitionDelay: `${i * 80}ms` }}
-              >
-                <span className="col-span-2 font-serif text-2xl italic text-bronze num-mono md:col-span-1">
-                  {step.year}
-                </span>
-                <p className="col-span-10 font-serif text-lg font-light leading-relaxed text-obsidian/85 md:col-span-9 md:text-xl">
-                  {step.t}
-                </p>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      {/* Differentiators */}
-      <section className="bg-alabaster text-obsidian">
-        <div className="mx-auto max-w-[1440px] px-6 pb-28 md:px-12 md:pb-40">
           <div className="grid grid-cols-12 gap-x-6 gap-y-12">
-            <h2 className="reveal col-span-12 font-serif text-3xl font-light leading-[1.1] tracking-tight md:col-span-6 md:text-5xl">
-              What Makes <em className="italic">Aanka</em> Different
-            </h2>
-            <ul className="col-span-12 grid grid-cols-1 gap-px bg-platinum/60 md:col-span-12 md:grid-cols-2">
-              {differences.map((d, i) => (
+            <div className="col-span-12 md:col-span-4">
+              <h2 className="reveal sticky top-28 font-serif text-3xl font-light leading-[1.1] tracking-tight md:text-5xl">
+                Our <em className="italic">journey,</em> in five chapters.
+              </h2>
+              <p className="reveal mt-8 max-w-md font-serif text-base font-light leading-relaxed text-obsidian/70 md:text-lg">
+                A story written one brand at a time — and one customer at a time.
+              </p>
+            </div>
+
+            <ol className="col-span-12 md:col-span-7 md:col-start-6">
+              {timeline.map((step, i) => (
                 <li
-                  key={d}
-                  className="reveal bg-alabaster p-8 font-serif text-lg font-light leading-relaxed text-obsidian/80 md:p-10 md:text-xl"
-                  style={{ transitionDelay: `${i * 80}ms` }}
+                  key={step.t}
+                  className="reveal grid grid-cols-12 gap-6 border-b border-platinum/60 py-10 first:border-t md:py-12"
+                  style={{ transitionDelay: `${i * 70}ms` }}
                 >
-                  <span className="mb-4 block font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
-                    {String(i + 1).padStart(2, "0")}
+                  <span className="col-span-2 font-serif text-3xl italic text-bronze num-mono md:col-span-2 md:text-4xl">
+                    {step.year}
                   </span>
-                  {d}
+                  <div className="col-span-10">
+                    <h3 className="font-serif text-xl font-light leading-tight text-obsidian md:text-2xl">
+                      {step.t}
+                    </h3>
+                    <p className="mt-3 max-w-xl font-serif text-base font-light leading-relaxed text-obsidian/70 md:text-lg">
+                      {step.p}
+                    </p>
+                  </div>
                 </li>
               ))}
-            </ul>
+            </ol>
+          </div>
+        </div>
+
+        {/* Full-bleed band image */}
+        <div className="reveal relative h-[40vh] min-h-[320px] w-full overflow-hidden bg-obsidian md:h-[55vh]">
+          <img
+            src={hero}
+            alt="The Aanka Group landscape"
+            loading="lazy"
+            className="img-scale h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-obsidian/35" />
+          <div className="absolute inset-x-0 bottom-0 px-6 pb-10 md:px-12 md:pb-14">
+            <p className="font-serif text-2xl font-light italic text-alabaster md:text-4xl lg:text-5xl">
+              “Built with vision. Growing with purpose.”
+            </p>
           </div>
         </div>
       </section>
+
+      {/* Differentiators — 2×2 image + text bento */}
+      <section className="bg-alabaster text-obsidian">
+        <div className="mx-auto max-w-[1440px] px-6 py-24 md:px-12 md:py-32">
+          <div className="mb-12 flex items-center gap-6 md:mb-16">
+            <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
+              04 / Difference
+            </span>
+            <span className="h-px flex-1 bg-platinum/60" />
+          </div>
+
+          <div className="grid grid-cols-12 gap-x-6 gap-y-10">
+            <h2 className="reveal col-span-12 font-serif text-3xl font-light leading-[1.1] tracking-tight md:col-span-6 md:text-5xl">
+              What makes <em className="italic">Aanka</em> different.
+            </h2>
+            <p
+              className="reveal col-span-12 self-end font-serif text-base font-light leading-relaxed text-obsidian/65 md:col-span-5 md:col-start-8 md:text-lg"
+              style={{ transitionDelay: "100ms" }}
+            >
+              Four ideas that show up in every brand, every interior, and every
+              service decision we make.
+            </p>
+          </div>
+
+          {/* 2x2 bento — text, image, image, text */}
+          <div className="mt-16 grid grid-cols-1 gap-px bg-platinum/60 md:grid-cols-2">
+            <DifferenceCard index={1} item={differences[0]} />
+            <ImageCell src={ladies} alt="Aanka brand interior detail" />
+            <ImageCell src={khau} alt="Aanka hospitality detail" />
+            <DifferenceCard index={2} item={differences[1]} />
+          </div>
+
+          {/* Slim follow-up row for the remaining two */}
+          <div className="mt-px grid grid-cols-1 gap-px bg-platinum/60 md:grid-cols-2">
+            <DifferenceCard index={3} item={differences[2]} compact />
+            <DifferenceCard index={4} item={differences[3]} compact />
+          </div>
+        </div>
+      </section>
+
+      <FoundersNote />
 
       <Leadership />
 
       <CtaBlock
         eyebrow="08 / Collaborate"
-        heading={<>Build the Next Chapter <em className="italic">With Us</em></>}
+        heading={<>Build the next chapter <em className="italic">with us.</em></>}
         body="From partnerships to careers, Aanka Group welcomes conversations rooted in vision, ambition, and shared standards."
         buttonLabel="Get in Touch"
         to="/contact"
       />
     </>
+  );
+}
+
+function DifferenceCard({
+  index,
+  item,
+  compact = false,
+}: {
+  index: number;
+  item: { h: string; p: string };
+  compact?: boolean;
+}) {
+  return (
+    <div
+      className={`reveal flex flex-col bg-alabaster ${compact ? "p-8 md:p-10" : "p-10 md:p-14"}`}
+      style={{ transitionDelay: `${index * 60}ms` }}
+    >
+      <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
+        {String(index).padStart(2, "0")}
+      </span>
+      <h3 className="mt-8 font-serif text-2xl font-light leading-tight text-obsidian md:text-3xl">
+        {item.h}
+      </h3>
+      <p className="mt-5 max-w-md font-serif text-base font-light leading-relaxed text-obsidian/70 md:text-lg">
+        {item.p}
+      </p>
+    </div>
+  );
+}
+
+function ImageCell({ src, alt }: { src: string; alt: string }) {
+  return (
+    <div className="reveal relative min-h-[280px] overflow-hidden bg-obsidian md:min-h-[360px]">
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        className="img-scale absolute inset-0 h-full w-full object-cover"
+      />
+      <div className="absolute inset-0 ring-1 ring-inset ring-obsidian/10" />
+    </div>
   );
 }
