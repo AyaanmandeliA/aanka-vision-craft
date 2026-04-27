@@ -1,26 +1,44 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/site/Navbar";
+import { Hero } from "@/components/site/Hero";
+import { Introduction } from "@/components/site/Introduction";
+import { Ecosystem } from "@/components/site/Ecosystem";
+import { Values } from "@/components/site/Values";
+import { Leadership } from "@/components/site/Leadership";
+import { Footer } from "@/components/site/Footer";
+import { useReveal } from "@/hooks/use-reveal";
 
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: "Aanka Group — A House of Lifestyle Brands" },
+      {
+        name: "description",
+        content:
+          "Aanka Group is a UAE-based holding building memorable brands across food, wellness, beauty, and interior design.",
+      },
+      { property: "og:title", content: "Aanka Group — A House of Lifestyle Brands" },
+      {
+        property: "og:description",
+        content:
+          "Built with Vision. Growing with Purpose. Six brands across hospitality, wellness, beauty, and design.",
+      },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
-
 function Index() {
-  return <PlaceholderIndex />;
+  useReveal();
+  return (
+    <main className="bg-alabaster text-obsidian">
+      <Navbar />
+      <Hero />
+      <Introduction />
+      <Ecosystem />
+      <Values />
+      <Leadership />
+      <Footer />
+    </main>
+  );
 }
