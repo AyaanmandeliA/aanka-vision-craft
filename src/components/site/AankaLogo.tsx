@@ -82,7 +82,8 @@ export const PulseLine = AankaNLine;
 /* AankaLogo — the full wordmark                                      */
 /* ------------------------------------------------------------------ */
 
-const LETTERS = ["A", "A", "N", "K", "A"] as const;
+import wordmarkPrimary from "@/assets/aanka-wordmark-primary.png";
+import wordmarkReversed from "@/assets/aanka-wordmark-reversed.png";
 
 export function AankaLogo({
   className,
@@ -90,14 +91,6 @@ export function AankaLogo({
   markOnly = false,
   title = "AANKA",
 }: LogoProps) {
-  const wordColor =
-    variant === "reversed"
-      ? "var(--alabaster)"
-      : variant === "warm"
-        ? "var(--platinum)"
-        : "var(--obsidian)";
-  const lineColor = "var(--bronze)";
-
   if (markOnly) {
     return (
       <AankaNLine
@@ -107,63 +100,15 @@ export function AankaLogo({
     );
   }
 
-  /**
-   * Wordmark — viewBox 800 × 220.
-   *   baseline y = 170   (sits along letter baseline)
-   *   peak     y = 50    (cap-height)
-   *   Letter centres: A(120) A(240) N(400) K(560) A(680)
-   *   N stems: x = 370 (left), x = 430 (right)
-   *
-   * Line traces: enter low under A·A → up left stem → diagonal down
-   * across to right baseline → up right stem → exit low under K·A.
-   * The N glyph itself is omitted — the line IS the N.
-   */
-  const baseline = 170;
-  const peak = 50;
-  const nLeft = 370;
-  const nRight = 430;
-  const letterX = [120, 240, 400, 560, 680];
-
-  const linePath =
-    `M20 ${baseline} ` +
-    `L${nLeft} ${baseline} ` +
-    `L${nLeft} ${peak} ` +
-    `L${nRight} ${baseline} ` +
-    `L${nRight} ${peak} ` +
-    `L${nRight} ${baseline} ` +
-    `L780 ${baseline}`;
+  const src = variant === "reversed" ? wordmarkReversed : wordmarkPrimary;
 
   return (
-    <svg
-      viewBox="0 0 800 220"
+    <img
+      src={src}
+      alt={title}
       className={className}
-      role="img"
-      aria-label={title}
-      fill="none"
-    >
-      <path
-        d={linePath}
-        stroke={lineColor}
-        strokeWidth="2.2"
-        strokeLinecap="butt"
-        strokeLinejoin="miter"
-        vectorEffect="non-scaling-stroke"
-      />
-      <g
-        fontFamily="'Playfair Display', 'Cormorant Garamond', Georgia, serif"
-        fontWeight="400"
-        fontSize="140"
-        fill={wordColor}
-        textAnchor="middle"
-      >
-        {LETTERS.map((ch, i) =>
-          ch === "N" ? null : (
-            <text key={i} x={letterX[i]} y={baseline}>
-              {ch}
-            </text>
-          ),
-        )}
-      </g>
-    </svg>
+      draggable={false}
+    />
   );
 }
+
