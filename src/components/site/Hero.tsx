@@ -71,13 +71,6 @@ export function Hero() {
             Explore the Portfolio
             <span className="block h-px w-8 bg-obsidian transition-all duration-500 group-hover:w-12 group-hover:bg-alabaster" />
           </Link>
-          <Link
-            to="/partner"
-            className="group inline-flex items-center gap-4 border border-alabaster/60 px-8 py-4 font-sans text-[11px] uppercase tracking-luxury text-alabaster transition-colors duration-500 hover:border-bronze hover:text-bronze"
-          >
-            Franchise With Us
-            <span className="block h-px w-8 bg-alabaster transition-all duration-500 group-hover:w-12 group-hover:bg-bronze" />
-          </Link>
         </div>
       </div>
 
