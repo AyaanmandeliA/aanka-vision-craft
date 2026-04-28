@@ -1,26 +1,20 @@
 /**
- * AANKA brand system — live SVG wordmark and signature N-line.
+ * AANKA brand system — live SVG wordmark + straight brand line.
  *
- * Logo structure (read left-to-right):
- *   A  A   [ N ]   K  A
- *   ‾‾‾‾  bronze   bronze
- *   ___________  ‾‾‾‾‾‾‾‾‾‾‾
- *   bottom rail   top rail
+ * Wordmark structure:
+ *   A  A   N   K  A
+ *   ‾‾‾‾‾  bronze rails wrap the N:
+ *     bottom rail under "A A" → vertical → diagonal slash (white) → vertical → top rail above "K A"
  *
- * The continuous bronze line:
- *   1. Bottom rail under the "A A".
- *   2. Rises vertically (left stem of N).
- *   3. Diagonal slash down-right — THIS STROKE IS WHITE / LIGHT.
- *   4. Rises vertically (right stem of N).
- *   5. Top rail above the "K A".
- *
- *   ____|\|‾‾‾‾    (slash = alabaster, everything else = bronze)
+ *   ____|\|‾‾‾‾
  *
  * Colour rules:
- *   • Wordmark letters: Oxidized Bronze (#8C7A6B) on dark, Obsidian on light.
- *   • Rails + N stems: Oxidized Bronze.
- *   • N diagonal slash: Alabaster on dark, Obsidian on light.
- *   • No gradients, gold, glow, shadow, or rounded ends.
+ *   • Letters A A K A — Alabaster on dark, Obsidian on light.
+ *   • Bronze rails + N stems — Oxidized Bronze (#8C7A6B).
+ *   • Diagonal slash of N — Alabaster on dark, Obsidian on light. Slightly thicker stroke.
+ *
+ * PulseLine / AankaNLine = a thin straight horizontal divider line
+ * (bronze on dark, platinum on light). No pulse, no notch, no zig-zag.
  */
 
 type Variant = "primary" | "reversed";
@@ -28,80 +22,52 @@ type Variant = "primary" | "reversed";
 type LogoProps = {
   className?: string;
   variant?: Variant;
-  /** Render only the AankaNLine brand mark. */
   markOnly?: boolean;
   title?: string;
 };
 
 /* ------------------------------------------------------------------ */
-/* AankaNLine — the canonical brand mark (line + N, no letters)       */
+/* AankaNLine / PulseLine — thin straight divider line                */
 /* ------------------------------------------------------------------ */
 
-/**
- * Brand mark viewBox 600 × 60.
- *   bottom rail y = 46
- *   top rail    y = 14
- *   N occupies  x = 274 → 326
- *
- *   ____|\|‾‾‾‾
- */
 export function AankaNLine({
   className,
   variant = "default",
 }: {
   className?: string;
+  /** "default" = bronze (dark bg), "muted"/"reversed" = platinum (light bg). */
   variant?: "default" | "muted" | "reversed";
 }) {
-  const railColor =
-    variant === "muted" ? "var(--platinum)" : "var(--bronze)";
-  const slashColor =
-    variant === "reversed" ? "var(--alabaster)" : "var(--obsidian)";
+  const color =
+    variant === "muted" ? "var(--platinum)" : variant === "reversed" ? "var(--platinum)" : "var(--bronze)";
 
   return (
     <svg
-      viewBox="0 0 600 60"
+      viewBox="0 0 600 2"
       preserveAspectRatio="none"
       className={className}
       role="presentation"
       aria-hidden="true"
       fill="none"
     >
-      {/* Bottom rail → left stem of N */}
-      <path
-        d="M0 46 L274 46 L274 14"
-        stroke={railColor}
-        strokeWidth="1.4"
-        strokeLinecap="butt"
-        strokeLinejoin="miter"
-        vectorEffect="non-scaling-stroke"
-      />
-      {/* Right stem of N → top rail */}
-      <path
-        d="M326 46 L326 14 L600 14"
-        stroke={railColor}
-        strokeWidth="1.4"
-        strokeLinecap="butt"
-        strokeLinejoin="miter"
-        vectorEffect="non-scaling-stroke"
-      />
-      {/* Diagonal slash of N — the accent stroke */}
-      <path
-        d="M274 14 L326 46"
-        stroke={slashColor}
-        strokeWidth="1.6"
-        strokeLinecap="butt"
-        strokeLinejoin="miter"
+      <line
+        x1="0"
+        y1="1"
+        x2="600"
+        y2="1"
+        stroke={color}
+        strokeWidth="1"
         vectorEffect="non-scaling-stroke"
       />
     </svg>
   );
 }
 
-/** Backwards-compatible alias used by existing imports across the site. */
+/** Backwards-compatible alias used across the site. */
 export const PulseLine = AankaNLine;
 
 /* ------------------------------------------------------------------ */
-/* AankaLogo — live SVG wordmark with integrated N-line                */
+/* AankaLogo — live SVG wordmark with integrated bronze N-rail        */
 /* ------------------------------------------------------------------ */
 
 export function AankaLogo({
@@ -114,35 +80,33 @@ export function AankaLogo({
     return (
       <AankaNLine
         className={className}
-        variant={variant === "reversed" ? "reversed" : "default"}
+        variant={variant === "reversed" ? "default" : "reversed"}
       />
     );
   }
 
-  // Colour palette
   const letterColor =
-    variant === "reversed" ? "var(--bronze)" : "var(--obsidian)";
+    variant === "reversed" ? "var(--alabaster)" : "var(--obsidian)";
   const railColor = "var(--bronze)";
   const slashColor =
     variant === "reversed" ? "var(--alabaster)" : "var(--obsidian)";
 
   /**
    * viewBox 800 × 140.
-   *   Letter cap-height baseline = 100, top = 30   (height 70)
-   *   N is 12% taller: top = 22, bottom = 108     (height 86)
-   *   Bottom rail (under A A) y = 116
-   *   Top rail (above K A)    y = 14
+   *   Letter baseline y = 102, cap-top y = 32  (cap-height ≈ 70)
+   *   N is ~10% taller — top y = 24, bottom y = 110
+   *   Bottom rail y = 118  (under A A)
+   *   Top rail    y = 16   (above K A)
    *
-   * Letter slots (centres):
-   *   A1 = 90   A2 = 210   N (center) = 400   K = 590   A3 = 710
-   *   N stems at x = 372 and x = 428
+   * Even visual spacing — letter centres at:
+   *   A1 = 80,  A2 = 240,  N (centre) = 400,  K = 560,  A3 = 720
+   *   N stems: x = 372 and x = 428 (≈ N visual width)
    */
-  const baseline = 100;
-  const capTop = 30;
-  const nTop = 22;
-  const nBottom = 108;
-  const bottomRail = 116;
-  const topRail = 14;
+  const baseline = 102;
+  const nTop = 24;
+  const nBottom = 110;
+  const bottomRail = 118;
+  const topRail = 16;
   const nLeft = 372;
   const nRight = 428;
 
@@ -154,38 +118,36 @@ export function AankaLogo({
       aria-label={title}
       fill="none"
     >
-      {/* ===== Wordmark letters (live SVG text, editorial serif) ===== */}
+      {/* Letters — A A   K A (the N slot is built from the rail + slash) */}
       <g
         fill={letterColor}
         style={{
           fontFamily:
-            '"Playfair Display", "Cormorant Garamond", "Canela", Georgia, serif',
+            '"Cormorant Garamond", "Playfair Display", "Canela", Georgia, serif',
           fontWeight: 500,
-          fontSize: "92px",
-          letterSpacing: "0.08em",
+          fontSize: "96px",
+          letterSpacing: "0.02em",
         }}
         textAnchor="middle"
       >
-        <text x="90" y={baseline}>A</text>
-        <text x="210" y={baseline}>A</text>
-        {/* N slot is intentionally empty — replaced by the structural N below */}
-        <text x="590" y={baseline}>K</text>
-        <text x="710" y={baseline}>A</text>
+        <text x="80" y={baseline}>A</text>
+        <text x="240" y={baseline}>A</text>
+        <text x="560" y={baseline}>K</text>
+        <text x="720" y={baseline}>A</text>
       </g>
 
-      {/* ===== Continuous bronze line: bottom rail → up → N stems → top rail ===== */}
-      {/* Bottom rail under A A, rising into left stem of N */}
+      {/* Bronze line: bottom rail under A A → up into left stem of N */}
       <path
-        d={`M20 ${bottomRail} L${nLeft} ${bottomRail} L${nLeft} ${nTop}`}
+        d={`M16 ${bottomRail} L${nLeft} ${bottomRail} L${nLeft} ${nTop}`}
         stroke={railColor}
         strokeWidth="1.6"
         strokeLinecap="butt"
         strokeLinejoin="miter"
         vectorEffect="non-scaling-stroke"
       />
-      {/* Right stem of N rising into top rail above K A */}
+      {/* Bronze line: right stem of N → up into top rail above K A */}
       <path
-        d={`M${nRight} ${nBottom} L${nRight} ${topRail} L780 ${topRail}`}
+        d={`M${nRight} ${nBottom} L${nRight} ${topRail} L784 ${topRail}`}
         stroke={railColor}
         strokeWidth="1.6"
         strokeLinecap="butt"
@@ -193,11 +155,11 @@ export function AankaLogo({
         vectorEffect="non-scaling-stroke"
       />
 
-      {/* ===== Diagonal slash of N — the accent stroke (white on dark) ===== */}
+      {/* Diagonal slash of N — focal stroke (slightly thicker) */}
       <path
         d={`M${nLeft} ${nTop} L${nRight} ${nBottom}`}
         stroke={slashColor}
-        strokeWidth="2.2"
+        strokeWidth="2.4"
         strokeLinecap="butt"
         strokeLinejoin="miter"
         vectorEffect="non-scaling-stroke"
