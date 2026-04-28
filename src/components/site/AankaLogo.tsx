@@ -1,24 +1,86 @@
 /**
- * AANKA brand system — wordmark, brand mark, and signature pulse line.
+ * AANKA brand system — wordmark and signature N-line.
  *
- * Geometry of the pulse line (per the brand board):
- *   • Bronze line enters from the LEFT at the BASELINE under A · A.
- *   • Rises vertically at the N's left stem.
- *   • Runs across the TOP (cap-height) over the N only.
- *   • Drops vertically at the N's right stem.
- *   • Continues at the BASELINE under K · A and exits right.
+ * The N-line is the brand mark: a thin horizontal line that becomes
+ * the letter N in the centre, then continues horizontally.
  *
- * The N sits inside an inverted "U" — the line goes UP and OVER the N,
- * then back DOWN to baseline on the other side. Both ends of the line
- * are at the same baseline level; only the N is "lifted".
+ * Path read left-to-right:
+ *   1. Horizontal line at the baseline.
+ *   2. Rises vertically (LEFT stem of the N).
+ *   3. Diagonal down-right (middle stroke of the N).
+ *   4. Rises vertically (RIGHT stem of the N).
+ *   5. Continues horizontally at the baseline.
+ *
+ * The N is BUILT INTO the line — not a separate glyph behind it.
+ *
+ * Colour rules:
+ *   • Line: Oxidized Bronze (#8C7A6B) by default;
+ *           Brushed Platinum (#B8B8B0) for muted secondary dividers.
+ *   • Wordmark text: Alabaster on dark, Obsidian on light.
+ *   • No gradients, gold, glow, shadow, or rounded ends.
  */
+
+type Variant = "primary" | "reversed" | "warm";
 
 type LogoProps = {
   className?: string;
-  variant?: "primary" | "reversed" | "warm";
+  variant?: Variant;
+  /** Render only the AankaNLine brand mark. */
   markOnly?: boolean;
   title?: string;
 };
+
+/* ------------------------------------------------------------------ */
+/* AankaNLine — the canonical brand mark                              */
+/* ------------------------------------------------------------------ */
+
+/**
+ * viewBox 600 × 60.
+ *   baseline y = 46    (horizontal rails)
+ *   peak     y = 14    (top of the N)
+ *   N occupies x = 274 → 326  (width 52, height 32)
+ *
+ * Single continuous stroke: ──│╲│──
+ */
+const N_LINE_PATH =
+  "M0 46 L274 46 L274 14 L326 46 L326 14 L326 46 L600 46";
+
+export function AankaNLine({
+  className,
+  variant = "default",
+}: {
+  className?: string;
+  variant?: "default" | "muted" | "reversed";
+}) {
+  const color = variant === "muted" ? "var(--platinum)" : "var(--bronze)";
+
+  return (
+    <svg
+      viewBox="0 0 600 60"
+      preserveAspectRatio="none"
+      className={className}
+      role="presentation"
+      aria-hidden="true"
+      fill="none"
+    >
+      <path
+        d={N_LINE_PATH}
+        stroke={color}
+        strokeWidth="1.4"
+        strokeLinecap="butt"
+        strokeLinejoin="miter"
+        vectorEffect="non-scaling-stroke"
+      />
+    </svg>
+  );
+}
+
+/** Backwards-compatible alias used by existing imports across the site. */
+export const PulseLine = AankaNLine;
+
+/* ------------------------------------------------------------------ */
+/* AankaLogo — the full wordmark                                      */
+/* ------------------------------------------------------------------ */
 
 const LETTERS = ["A", "A", "N", "K", "A"] as const;
 
@@ -34,64 +96,55 @@ export function AankaLogo({
       : variant === "warm"
         ? "var(--platinum)"
         : "var(--obsidian)";
-  const pulse = "var(--bronze)";
+  const lineColor = "var(--bronze)";
 
   if (markOnly) {
     return (
-      <svg
-        viewBox="0 0 200 120"
+      <AankaNLine
         className={className}
-        role="img"
-        aria-label={`${title} mark`}
-        fill="none"
-      >
-        <path
-          d="M0 100 H70 L70 20 H130 L130 100 H200"
-          stroke={pulse}
-          strokeWidth="2.4"
-          strokeLinecap="butt"
-          strokeLinejoin="miter"
-          vectorEffect="non-scaling-stroke"
-        />
-        <text
-          x="100"
-          y="92"
-          textAnchor="middle"
-          fontFamily="'Playfair Display', 'Cormorant Garamond', Georgia, serif"
-          fontWeight="400"
-          fontSize="92"
-          fill={wordColor}
-        >
-          N
-        </text>
-      </svg>
+        variant={variant === "reversed" ? "reversed" : "default"}
+      />
     );
   }
 
   /**
-   * Wordmark — viewBox 800 × 200.
-   * Letters baseline y=140, cap-height y=40.
-   * Line: baseline under A·A, rises at N's left stem, across cap-height
-   * over N, drops at N's right stem, baseline under K·A.
+   * Wordmark — viewBox 800 × 220.
+   *   baseline y = 170   (sits along letter baseline)
+   *   peak     y = 50    (cap-height)
+   *   Letter centres: A(120) A(240) N(400) K(560) A(680)
+   *   N stems: x = 370 (left), x = 430 (right)
+   *
+   * Line traces: enter low under A·A → up left stem → diagonal down
+   * across to right baseline → up right stem → exit low under K·A.
+   * The N glyph itself is omitted — the line IS the N.
    */
-  const lineLow = 140;
-  const lineHigh = 40;
-  const nLeft = 365;
-  const nRight = 432;
-  const letterPositions = [120, 240, 400, 560, 680];
+  const baseline = 170;
+  const peak = 50;
+  const nLeft = 370;
+  const nRight = 430;
+  const letterX = [120, 240, 400, 560, 680];
+
+  const linePath =
+    `M20 ${baseline} ` +
+    `L${nLeft} ${baseline} ` +
+    `L${nLeft} ${peak} ` +
+    `L${nRight} ${baseline} ` +
+    `L${nRight} ${peak} ` +
+    `L${nRight} ${baseline} ` +
+    `L780 ${baseline}`;
 
   return (
     <svg
-      viewBox="0 0 800 200"
+      viewBox="0 0 800 220"
       className={className}
       role="img"
       aria-label={title}
       fill="none"
     >
       <path
-        d={`M20 ${lineLow} H${nLeft} L${nLeft} ${lineHigh} H${nRight} L${nRight} ${lineLow} H780`}
-        stroke={pulse}
-        strokeWidth="2.4"
+        d={linePath}
+        stroke={lineColor}
+        strokeWidth="2.2"
         strokeLinecap="butt"
         strokeLinejoin="miter"
         vectorEffect="non-scaling-stroke"
@@ -99,59 +152,18 @@ export function AankaLogo({
       <g
         fontFamily="'Playfair Display', 'Cormorant Garamond', Georgia, serif"
         fontWeight="400"
-        fontSize="128"
+        fontSize="140"
         fill={wordColor}
         textAnchor="middle"
       >
-        {LETTERS.map((ch, i) => (
-          <text key={i} x={letterPositions[i]} y={lineLow}>
-            {ch}
-          </text>
-        ))}
+        {LETTERS.map((ch, i) =>
+          ch === "N" ? null : (
+            <text key={i} x={letterX[i]} y={baseline}>
+              {ch}
+            </text>
+          ),
+        )}
       </g>
-    </svg>
-  );
-}
-
-/**
- * Signature pulse line — universal divider matching the logo geometry.
- * Horizontal baseline with a single inverted-U "lift" in the middle
- * (where the N sits in the wordmark). Both ends of the line are at
- * the same baseline level.
- */
-export function PulseLine({
-  className,
-  variant = "default",
-  flat = false,
-}: {
-  className?: string;
-  variant?: "default" | "muted";
-  flat?: boolean;
-}) {
-  const color = variant === "muted" ? "var(--platinum)" : "var(--bronze)";
-
-  // viewBox 600 × 40. Baseline y=28, lifted top y=12. Lift between x=288..312.
-  const path = flat
-    ? "M0 28 H600"
-    : "M0 28 H288 L288 12 H312 L312 28 H600";
-
-  return (
-    <svg
-      viewBox="0 0 600 40"
-      preserveAspectRatio="none"
-      className={className}
-      role="presentation"
-      aria-hidden="true"
-      fill="none"
-    >
-      <path
-        d={path}
-        stroke={color}
-        strokeWidth="1.4"
-        strokeLinecap="butt"
-        strokeLinejoin="miter"
-        vectorEffect="non-scaling-stroke"
-      />
     </svg>
   );
 }
