@@ -2,21 +2,21 @@
  * AANKA brand system — wordmark and signature N-line.
  *
  * The N-line is the brand mark: a thin horizontal line that becomes
- * the letter N in the centre, then continues horizontally.
+ * the letter N in the centre, then exits along the TOP rail.
  *
  * Path read left-to-right:
- *   1. Horizontal line at the baseline.
- *   2. Rises vertically (LEFT stem of the N).
- *   3. Diagonal down-right (middle stroke of the N).
- *   4. Rises vertically (RIGHT stem of the N).
- *   5. Continues horizontally at the baseline.
+ *   1. Horizontal rail at the BOTTOM (baseline).
+ *   2. Rises vertically — LEFT stem of the N.
+ *   3. Diagonal down-right — middle stroke of the N.
+ *   4. Rises vertically — RIGHT stem of the N.
+ *   5. Continues horizontally at the TOP (cap-height).
  *
- * The N is BUILT INTO the line — not a separate glyph behind it.
+ *   ____|\|‾‾‾‾
+ *
+ * The line "steps up" through the N — entering low, exiting high.
  *
  * Colour rules:
- *   • Line: Oxidized Bronze (#8C7A6B) by default;
- *           Brushed Platinum (#B8B8B0) for muted secondary dividers.
- *   • Wordmark text: Alabaster on dark, Obsidian on light.
+ *   • Line: Oxidized Bronze (#8C7A6B); muted = Brushed Platinum.
  *   • No gradients, gold, glow, shadow, or rounded ends.
  */
 
@@ -36,14 +36,15 @@ type LogoProps = {
 
 /**
  * viewBox 600 × 60.
- *   baseline y = 46    (horizontal rails)
- *   peak     y = 14    (top of the N)
- *   N occupies x = 274 → 326  (width 52, height 32)
+ *   bottom rail y = 46
+ *   top rail    y = 14
+ *   N occupies  x = 274 → 326  (width 52, height 32)
  *
- * Single continuous stroke: ──│╲│──
+ * Single continuous stroke: ____|\|‾‾‾‾
  */
 const N_LINE_PATH =
-  "M0 46 L274 46 L274 14 L326 46 L326 14 L326 46 L600 46";
+  "M0 46 L274 46 L274 14 L326 46 L326 14 L600 14";
+
 
 export function AankaNLine({
   className,
