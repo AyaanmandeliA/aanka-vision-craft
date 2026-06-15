@@ -9,18 +9,6 @@ import ladies from "@/assets/brands/ladies.jpg";
 import deco from "@/assets/brands/deco.jpg";
 import zaikaInterior from "@/assets/brands/zaika-interior.jpg";
 
-// Behold custom element declaration
-declare module "react/jsx-runtime" {
-  namespace JSX {
-    interface IntrinsicElements {
-      "behold-widget": React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLElement>,
-        HTMLElement
-      > & { "feed-id"?: string };
-    }
-  }
-}
-
 /**
  * Curated Instagram-style grid. Tiles are placeholders pulled from the brand
  * library until the real Instagram handle + Graph API access is provided.
@@ -51,7 +39,6 @@ export function InstagramGrid({
   beholdFeedId,
 }: InstagramGridProps) {
   const dark = variant === "dark";
-  const widgetRef = useRef<HTMLDivElement>(null);
   const [scriptLoaded, setScriptLoaded] = useState(false);
 
   useEffect(() => {
@@ -70,10 +57,6 @@ export function InstagramGrid({
     script.onload = () => setScriptLoaded(true);
     script.onerror = () => setScriptLoaded(false);
     document.body.appendChild(script);
-
-    return () => {
-      // Cleanup not strictly needed for external scripts, but good practice
-    };
   }, [beholdFeedId]);
 
   return (
@@ -108,9 +91,9 @@ export function InstagramGrid({
 
         {/* Behold live feed */}
         {beholdFeedId ? (
-          <div ref={widgetRef} className="min-h-[400px]">
+          <div className="min-h-[400px]">
             {scriptLoaded ? (
-              <behold-widget feed-id={beholdFeedId}></behold-widget>
+              <BeholdWidget feedId={beholdFeedId} />
             ) : (
               <div className="flex h-[400px] items-center justify-center">
                 <span className="font-sans text-[11px] uppercase tracking-luxury text-bronze">
@@ -155,4 +138,18 @@ export function InstagramGrid({
       </div>
     </section>
   );
+}
+
+function BeholdWidget({ feedId }: { feedId: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!ref.current) return;
+    const el = document.createElement("behold-widget");
+    el.setAttribute("feed-id", feedId);
+    ref.current.innerHTML = "";
+    ref.current.appendChild(el);
+  }, [feedId]);
+
+  return <div ref={ref} />;
 }
