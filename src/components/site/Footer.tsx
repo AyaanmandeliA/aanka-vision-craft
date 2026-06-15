@@ -5,7 +5,7 @@ import { AankaLogo, PulseLine } from "./AankaLogo";
 export function Footer() {
   return (
     <footer className="bg-obsidian text-alabaster">
-      <div className="mx-auto max-w-[1440px] px-6 pt-24 md:px-12 md:pt-32">
+      <div className="mx-auto max-w-[1440px] px-6 pt-16 md:px-12 md:pt-20">
         {/* Large statement */}
         <div className="reveal grid grid-cols-12 gap-6 pb-10 md:pb-14">
           <div className="col-span-12 md:col-span-9">
