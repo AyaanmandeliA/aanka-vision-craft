@@ -17,14 +17,16 @@ export function Growth() {
             Growing with <em className="italic">Purpose.</em>
           </h2>
 
-          <div className="reveal col-span-12 flex flex-col gap-y-8 md:col-span-5 md:col-start-8 md:self-end">
-            <p className="font-serif text-lg font-light leading-relaxed text-obsidian/75">
-              From its early beginnings to a growing portfolio of lifestyle brands, Aanka Group continues to evolve with a focus on relevance, experience, and scale.
-            </p>
-            <p className="font-serif text-lg font-light leading-relaxed text-obsidian/75">
-              The group's journey reflects a commitment to building brands that are not only visible, but valued — creating spaces and experiences that people return to.
-            </p>
-            <div className="mt-4 grid grid-cols-3 gap-4 border-t border-obsidian/10 pt-6">
+          <div className="reveal col-span-12 grid grid-cols-1 gap-8 md:col-span-7 md:col-start-6 md:grid-cols-2 md:gap-10 md:self-end">
+            <div className="flex flex-col gap-y-6">
+              <p className="font-serif text-lg font-light leading-relaxed text-obsidian/75">
+                From its early beginnings to a growing portfolio of lifestyle brands, Aanka Group continues to evolve with a focus on relevance, experience, and scale.
+              </p>
+              <p className="font-serif text-lg font-light leading-relaxed text-obsidian/75">
+                The group's journey reflects a commitment to building brands that are not only visible, but valued — creating spaces and experiences that people return to.
+              </p>
+            </div>
+            <div className="flex items-end gap-6 md:flex-col md:gap-8">
               <div>
                 <span className="block font-serif text-3xl font-light text-obsidian md:text-4xl">6</span>
                 <span className="mt-1 block font-sans text-[10px] uppercase tracking-luxury text-obsidian/50">Brands</span>
