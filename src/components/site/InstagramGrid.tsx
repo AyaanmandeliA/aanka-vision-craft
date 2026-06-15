@@ -9,6 +9,18 @@ import ladies from "@/assets/brands/ladies.jpg";
 import deco from "@/assets/brands/deco.jpg";
 import zaikaInterior from "@/assets/brands/zaika-interior.jpg";
 
+// Behold custom element declaration
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      "behold-widget": React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLElement>,
+        HTMLElement
+      > & { "feed-id"?: string };
+    }
+  }
+}
+
 /**
  * Curated Instagram-style grid. Tiles are placeholders pulled from the brand
  * library until the real Instagram handle + Graph API access is provided.
