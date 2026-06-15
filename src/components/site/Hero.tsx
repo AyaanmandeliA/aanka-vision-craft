@@ -34,27 +34,25 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-6xl px-6 py-32 text-center md:py-40">
-        <p className="reveal mb-10 font-sans text-[11px] uppercase tracking-luxury text-bronze">
+        <p className="mb-10 font-sans text-[11px] uppercase tracking-luxury text-bronze">
           A UAE Lifestyle Group
         </p>
 
         {/* The AANKA wordmark — centerpiece of the hero */}
-        <div className="reveal mx-auto mb-10 w-full max-w-[640px]" style={{ transitionDelay: "60ms" }}>
+        <div className="mx-auto mb-10 w-full max-w-[640px]">
           <AankaLogo variant="reversed" className="mx-auto h-auto w-full" />
         </div>
 
-        <PulseLine className="reveal mx-auto mb-12 h-4 w-48 opacity-80" />
+        <PulseLine className="mx-auto mb-12 h-4 w-48 opacity-80" />
 
         <h1
-          className="reveal mx-auto max-w-[980px] font-serif text-4xl font-light leading-tight text-alabaster md:text-6xl lg:text-7xl"
-          style={{ transitionDelay: "140ms" }}
+          className="mx-auto max-w-[980px] font-serif text-4xl font-light leading-tight text-alabaster md:text-6xl lg:text-7xl"
         >
           Built with <em className="italic">vision.</em> Grown with <em className="italic">purpose.</em>
         </h1>
 
         <p
-          className="reveal measure mx-auto mt-10 font-serif text-lg font-light leading-relaxed text-alabaster/75 md:text-xl"
-          style={{ transitionDelay: "220ms" }}
+          className="measure mx-auto mt-10 font-serif text-lg font-light leading-relaxed text-alabaster/75 md:text-xl"
         >
           A curated portfolio of lifestyle brands across hospitality,
           wellness, beauty, and design — built in the UAE, designed to last,
@@ -62,8 +60,7 @@ export function Hero() {
         </p>
 
         <div
-          className="reveal mt-16 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6"
-          style={{ transitionDelay: "240ms" }}
+          className="mt-16 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6"
         >
           <Link
             to="/businesses"
