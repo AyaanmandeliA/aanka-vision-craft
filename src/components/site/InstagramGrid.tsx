@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { Instagram, ArrowUpRight } from "lucide-react";
 import khau from "@/assets/brands/khau-galli.jpg";
 import khauThali from "@/assets/brands/khau-thali.jpg";
@@ -28,14 +29,41 @@ interface InstagramGridProps {
   handle?: string;
   href?: string;
   variant?: "light" | "dark";
+  beholdFeedId?: string; // e.g. "your-feed-id" from behold.so
 }
 
 export function InstagramGrid({
   handle = "@aankagroup",
   href = "https://www.instagram.com/aankagroup",
   variant = "light",
+  beholdFeedId,
 }: InstagramGridProps) {
   const dark = variant === "dark";
+  const widgetRef = useRef<HTMLDivElement>(null);
+  const [scriptLoaded, setScriptLoaded] = useState(false);
+
+  useEffect(() => {
+    if (!beholdFeedId) return;
+
+    // Load Behold widget script if not already present
+    const existing = document.querySelector('script[src="https://w.behold.so/widget.js"]');
+    if (existing) {
+      setScriptLoaded(true);
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.src = "https://w.behold.so/widget.js";
+    script.type = "module";
+    script.onload = () => setScriptLoaded(true);
+    script.onerror = () => setScriptLoaded(false);
+    document.body.appendChild(script);
+
+    return () => {
+      // Cleanup not strictly needed for external scripts, but good practice
+    };
+  }, [beholdFeedId]);
+
   return (
     <section className={dark ? "bg-obsidian text-alabaster" : "bg-alabaster text-obsidian"}>
       <div className="mx-auto max-w-[1440px] px-6 py-28 md:px-12 md:py-36">
@@ -66,36 +94,52 @@ export function InstagramGrid({
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-px bg-platinum/40 md:grid-cols-4">
-          {tiles.map((t, i) => (
-            <a
-              key={`${t.brand}-${i}`}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative block aspect-square overflow-hidden bg-obsidian"
-            >
-              <img
-                src={t.img}
-                alt={`${t.brand} — ${t.caption}`}
-                loading="lazy"
-                className="img-scale h-full w-full object-cover opacity-90 transition-opacity duration-700 group-hover:opacity-50"
-              />
-              <div className="absolute inset-0 bg-obsidian/0 transition-colors duration-700 group-hover:bg-obsidian/55" />
-              <div className="absolute inset-x-0 bottom-0 translate-y-2 px-4 pb-4 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                <p className="font-sans text-[10px] uppercase tracking-luxury text-bronze">
-                  {t.brand}
-                </p>
-                <p className="mt-2 font-serif text-sm font-light leading-snug text-alabaster">
-                  {t.caption}
-                </p>
+        {/* Behold live feed */}
+        {beholdFeedId ? (
+          <div ref={widgetRef} className="min-h-[400px]">
+            {scriptLoaded ? (
+              <behold-widget feed-id={beholdFeedId}></behold-widget>
+            ) : (
+              <div className="flex h-[400px] items-center justify-center">
+                <span className="font-sans text-[11px] uppercase tracking-luxury text-bronze">
+                  Loading feed…
+                </span>
               </div>
-              <span className="absolute right-3 top-3 text-alabaster/70 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                <Instagram size={14} strokeWidth={1.25} />
-              </span>
-            </a>
-          ))}
-        </div>
+            )}
+          </div>
+        ) : (
+          /* Placeholder curated grid */
+          <div className="grid grid-cols-2 gap-px bg-platinum/40 md:grid-cols-4">
+            {tiles.map((t, i) => (
+              <a
+                key={`${t.brand}-${i}`}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative block aspect-square overflow-hidden bg-obsidian"
+              >
+                <img
+                  src={t.img}
+                  alt={`${t.brand} — ${t.caption}`}
+                  loading="lazy"
+                  className="img-scale h-full w-full object-cover opacity-90 transition-opacity duration-700 group-hover:opacity-50"
+                />
+                <div className="absolute inset-0 bg-obsidian/0 transition-colors duration-700 group-hover:bg-obsidian/55" />
+                <div className="absolute inset-x-0 bottom-0 translate-y-2 px-4 pb-4 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                  <p className="font-sans text-[10px] uppercase tracking-luxury text-bronze">
+                    {t.brand}
+                  </p>
+                  <p className="mt-2 font-serif text-sm font-light leading-snug text-alabaster">
+                    {t.caption}
+                  </p>
+                </div>
+                <span className="absolute right-3 top-3 text-alabaster/70 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                  <Instagram size={14} strokeWidth={1.25} />
+                </span>
+              </a>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
