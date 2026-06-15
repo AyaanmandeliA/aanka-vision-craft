@@ -30,7 +30,7 @@ export function Footer() {
 
         <PulseLine className="h-4 w-full opacity-80" />
 
-        <div className="grid grid-cols-12 gap-6 py-14">
+        <div className="grid grid-cols-12 gap-6 py-10 md:py-12">
           <div className="col-span-12 md:col-span-4">
             <Link to="/" className="font-sans text-sm font-medium tracking-luxury">
               AANKA&nbsp;&nbsp;GROUP
