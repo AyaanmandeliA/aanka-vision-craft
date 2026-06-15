@@ -7,23 +7,25 @@ export function Footer() {
     <footer className="bg-obsidian text-alabaster">
       <div className="mx-auto max-w-[1440px] px-6 pt-24 md:px-12 md:pt-32">
         {/* Large statement */}
-        <div className="reveal grid grid-cols-12 gap-6 pb-20">
-          <h2 className="col-span-12 font-serif text-4xl font-light leading-[1.05] tracking-tight md:col-span-9 md:text-6xl lg:text-7xl">
-            Built with <em className="italic text-bronze">Vision.</em>
-            <br />
-            Growing with <em className="italic text-bronze">Purpose.</em>
-          </h2>
-          <Link
-            to="/contact"
-            className="col-span-12 self-end md:col-span-3 md:text-right"
-          >
-            <span className="font-sans text-[11px] uppercase tracking-luxury text-alabaster/60">
-              Get in touch
-            </span>
-            <span className="mt-2 block font-serif text-xl text-alabaster transition-colors hover:text-bronze">
-              contact@aankagroup.com →
-            </span>
-          </Link>
+        <div className="reveal grid grid-cols-12 gap-6 pb-10 md:pb-14">
+          <div className="col-span-12 md:col-span-9">
+            <h2 className="font-serif text-4xl font-light leading-[1.05] tracking-tight md:text-6xl lg:text-7xl">
+              Built with <em className="italic text-bronze">Vision.</em>
+              <br />
+              Growing with <em className="italic text-bronze">Purpose.</em>
+            </h2>
+            <Link
+              to="/contact"
+              className="mt-6 inline-block md:mt-8"
+            >
+              <span className="font-sans text-[11px] uppercase tracking-luxury text-alabaster/60">
+                Get in touch
+              </span>
+              <span className="mt-1 block font-serif text-xl text-alabaster transition-colors hover:text-bronze">
+                contact@aankagroup.com →
+              </span>
+            </Link>
+          </div>
         </div>
 
         <PulseLine className="h-4 w-full opacity-80" />
