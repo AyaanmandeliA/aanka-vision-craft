@@ -10,14 +10,17 @@ export function Growth() {
           <PulseLine variant="muted" className="h-4 flex-1" />
         </div>
 
-        <div className="grid grid-cols-12 items-center gap-x-6 gap-y-10">
-          <h2 className="reveal col-span-12 font-serif text-4xl font-light leading-[1.05] tracking-tight md:col-span-6 md:text-6xl lg:text-7xl">
-            Built with <em className="italic">Vision.</em>
-            <br />
-            Growing with <em className="italic">Purpose.</em>
-          </h2>
+        <div className="reveal grid grid-cols-12 items-end gap-x-6 gap-y-10 border-t border-obsidian/10 pt-10 md:pt-12">
+          <div className="col-span-12 md:col-span-6 lg:col-span-5">
+            <p className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
+              Portfolio growth
+            </p>
+            <h2 className="mt-5 font-serif text-3xl font-light leading-tight text-obsidian md:text-5xl">
+              A measured expansion across the UAE lifestyle landscape.
+            </h2>
+          </div>
 
-          <div className="reveal col-span-12 grid gap-8 border-t border-obsidian/10 pt-8 md:col-span-6 md:grid-cols-[1fr_auto] md:items-end md:gap-10 md:pt-10">
+          <div className="col-span-12 grid gap-8 md:col-span-6 md:col-start-7 md:grid-cols-[1fr_auto] md:items-end md:gap-10">
             <div className="max-w-[34rem] space-y-5">
               <p className="font-serif text-lg font-light leading-relaxed text-obsidian/75">
                 From its early beginnings to a growing portfolio of lifestyle brands, Aanka Group continues to evolve with a focus on relevance, experience, and scale.
