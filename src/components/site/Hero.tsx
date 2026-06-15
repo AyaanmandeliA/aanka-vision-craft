@@ -45,10 +45,11 @@ export function Hero() {
 
         <PulseLine className="reveal mx-auto mb-12 h-4 w-48 opacity-80" />
 
-        <h1 className="reveal display-lg text-alabaster" style={{ transitionDelay: "140ms" }}>
-          Built with <em className="italic">vision.</em>
-          <br />
-          Grown with <em className="italic">purpose.</em>
+        <h1
+          className="reveal mx-auto max-w-[980px] font-serif text-4xl font-light leading-tight text-alabaster md:text-6xl lg:text-7xl"
+          style={{ transitionDelay: "140ms" }}
+        >
+          Built with <em className="italic">vision.</em> Grown with <em className="italic">purpose.</em>
         </h1>
 
         <p
