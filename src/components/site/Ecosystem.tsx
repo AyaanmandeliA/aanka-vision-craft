@@ -27,7 +27,7 @@ export function Ecosystem() {
         </div>
 
         {/* Bento grid */}
-        <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-4 lg:grid-cols-12 lg:auto-rows-[260px]">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {brands.map((b, i) => (
             <BrandCard key={b.name} brand={b} delay={i * 80} />
           ))}
@@ -43,10 +43,10 @@ function BrandCard({ brand, delay }: { brand: Brand; delay: number }) {
       // Each brand has its own static route under /businesses/<slug>
       // so we map slug -> typed `to` value.
       to={brandHrefForSlug(brand.slug)}
-      className={`reveal group relative block overflow-hidden bg-obsidian ${brand.span}`}
+      className="reveal group relative block overflow-hidden bg-obsidian"
       style={{ transitionDelay: `${delay}ms` }}
     >
-      <div className="relative h-full min-h-[320px] w-full">
+      <div className="relative aspect-[4/5] w-full">
         <div className="mask-reveal absolute inset-0">
           <img
             src={brand.img}
