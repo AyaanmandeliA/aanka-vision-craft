@@ -10,7 +10,7 @@ import deco from "@/assets/brands/deco.jpg";
 import zaikaInterior from "@/assets/brands/zaika-interior.jpg";
 
 // Behold custom element declaration
-declare global {
+declare module "react/jsx-runtime" {
   namespace JSX {
     interface IntrinsicElements {
       "behold-widget": React.DetailedHTMLProps<
