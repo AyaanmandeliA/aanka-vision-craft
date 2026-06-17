@@ -3,13 +3,11 @@ import { useReveal } from "@/hooks/use-reveal";
 import { PageHeader, CtaBlock } from "@/components/site/PageShell";
 import { Leadership } from "@/components/site/Leadership";
 import { FoundersNote } from "@/components/site/FoundersNote";
-import leader1 from "@/assets/leader-1.jpg";
-import leader2 from "@/assets/leader-2.jpg";
-import zaikaInterior from "@/assets/brands/zaika-interior.jpg";
-import deco from "@/assets/brands/deco.jpg";
-import gents from "@/assets/brands/gents.webp";
-import ladies from "@/assets/brands/ladies.jpg";
-import khau from "@/assets/brands/khau-thali.jpg";
+import aanand from "@/assets/brands/leader-aanand.jpg";
+import priyanka from "@/assets/brands/leader-priyanka.jpg";
+import zaikaHero from "@/assets/brand-zaika.jpg";
+import decoHero from "@/assets/brand-deco.jpg";
+import gentsHero from "@/assets/brand-gents.jpg";
 import hero from "@/assets/hero.jpg";
 import { PulseLine } from "@/components/site/AankaLogo";
 
@@ -38,17 +36,17 @@ export const Route = createFileRoute("/about")({
 const tenets = [
   {
     h: "Our Vision",
-    img: zaikaInterior,
+    img: zaikaHero,
     p: "To build a UAE lifestyle group whose brands shape how a generation eats, unwinds, grooms, and lives — and whose name is shorthand for a standard.",
   },
   {
     h: "Our Mission",
-    img: deco,
+    img: decoHero,
     p: "To run customer-first businesses where craft, consistency, and warmth aren't features — they're the operating system.",
   },
   {
     h: "Our Philosophy",
-    img: gents,
+    img: gentsHero,
     p: "Hospitality is not a department. It's the whole product. Every space, every service, every detail is judged by what it feels like to be served.",
   },
 ];
@@ -119,8 +117,8 @@ function AboutPage() {
         }
         intro="Aanka Group is a founder-led portfolio of lifestyle brands across food, wellness, beauty, and design — built with a long view, operated to a single standard, and designed for guests who notice the difference."
         media={{
-          src: leader1,
-          alt: "Founders of Aanka Group",
+          src: aanand,
+          alt: "Aanand Mandelia, Co-founder of Aanka Group",
           caption: "Founded in Dubai by Aanand Mandelia & Priyanka Agarwal",
           ratio: "portrait",
         }}
@@ -140,8 +138,8 @@ function AboutPage() {
             <figure className="reveal col-span-12 md:col-span-5">
               <div className="relative aspect-[4/5] overflow-hidden bg-obsidian">
                 <img
-                  src={leader2}
-                  alt="A founder of Aanka Group"
+                  src={priyanka}
+                  alt="Priyanka Agarwal, Co-founder of Aanka Group"
                   loading="lazy"
                   className="img-scale h-full w-full object-cover"
                 />

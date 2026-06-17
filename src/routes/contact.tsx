@@ -3,8 +3,8 @@ import { useState } from "react";
 import { useReveal } from "@/hooks/use-reveal";
 import { PageHeader } from "@/components/site/PageShell";
 import { Phone, Mail, MessageCircle } from "lucide-react";
-import zaikaInterior from "@/assets/brands/zaika-interior.jpg";
-import deco from "@/assets/brands/deco.jpg";
+import zaikaHero from "@/assets/brand-zaika.jpg";
+import decoHero from "@/assets/brand-deco.jpg";
 import { PulseLine } from "@/components/site/AankaLogo";
 import { sendContactEnquiry } from "@/lib/email";
 
@@ -24,8 +24,8 @@ export const Route = createFileRoute("/contact")({
         content:
           "Reach the Aanka Group team in the UAE — phone, email, WhatsApp, and enquiry form.",
       },
-      { property: "og:image", content: zaikaInterior },
-      { name: "twitter:image", content: zaikaInterior },
+      { property: "og:image", content: zaikaHero },
+      { name: "twitter:image", content: zaikaHero },
     ],
   }),
 });
@@ -43,7 +43,7 @@ function ContactPage() {
         }
         intro="Whether you are looking to connect for business enquiries, partnerships, careers, or general information, the Aanka Group team is happy to hear from you — usually within one business day."
         media={{
-          src: zaikaInterior,
+          src: zaikaHero,
           alt: "Aanka Group hospitality",
           caption: "Headquartered in Dubai, UAE.",
           ratio: "portrait",
@@ -80,7 +80,7 @@ function ContactPage() {
             <div className="reveal col-span-12 md:col-span-4">
               <div className="relative aspect-[3/4] overflow-hidden bg-obsidian md:aspect-auto md:h-full md:min-h-[420px]">
                 <img
-                  src={deco}
+                  src={decoHero}
                   alt="Aanka Group studio"
                   loading="lazy"
                   className="img-scale h-full w-full object-cover"

@@ -1,14 +1,19 @@
 import khauImg from "@/assets/brands/khau-galli.jpg";
 import khauThali from "@/assets/brands/khau-thali.jpg";
+import khauHero from "@/assets/brand-khaugalli.jpg";
 import zaikaImg from "@/assets/brands/zaika.jpg";
 import zaika2 from "@/assets/brands/zaika-2.jpg";
 import zaikaInterior from "@/assets/brands/zaika-interior.jpg";
+import zaikaHero from "@/assets/brand-zaika.jpg";
 import gentsImg from "@/assets/brands/gents.webp";
 import gents2 from "@/assets/brands/gents-2.webp";
+import gentsHero from "@/assets/brand-gents.jpg";
 import ladiesImg from "@/assets/brands/ladies.jpg";
 import ladies2 from "@/assets/brands/ladies-2.jpg";
+import ladiesHero from "@/assets/brand-ladies.jpg";
 import decoImg from "@/assets/brands/deco.jpg";
 import deco2 from "@/assets/brands/deco-2.jpg";
+import decoHero from "@/assets/brand-deco.jpg";
 import constImg from "@/assets/brand-construction.jpg";
 
 export type Brand = {
@@ -36,8 +41,8 @@ export const brands: Brand[] = [
     desc: "A vibrant food concept serving flavour, familiarity, and comfort.",
     longDesc:
       "Khau Galli is a celebration of India's beloved street-food culture, reimagined for the modern UAE diner. From small plates to shared platters, every dish carries the warmth, spice, and memory of a city's most-loved corners — served in a setting that feels familiar, joyful, and unmistakably ours.",
-    img: khauImg,
-    gallery: [khauImg, khauThali],
+    img: khauHero,
+    gallery: [khauHero, khauImg, khauThali],
     locations: ["JLT, Dubai", "Ibn Battuta Mall", "DSO", "Deira CC", "Al Quoz", "Mega Mall, Sharjah"],
     href: "https://thekhaugalli.com/",
     span: "lg:col-span-8 lg:row-span-2",
@@ -52,8 +57,8 @@ export const brands: Brand[] = [
     desc: "A Mughlai dining experience rooted in richness, warmth, and memorable taste.",
     longDesc:
       "House of Zaika is a refined Mughlai dining destination — an evening of slow-cooked richness, generous hospitality, and the kind of detail that turns a meal into a memory. Designed for guests who value craftsmanship in both kitchen and atmosphere.",
-    img: zaikaImg,
-    gallery: [zaikaImg, zaika2, zaikaInterior],
+    img: zaikaHero,
+    gallery: [zaikaHero, zaikaInterior, zaikaImg, zaika2],
     locations: ["Ibn Battuta Mall, Dubai"],
     href: "https://houseofzaika.com/",
     span: "lg:col-span-4",
@@ -68,8 +73,8 @@ export const brands: Brand[] = [
     desc: "A modern grooming destination designed for the contemporary gentleman.",
     longDesc:
       "Cutting Edge Gents is a contemporary grooming house built around precision, personalisation, and the quiet confidence of a great cut. From classic services to modern signatures, every chair offers an experience tailored to today's gentleman.",
-    img: gentsImg,
-    gallery: [gentsImg, gents2],
+    img: gentsHero,
+    gallery: [gentsHero, gentsImg, gents2],
     locations: ["IBN", "JLT (×3)", "DSO"],
     href: "https://cuttingedgemens.com/",
     span: "lg:col-span-4",
@@ -84,8 +89,8 @@ export const brands: Brand[] = [
     desc: "A beauty and self-care brand created for today's confident woman.",
     longDesc:
       "Cutting Edge Ladies is a beauty and wellness sanctuary shaped around modern self-care. Hair, skin, nails, and bridal — every service is delivered with the warmth and expertise that turn appointments into rituals.",
-    img: ladiesImg,
-    gallery: [ladiesImg, ladies2],
+    img: ladiesHero,
+    gallery: [ladiesHero, ladiesImg, ladies2],
     locations: ["IBN", "JLT", "Dubai Marina", "DSO", "Mega Mall, Sharjah"],
     href: "https://cuttingedgeladies.com/",
     span: "lg:col-span-4",
@@ -100,8 +105,8 @@ export const brands: Brand[] = [
     desc: "Interior solutions shaped by design, detail, and functionality.",
     longDesc:
       "Deco Vibes is an interior design and fit-out studio that brings together architectural rigour and a feel for atmosphere. Residential, hospitality, and commercial — each project is shaped end-to-end, from concept through delivery.",
-    img: decoImg,
-    gallery: [decoImg, deco2],
+    img: decoHero,
+    gallery: [decoHero, decoImg, deco2],
     locations: ["Dubai Investment Park 2, Dubai"],
     href: "https://decovibesinterior.com/",
     span: "lg:col-span-4",

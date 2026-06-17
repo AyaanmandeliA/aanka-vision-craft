@@ -5,9 +5,9 @@ import { brands, type Brand } from "@/components/site/brand-data";
 import { ArrowUpRight } from "lucide-react";
 import { PulseLine } from "@/components/site/AankaLogo";
 import zaikaInterior from "@/assets/brands/zaika-interior.jpg";
-import khauThali from "@/assets/brands/khau-thali.jpg";
-import gents from "@/assets/brands/gents.webp";
-import deco from "@/assets/brands/deco.jpg";
+import zaikaHero from "@/assets/brand-zaika.jpg";
+import ladiesHero from "@/assets/brand-ladies.jpg";
+import decoHero from "@/assets/brand-deco.jpg";
 import construction from "@/assets/brand-construction.jpg";
 
 export const Route = createFileRoute("/businesses")({
@@ -39,7 +39,7 @@ const verticals = [
     intro:
       "From vibrant street-food concepts to slow-cooked fine dining, our F&B brands are designed for different moods, moments, and tables. Each one is built around a clear point of view, a distinct kitchen, and a service standard that turns guests into regulars.",
     keys: ["Khau Galli", "House of Zaika"],
-    img: khauThali,
+    img: zaikaHero,
     imgAlt: "House of Zaika and Khau Galli — Aanka F&B portfolio",
   },
   {
@@ -48,7 +48,7 @@ const verticals = [
     intro:
       "Modern grooming and beauty houses built around comfort, expertise, and the small rituals that define how people show up. Two flagships — one for gents, one for ladies — sharing a single standard of craft, hygiene, and warm hospitality.",
     keys: ["Cutting Edge Gents", "Cutting Edge Ladies"],
-    img: gents,
+    img: ladiesHero,
     imgAlt: "Cutting Edge — Aanka wellness and salons",
   },
   {
@@ -57,7 +57,7 @@ const verticals = [
     intro:
       "Design-led spaces shaped end-to-end — where function, atmosphere, and detail meet. From concept and material palettes to fit-out and final styling, our interiors practice gives form to the brands we run and the partners we work with.",
     keys: ["Deco Vibes"],
-    img: deco,
+    img: decoHero,
     imgAlt: "Deco Vibes — Aanka interiors and design",
   },
   {

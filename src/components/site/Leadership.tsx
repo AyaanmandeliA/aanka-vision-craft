@@ -1,5 +1,5 @@
-import leader1 from "@/assets/leader-1.jpg";
-import leader2 from "@/assets/leader-2.jpg";
+import leader1 from "@/assets/brands/leader-aanand.jpg";
+import leader2 from "@/assets/brands/leader-priyanka.jpg";
 import { PulseLine } from "./AankaLogo";
 
 const leaders = [

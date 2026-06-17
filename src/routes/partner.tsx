@@ -4,15 +4,10 @@ import { PageHeader } from "@/components/site/PageShell";
 import { brands } from "@/components/site/brand-data";
 import { FranchiseForm } from "@/components/site/FranchiseForm";
 import { ArrowUpRight, Check } from "lucide-react";
-import zaikaInterior from "@/assets/brands/zaika-interior.jpg";
-import khauThali from "@/assets/brands/khau-thali.jpg";
-import gents from "@/assets/brands/gents.webp";
-import ladies from "@/assets/brands/ladies.jpg";
-import deco from "@/assets/brands/deco.jpg";
-import hero from "@/assets/hero.jpg";
+import khaugalli from "@/assets/brand-khaugalli.jpg";
+import zaikaHero from "@/assets/brand-zaika.jpg";
 import { PulseLine } from "@/components/site/AankaLogo";
 
-const pillarImages = [zaikaInterior, gents, ladies, deco];
 
 export const Route = createFileRoute("/partner")({
   component: PartnerPage,
@@ -30,8 +25,8 @@ export const Route = createFileRoute("/partner")({
         content:
           "Proven concepts. Operational playbooks. UAE pedigree. Franchise opportunities across hospitality, wellness, and beauty.",
       },
-      { property: "og:image", content: khauThali },
-      { name: "twitter:image", content: khauThali },
+      { property: "og:image", content: khaugalli },
+      { name: "twitter:image", content: khaugalli },
     ],
   }),
 });
@@ -108,7 +103,7 @@ function PartnerPage() {
         }
         intro="Aanka Group is opening selective franchise opportunities for its hospitality and wellness brands. If you bring local insight, capital, and a serious commitment to the customer — we'd like to hear from you."
         media={{
-          src: khauThali,
+          src: khaugalli,
           alt: "Khau Galli — a flagship Aanka franchise concept",
           caption: "Proven in the UAE. Designed to travel.",
           ratio: "portrait",
@@ -214,7 +209,7 @@ function PartnerPage() {
             <figure className="reveal col-span-12 md:col-span-4">
               <div className="relative aspect-[4/5] overflow-hidden bg-obsidian">
                 <img
-                  src={hero}
+                  src={zaikaHero}
                   alt="Aanka Group regional ambition"
                   loading="lazy"
                   className="img-scale h-full w-full object-cover"

@@ -1,12 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useReveal } from "@/hooks/use-reveal";
 import { PageHeader, CtaBlock } from "@/components/site/PageShell";
-import zaikaInterior from "@/assets/brands/zaika-interior.jpg";
-import gents from "@/assets/brands/gents.webp";
-import deco from "@/assets/brands/deco.jpg";
-import ladies from "@/assets/brands/ladies.jpg";
-import khauThali from "@/assets/brands/khau-thali.jpg";
-import leader1 from "@/assets/leader-1.jpg";
+import ladiesHero from "@/assets/brand-ladies.jpg";
+import khaugalli from "@/assets/brand-khaugalli.jpg";
 import { PulseLine } from "@/components/site/AankaLogo";
 
 export const Route = createFileRoute("/careers")({
@@ -25,8 +21,8 @@ export const Route = createFileRoute("/careers")({
         content:
           "A growing multi-brand group creating opportunities for ambitious people across lifestyle categories.",
       },
-      { property: "og:image", content: leader1 },
-      { name: "twitter:image", content: leader1 },
+      { property: "og:image", content: ladiesHero },
+      { name: "twitter:image", content: ladiesHero },
     ],
   }),
 });
@@ -35,22 +31,22 @@ const reasons = [
   {
     h: "Be part of a growing multi-brand group",
     p: "Work alongside teams shaping a portfolio of lifestyle brands under one shared standard — and learn how a multi-vertical group actually runs, day to day.",
-    img: zaikaInterior,
+    img: zaikaHero,
   },
   {
     h: "Work across exciting lifestyle categories",
     p: "From food and wellness to interiors and design, every day touches a different discipline — and every project sharpens a different skill.",
-    img: deco,
+    img: decoHero,
   },
   {
     h: "Grow with a business that values progress",
     p: "Ambition is met with structure, mentorship, and meaningful responsibility. We promote from within and invest in the people who invest in the work.",
-    img: gents,
+    img: gentsHero,
   },
   {
     h: "An environment shaped by people",
     p: "Our culture values experience, craftsmanship, and the long view — colleagues who care about the detail, and leaders who notice it.",
-    img: ladies,
+    img: ladiesHero,
   },
 ];
 
@@ -68,8 +64,8 @@ function CareersPage() {
         }
         intro="As Aanka Group continues to grow across industries, we continue to create opportunities for people who want to be part of a dynamic, evolving business journey — across food, wellness, beauty, design, and construction."
         media={{
-          src: leader1,
-          alt: "Aanka Group team",
+          src: ladiesHero,
+          alt: "Aanka Group — Cutting Edge Ladies",
           caption: "Built in the UAE — staffed by people who care.",
           ratio: "portrait",
         }}
@@ -125,7 +121,7 @@ function CareersPage() {
             <figure className="reveal col-span-12 md:col-span-4">
               <div className="relative aspect-[4/5] overflow-hidden bg-obsidian">
                 <img
-                  src={khauThali}
+                  src={khaugalli}
                   alt="Aanka Group craftsmanship"
                   loading="lazy"
                   className="img-scale h-full w-full object-cover"
