@@ -1,5 +1,5 @@
 import aanand from "@/assets/brands/founders/aanand.webp";
-import duoCasual from "@/assets/brands/founders/duo-casual.webp";
+import priyanka from "@/assets/brands/founders/priyanka.webp";
 import { PulseLine } from "./AankaLogo";
 
 export function FoundersNote() {
@@ -26,8 +26,8 @@ export function FoundersNote() {
             </div>
             <div className="relative aspect-[4/5] w-1/2 overflow-hidden bg-obsidian">
               <img
-                src={duoCasual}
-                alt="Aanand Mandelia & Priyanka Agarwal"
+                src={priyanka}
+                alt="Priyanka Agarwal"
                 loading="lazy"
                 className="img-scale h-full w-full object-cover object-top"
               />
