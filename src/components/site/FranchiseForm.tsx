@@ -39,9 +39,10 @@ export function FranchiseForm() {
     setState("submitting");
     try {
       await sendFranchiseEnquiry({ data: parsed.data });
-      setState("success");
       form.reset();
-    } catch {
+      setState("success");
+    } catch (err) {
+      console.error("[FranchiseForm] sendFranchiseEnquiry failed:", err);
       setState("error");
     }
   }

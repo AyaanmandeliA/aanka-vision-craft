@@ -231,8 +231,9 @@ function ContactForm() {
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const form = e.currentTarget;
     setStatus("submitting");
-    const fd = new FormData(e.currentTarget);
+    const fd = new FormData(form);
     const data = {
       name: String(fd.get("name") ?? ""),
       email: String(fd.get("email") ?? ""),
@@ -242,9 +243,10 @@ function ContactForm() {
     };
     try {
       await sendContactEnquiry({ data });
+      form.reset();
       setStatus("success");
-      e.currentTarget.reset();
-    } catch {
+    } catch (err) {
+      console.error("[ContactForm] sendContactEnquiry failed:", err);
       setStatus("error");
     }
   }
