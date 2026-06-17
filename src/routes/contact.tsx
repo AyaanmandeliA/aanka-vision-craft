@@ -198,11 +198,13 @@ function DarkField({
   label,
   name,
   type = "text",
+  required = false,
   className = "",
 }: {
   label: string;
   name: string;
   type?: string;
+  required?: boolean;
   className?: string;
 }) {
   return (
@@ -213,18 +215,28 @@ function DarkField({
       <input
         type={type}
         name={name}
+        required={required}
+        maxLength={255}
         className="mt-3 w-full border-0 border-b border-alabaster/20 bg-transparent py-3 font-serif text-lg font-light text-alabaster placeholder:text-alabaster/35 focus:border-bronze focus:outline-none"
       />
     </label>
   );
 }
 
+function getFormErrorMessage(err: unknown) {
+  if (err instanceof Error && err.message) return err.message;
+  if (typeof err === "string") return err;
+  return "Please email us directly or try again in a moment.";
+}
+
 function ContactForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
+    setErrorMessage("");
     setStatus("submitting");
     const fd = new FormData(form);
     const data = {
@@ -240,6 +252,7 @@ function ContactForm() {
       setStatus("success");
     } catch (err) {
       console.error("[ContactForm] sendContactEnquiry failed:", err);
+      setErrorMessage(getFormErrorMessage(err));
       setStatus("error");
     }
   }
@@ -271,7 +284,7 @@ function ContactForm() {
       <div className="reveal col-span-12 md:col-span-6 md:col-start-7 border border-alabaster/15 p-10 md:p-14">
         <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze">Something went wrong</span>
         <p className="mt-6 font-serif text-lg font-light leading-relaxed text-alabaster/70">
-          Please email us directly at{" "}
+          {errorMessage} Please email us directly at{" "}
           <a href="mailto:contact@aankagroup.com" className="text-bronze hover:underline">
             contact@aankagroup.com
           </a>
@@ -294,8 +307,8 @@ function ContactForm() {
       className="reveal col-span-12 grid grid-cols-12 gap-6 md:col-span-6 md:col-start-7"
       style={{ transitionDelay: "120ms" }}
     >
-      <DarkField label="Full Name" name="name" className="md:col-span-6" />
-      <DarkField label="Email" name="email" type="email" className="md:col-span-6" />
+      <DarkField label="Full Name" name="name" required className="md:col-span-6" />
+      <DarkField label="Email" name="email" type="email" required className="md:col-span-6" />
       <DarkField label="Phone" name="phone" type="tel" className="md:col-span-6" />
       <label className="col-span-12 block md:col-span-6">
         <span className="block font-sans text-[10px] uppercase tracking-luxury text-bronze">
@@ -319,6 +332,8 @@ function ContactForm() {
         <textarea
           rows={5}
           name="message"
+          required
+          maxLength={2000}
           placeholder="Tell us how we can help"
           className="mt-3 w-full border-0 border-b border-alabaster/20 bg-transparent py-3 font-serif text-lg font-light text-alabaster placeholder:text-alabaster/35 focus:border-bronze focus:outline-none"
         />

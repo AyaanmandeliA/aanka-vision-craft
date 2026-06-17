@@ -1,7 +1,11 @@
 name = "aanka-vision-craft"
 main = "dist/server/server.js"
 compatibility_date = "2025-01-01"
-compatibility_flags = ["nodejs_compat"]
+compatibility_flags = ["nodejs_compat", "nodejs_compat_populate_process_env"]
 
 [assets]
 directory = "./dist/client"
+
+[vars]
+RESEND_FROM = "AANKA Group Website <noreply@aankagroup.com>"
+RESEND_TO = "contact@aankagroup.com"

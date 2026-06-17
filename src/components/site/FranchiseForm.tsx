@@ -17,13 +17,21 @@ const schema = z.object({
 
 type FormState = "idle" | "submitting" | "success" | "error";
 
+function getFormErrorMessage(err: unknown) {
+  if (err instanceof Error && err.message) return err.message;
+  if (typeof err === "string") return err;
+  return "Please email us directly or try again in a moment.";
+}
+
 export function FranchiseForm() {
   const [state, setState] = useState<FormState>("idle");
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [errorMessage, setErrorMessage] = useState("");
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setErrors({});
+    setErrorMessage("");
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
     const parsed = schema.safeParse(data);
@@ -43,6 +51,7 @@ export function FranchiseForm() {
       setState("success");
     } catch (err) {
       console.error("[FranchiseForm] sendFranchiseEnquiry failed:", err);
+      setErrorMessage(getFormErrorMessage(err));
       setState("error");
     }
   }
@@ -54,7 +63,7 @@ export function FranchiseForm() {
           Something went wrong
         </span>
         <p className="mt-6 max-w-xl font-serif text-lg font-light leading-relaxed text-alabaster/70">
-          We couldn't send your enquiry. Please email us directly at{" "}
+          {errorMessage} Please email us directly at{" "}
           <a href="mailto:contact@aankagroup.com" className="text-bronze hover:underline">
             contact@aankagroup.com
           </a>
