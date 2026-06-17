@@ -4,7 +4,7 @@ import { PageHeader, CtaBlock } from "@/components/site/PageShell";
 import { UaeMap } from "@/components/site/UaeMap";
 import { mapPins, venues, type Venue } from "@/components/site/location-data";
 import { MapPin, ArrowUpRight, Phone, Clock } from "lucide-react";
-import hero from "@/assets/brands/khau/storefront.jpg";
+import hero from "@/assets/brands/founders/duo-casual.png";
 import { PulseLine } from "@/components/site/AankaLogo";
 
 export const Route = createFileRoute("/locations")({

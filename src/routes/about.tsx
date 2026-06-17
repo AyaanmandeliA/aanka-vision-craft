@@ -5,9 +5,9 @@ import { Leadership } from "@/components/site/Leadership";
 import { FoundersNote } from "@/components/site/FoundersNote";
 import aanand from "@/assets/brands/founders/aanand.png";
 import duoStudio from "@/assets/brands/founders/duo-studio.jpeg";
-import zaikaStorefront from "@/assets/brands/zaika/storefront.png";
-import decoCorridor from "@/assets/brands/deco/corridor.jpg";
-import cemStorefront from "@/assets/brands/cem/storefront.jpg";
+import zaikaCounter from "@/assets/brands/zaika/counter.png";
+import decoBedroom from "@/assets/brands/deco/bedroom.jpg";
+import cemInterior from "@/assets/brands/cem/interior-1.jpg";
 import duoStudio2 from "@/assets/brands/founders/duo-studio-2.jpeg";
 import { PulseLine } from "@/components/site/AankaLogo";
 
@@ -36,17 +36,17 @@ export const Route = createFileRoute("/about")({
 const tenets = [
   {
     h: "Our Vision",
-    img: zaikaStorefront,
+    img: zaikaCounter,
     p: "To build a UAE lifestyle group whose brands shape how a generation eats, unwinds, grooms, and lives — and whose name is shorthand for a standard.",
   },
   {
     h: "Our Mission",
-    img: decoCorridor,
+    img: decoBedroom,
     p: "To run customer-first businesses where craft, consistency, and warmth aren't features — they're the operating system.",
   },
   {
     h: "Our Philosophy",
-    img: cemStorefront,
+    img: cemInterior,
     p: "Hospitality is not a department. It's the whole product. Every space, every service, every detail is judged by what it feels like to be served.",
   },
 ];

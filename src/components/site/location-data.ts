@@ -1,8 +1,21 @@
 import type { MapPinData } from "@/components/site/UaeMap";
-import khauImg from "@/assets/brands/khau/storefront.jpg";
-import zaikaImg from "@/assets/brands/zaika/storefront.png";
-import gentsImg from "@/assets/brands/cem/storefront.jpg";
-import ladiesImg from "@/assets/brands/cel/salon.jpg";
+import khau1 from "@/assets/brands/khau/storefront.jpg";
+import khau2 from "@/assets/brands/khau/store-2.jpg";
+import khau3 from "@/assets/brands/khau/store-3.jpg";
+import khauFood1 from "@/assets/brands/khau/food-1.jpg";
+import khauFood2 from "@/assets/brands/khau/food-2.jpg";
+import khauFood3 from "@/assets/brands/khau/food-3.jpg";
+import zaika1 from "@/assets/brands/zaika/storefront.png";
+import zaika2 from "@/assets/brands/zaika/counter.png";
+import cem1 from "@/assets/brands/cem/storefront.jpg";
+import cem2 from "@/assets/brands/cem/interior-1.jpg";
+import cem3 from "@/assets/brands/cem/interior-2.jpg";
+import cem4 from "@/assets/brands/cem/team-1.jpg";
+import cel1 from "@/assets/brands/cel/salon.jpg";
+import cel2 from "@/assets/brands/cel/storefront.png";
+import cel3 from "@/assets/brands/cel/interior-1.png";
+import cel4 from "@/assets/brands/cel/interior-2.png";
+import cel5 from "@/assets/brands/cel/interior-3.png";
 import decoImg from "@/assets/brands/deco/corridor.jpg";
 import constructionImg from "@/assets/brand-construction.jpg";
 
@@ -29,7 +42,7 @@ export const venues: Venue[] = [
     phone: "+971 4 589 6525",
     hours: "Daily · 10:00 – 23:00",
     mapsHref: "https://maps.google.com/?q=Khau+Galli+JLT+Cluster+T+Dubai",
-    img: khauImg,
+    img: khau1,
     pin: { x: 36, y: 60 },
   },
   {
@@ -40,7 +53,7 @@ export const venues: Venue[] = [
     phone: "+971 55 464 5864",
     hours: "Daily · 08:00 – 23:30",
     mapsHref: "https://maps.google.com/?q=Khau+Galli+Ibn+Battuta+Mall+Dubai",
-    img: khauImg,
+    img: khau2,
     pin: { x: 30, y: 63 },
   },
   {
@@ -51,7 +64,7 @@ export const venues: Venue[] = [
     phone: "+971 52 385 1394",
     hours: "Daily · 09:00 – 23:00",
     mapsHref: "https://maps.google.com/?q=Khau+Galli+Silicon+Central+Mall+Dubai",
-    img: khauImg,
+    img: khau3,
     pin: { x: 54, y: 55 },
   },
   {
@@ -62,7 +75,7 @@ export const venues: Venue[] = [
     phone: "+971 56 132 5188",
     hours: "Daily · 10:00 – 23:00",
     mapsHref: "https://maps.google.com/?q=Khau+Galli+Deira+City+Centre+Dubai",
-    img: khauImg,
+    img: khauFood1,
     pin: { x: 48, y: 48 },
   },
   {
@@ -73,7 +86,7 @@ export const venues: Venue[] = [
     phone: "+971 56 982 3223",
     hours: "Daily · 10:00 – 23:00",
     mapsHref: "https://maps.google.com/?q=Khau+Galli+Al+Quoz+Mall+Dubai",
-    img: khauImg,
+    img: khauFood2,
     pin: { x: 40, y: 58 },
   },
   {
@@ -84,7 +97,7 @@ export const venues: Venue[] = [
     phone: "+971 6 574 2574",
     hours: "Daily · 10:00 – 23:00",
     mapsHref: "https://maps.google.com/?q=Khau+Galli+Mega+Mall+Sharjah",
-    img: khauImg,
+    img: khauFood3,
     pin: { x: 58, y: 44 },
   },
   {
@@ -95,7 +108,7 @@ export const venues: Venue[] = [
     phone: "+971 52 584 6383",
     hours: "Daily · 10:00 – 23:00",
     mapsHref: "https://maps.google.com/?q=House+of+Zaika+Ibn+Battuta+Mall+Dubai",
-    img: zaikaImg,
+    img: zaika2,
     pin: { x: 29, y: 64 },
   },
   {
@@ -106,7 +119,7 @@ export const venues: Venue[] = [
     phone: "+971 4 589 6742",
     hours: "Daily · 10:00 – 22:00",
     mapsHref: "https://maps.google.com/?q=Cutting+Edge+Gents+Ibn+Battuta+Mall+Dubai",
-    img: gentsImg,
+    img: cem1,
     pin: { x: 31, y: 64 },
   },
   {
@@ -117,7 +130,7 @@ export const venues: Venue[] = [
     phone: "+971 52 322 1838",
     hours: "Daily · 10:00 – 22:00",
     mapsHref: "https://maps.google.com/?q=Cutting+Edge+Gents+JLT+Dubai",
-    img: gentsImg,
+    img: cem2,
     pin: { x: 37, y: 61 },
   },
   {
@@ -128,7 +141,7 @@ export const venues: Venue[] = [
     phone: "+971 58 605 0594",
     hours: "Daily · 10:00 – 22:00",
     mapsHref: "https://maps.google.com/?q=Cutting+Edge+Gents+Cluster+B+JLT+Dubai",
-    img: gentsImg,
+    img: cem3,
     pin: { x: 35, y: 59 },
   },
   {
@@ -139,7 +152,7 @@ export const venues: Venue[] = [
     phone: "+971 52 565 3936",
     hours: "Daily · 10:00 – 22:00",
     mapsHref: "https://maps.google.com/?q=Cutting+Edge+Gents+Silicon+Oasis+Dubai",
-    img: gentsImg,
+    img: cem4,
     pin: { x: 55, y: 55 },
   },
   {
@@ -150,7 +163,7 @@ export const venues: Venue[] = [
     phone: "+971 4 430 6950",
     hours: "Daily · 10:00 – 22:00",
     mapsHref: "https://maps.google.com/?q=Cutting+Edge+Ladies+Ibn+Battuta+Mall+Dubai",
-    img: ladiesImg,
+    img: cel1,
     pin: { x: 32, y: 65 },
   },
   {
@@ -161,7 +174,7 @@ export const venues: Venue[] = [
     phone: "+971 4 422 8997",
     hours: "Daily · 10:00 – 22:00",
     mapsHref: "https://maps.google.com/?q=Cutting+Edge+Ladies+JLT+Dubai",
-    img: ladiesImg,
+    img: cel2,
     pin: { x: 38, y: 62 },
   },
   {
@@ -172,7 +185,7 @@ export const venues: Venue[] = [
     phone: "+971 4 442 1110",
     hours: "Daily · 10:00 – 22:00",
     mapsHref: "https://maps.google.com/?q=Cutting+Edge+Ladies+Dubai+Marina+Mall",
-    img: ladiesImg,
+    img: cel3,
     pin: { x: 33, y: 62 },
   },
   {
@@ -183,7 +196,7 @@ export const venues: Venue[] = [
     phone: "+971 56 418 8313",
     hours: "Daily · 10:00 – 22:00",
     mapsHref: "https://maps.google.com/?q=Cutting+Edge+Ladies+Silicon+Oasis+Dubai",
-    img: ladiesImg,
+    img: cel4,
     pin: { x: 56, y: 55 },
   },
   {
@@ -194,7 +207,7 @@ export const venues: Venue[] = [
     phone: "+971 52 186 5938",
     hours: "Daily · 10:00 – 22:00",
     mapsHref: "https://maps.google.com/?q=Cutting+Edge+Ladies+Mega+Mall+Sharjah",
-    img: ladiesImg,
+    img: cel5,
     pin: { x: 60, y: 44 },
   },
   {

@@ -4,8 +4,8 @@ import { PageHeader } from "@/components/site/PageShell";
 import { brands } from "@/components/site/brand-data";
 import { FranchiseForm } from "@/components/site/FranchiseForm";
 import { ArrowUpRight, Check } from "lucide-react";
-import khaugalli from "@/assets/brands/khau/storefront.jpg";
-import zaikaHero from "@/assets/brands/zaika/storefront.png";
+import khaugalli from "@/assets/brands/khau/store-2.jpg";
+import zaikaHero from "@/assets/brands/zaika/sign.png";
 import { PulseLine } from "@/components/site/AankaLogo";
 
 
