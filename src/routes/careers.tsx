@@ -31,17 +31,14 @@ const reasons = [
   {
     h: "Be part of a growing multi-brand group",
     p: "Work alongside teams shaping a portfolio of lifestyle brands under one shared standard — and learn how a multi-vertical group actually runs, day to day.",
-    img: zaikaHero,
   },
   {
     h: "Work across exciting lifestyle categories",
     p: "From food and wellness to interiors and design, every day touches a different discipline — and every project sharpens a different skill.",
-    img: decoHero,
   },
   {
     h: "Grow with a business that values progress",
     p: "Ambition is met with structure, mentorship, and meaningful responsibility. We promote from within and invest in the people who invest in the work.",
-    img: gentsHero,
   },
   {
     h: "An environment shaped by people",
