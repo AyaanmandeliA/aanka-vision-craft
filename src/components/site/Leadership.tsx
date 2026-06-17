@@ -1,4 +1,4 @@
-import aanand from "@/assets/brands/founders/aanand.png";
+import aanand from "@/assets/brands/founders/aanand.webp";
 import duoStudio from "@/assets/brands/founders/duo-studio-2.jpeg";
 import { PulseLine } from "./AankaLogo";
 

@@ -1,6 +1,6 @@
 // Zaika
-import zaikaStorefront from "@/assets/brands/zaika/storefront.png";
-import zaikaCounter from "@/assets/brands/zaika/counter.png";
+import zaikaStorefront from "@/assets/brands/zaika/storefront.webp";
+import zaikaCounter from "@/assets/brands/zaika/counter.webp";
 import zaikaSign from "@/assets/brands/zaika/sign.png";
 import zaikaTeam from "@/assets/brands/zaika/team.jpg";
 import zaikaFood1 from "@/assets/brands/zaika/food-1.png";

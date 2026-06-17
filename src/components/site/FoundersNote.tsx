@@ -1,5 +1,5 @@
-import aanand from "@/assets/brands/founders/aanand.png";
-import duoCasual from "@/assets/brands/founders/duo-casual.png";
+import aanand from "@/assets/brands/founders/aanand.webp";
+import duoCasual from "@/assets/brands/founders/duo-casual.webp";
 import { PulseLine } from "./AankaLogo";
 
 export function FoundersNote() {
