@@ -1,9 +1,9 @@
 import type { MapPinData } from "@/components/site/UaeMap";
-import khauImg from "@/assets/brands/khau-galli.jpg";
-import zaikaImg from "@/assets/brands/zaika.jpg";
-import gentsImg from "@/assets/brands/gents.webp";
-import ladiesImg from "@/assets/brands/ladies.jpg";
-import decoImg from "@/assets/brands/deco.jpg";
+import khauImg from "@/assets/brands/khau/storefront.jpg";
+import zaikaImg from "@/assets/brands/zaika/storefront.png";
+import gentsImg from "@/assets/brands/cem/storefront.jpg";
+import ladiesImg from "@/assets/brands/cel/salon.jpg";
+import decoImg from "@/assets/brands/deco/corridor.jpg";
 import constructionImg from "@/assets/brand-construction.jpg";
 
 export type Venue = {

@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useReveal } from "@/hooks/use-reveal";
 import { PageHeader } from "@/components/site/PageShell";
 import { Phone, Mail, MessageCircle } from "lucide-react";
-import zaikaHero from "@/assets/brands/zaika/storefront.png";
 import decoHero from "@/assets/brands/deco/corridor.jpg";
 import { PulseLine } from "@/components/site/AankaLogo";
 import { sendContactEnquiry } from "@/lib/email";
@@ -24,8 +23,8 @@ export const Route = createFileRoute("/contact")({
         content:
           "Reach the Aanka Group team in the UAE — phone, email, WhatsApp, and enquiry form.",
       },
-      { property: "og:image", content: zaikaHero },
-      { name: "twitter:image", content: zaikaHero },
+      { property: "og:image", content: decoHero },
+      { name: "twitter:image", content: decoHero },
     ],
   }),
 });
@@ -42,12 +41,6 @@ function ContactPage() {
           </>
         }
         intro="Whether you are looking to connect for business enquiries, partnerships, careers, or general information, the Aanka Group team is happy to hear from you — usually within one business day."
-        media={{
-          src: zaikaHero,
-          alt: "Aanka Group hospitality",
-          caption: "Headquartered in Dubai, UAE.",
-          ratio: "portrait",
-        }}
       />
 
       {/* Contact channels — cards + image */}
