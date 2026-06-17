@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useReveal } from "@/hooks/use-reveal";
 import { PageHeader, CtaBlock } from "@/components/site/PageShell";
-import ladiesHero from "@/assets/brand-ladies.jpg";
-import khaugalli from "@/assets/brand-khaugalli.jpg";
+import ladiesHero from "@/assets/brands/cel/salon.jpg";
+import khaugalli from "@/assets/brands/khau/storefront.jpg";
 import { PulseLine } from "@/components/site/AankaLogo";
 
 export const Route = createFileRoute("/careers")({

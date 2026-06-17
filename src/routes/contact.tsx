@@ -3,8 +3,8 @@ import { useState } from "react";
 import { useReveal } from "@/hooks/use-reveal";
 import { PageHeader } from "@/components/site/PageShell";
 import { Phone, Mail, MessageCircle } from "lucide-react";
-import zaikaHero from "@/assets/brand-zaika.jpg";
-import decoHero from "@/assets/brand-deco.jpg";
+import zaikaHero from "@/assets/brands/zaika/storefront.png";
+import decoHero from "@/assets/brands/deco/corridor.jpg";
 import { PulseLine } from "@/components/site/AankaLogo";
 import { sendContactEnquiry } from "@/lib/email";
 

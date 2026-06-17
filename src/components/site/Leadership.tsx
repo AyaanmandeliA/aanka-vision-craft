@@ -1,16 +1,16 @@
-import leader1 from "@/assets/brands/leader-aanand.jpg";
-import leader2 from "@/assets/brands/leader-priyanka.jpg";
+import aanand from "@/assets/brands/founders/aanand.png";
+import duoStudio from "@/assets/brands/founders/duo-studio.jpeg";
 import { PulseLine } from "./AankaLogo";
 
 const leaders = [
   {
-    img: leader1,
+    img: aanand,
     name: "Aanand Mandelia",
     role: "Co-founder",
     bio: "A Chartered Accountant and entrepreneur whose career began in professional services before he chose to build businesses of his own. Driven by a belief in long-term value creation, he helped lay the foundations of what would become Aanka Group. Today, he leads the group's strategic direction, expansion, and growth initiatives — combining financial discipline with an entrepreneurial mindset and a relentless focus on execution.",
   },
   {
-    img: leader2,
+    img: duoStudio,
     name: "Priyanka Agarwal",
     role: "Co-founder",
     bio: "A Chartered Accountant whose expertise in finance, operations, and business management has been instrumental in shaping Aanka Group. As co-founder, she has played a key role in transforming ideas into scalable businesses while maintaining a strong focus on quality, culture, and customer experience. Her attention to detail and long-term perspective continue to guide the group's growth across multiple industries.",
@@ -51,7 +51,7 @@ export function Leadership() {
                   loading="lazy"
                   width={1024}
                   height={1280}
-                  className="img-scale h-full w-full object-cover grayscale"
+                  className="img-scale h-full w-full object-cover object-top"
                 />
                 <div className="absolute inset-0 ring-1 ring-inset ring-obsidian/10" />
               </div>

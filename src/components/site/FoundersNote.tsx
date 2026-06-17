@@ -1,5 +1,5 @@
-import leader1 from "@/assets/brands/leader-aanand.jpg";
-import leader2 from "@/assets/brands/leader-priyanka.jpg";
+import aanand from "@/assets/brands/founders/aanand.png";
+import duoCasual from "@/assets/brands/founders/duo-casual.png";
 import { PulseLine } from "./AankaLogo";
 
 export function FoundersNote() {
@@ -18,18 +18,18 @@ export function FoundersNote() {
           <div className="reveal col-span-12 flex items-center gap-6 md:col-span-3">
             <div className="relative aspect-[4/5] w-1/2 overflow-hidden bg-obsidian">
               <img
-                src={leader1}
+                src={aanand}
                 alt="Aanand Mandelia"
                 loading="lazy"
-                className="img-scale h-full w-full object-cover grayscale"
+                className="img-scale h-full w-full object-cover object-top"
               />
             </div>
             <div className="relative aspect-[4/5] w-1/2 overflow-hidden bg-obsidian">
               <img
-                src={leader2}
-                alt="Priyanka Agarwal"
+                src={duoCasual}
+                alt="Aanand Mandelia & Priyanka Agarwal"
                 loading="lazy"
-                className="img-scale h-full w-full object-cover grayscale"
+                className="img-scale h-full w-full object-cover object-top"
               />
             </div>
           </div>
@@ -37,10 +37,10 @@ export function FoundersNote() {
           {/* Pull quote */}
           <blockquote className="reveal col-span-12 md:col-span-8 md:col-start-5">
             <p className="display-md text-obsidian">
-              <span className="font-serif italic text-bronze">“</span>
+              <span className="font-serif italic text-bronze">"</span>
               Our ambition was never to build a collection of companies. It was
               to build a reputation that customers choose again and again.
-              <span className="font-serif italic text-bronze">”</span>
+              <span className="font-serif italic text-bronze">"</span>
             </p>
             <footer className="mt-12 pt-6 relative">
               <PulseLine className="absolute inset-x-0 top-0 h-4" />
