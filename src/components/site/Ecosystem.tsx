@@ -16,13 +16,13 @@ export function Ecosystem() {
 
         <div className="reveal mb-20 grid grid-cols-12 gap-6 md:mb-24">
           <h2 className="col-span-12 display-lg md:col-span-8">
-            A house of brands. <br />
-            Defined <em className="italic">excellence.</em>
+            A family of brands. <br />
+            Built on <em className="italic">trust.</em>
           </h2>
           <p className="col-span-12 measure-narrow self-end font-serif text-base font-light leading-relaxed text-obsidian/70 md:col-span-3 md:col-start-10 md:text-lg">
-            Each brand has its own identity, its own audience, and its own
-            kitchen, chair, or studio — held together by a single operating
-            standard.
+            Each brand has its own identity, its own customers, and its own
+            daily rhythm — held together by service, care and the trust we earn
+            over time.
           </p>
         </div>
 

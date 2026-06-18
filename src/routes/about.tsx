@@ -19,13 +19,13 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "The vision, mission, and philosophy behind Aanka Group — a UAE-based holding building memorable lifestyle brands across hospitality, wellness, beauty, and design.",
+          "The founders, values, and family-built story behind Aanka Group — a UAE business group built across hospitality, beauty, wellness, interiors and construction.",
       },
       { property: "og:title", content: "About — Aanka Group" },
       {
         property: "og:description",
         content:
-          "Built with passion. Growing with purpose. The story of Aanka Group's portfolio across hospitality, wellness, beauty, and design.",
+          "Built with Passion. Growing with Trust. The story of a family-built portfolio of customer-focused brands.",
       },
       { property: "og:image", content: duoStudio2 },
       { name: "twitter:image", content: duoStudio2 },
@@ -35,19 +35,19 @@ export const Route = createFileRoute("/about")({
 
 const tenets = [
   {
-    h: "Our Vision",
+    h: "Our Belief",
     img: zaikaCounter,
-    p: "To build a UAE lifestyle group whose brands shape how a generation eats, unwinds, grooms, and lives — and whose name is shorthand for a standard.",
+    p: "People come first. When customers, teams and partners are treated with care, meaningful growth follows.",
   },
   {
-    h: "Our Mission",
+    h: "Our Promise",
     img: decoBedroom,
-    p: "To run customer-first businesses where craft, consistency, and warmth aren't features — they're the operating system.",
+    p: "To build customer-focused brands where quality, consistency and warmth can be felt in every experience.",
   },
   {
-    h: "Our Philosophy",
+    h: "Our Way",
     img: cemInterior,
-    p: "Hospitality is not a department. It's the whole product. Every space, every service, every detail is judged by what it feels like to be served.",
+    p: "Hospitality is a mindset. Every space, service and decision is judged by how it makes people feel.",
   },
 ];
 
@@ -55,46 +55,46 @@ const timeline = [
   {
     year: "I",
     t: "An entrepreneurial beginning",
-    p: "A first investment of belief, capital, and curiosity — choosing to build, not just observe.",
+    p: "A family decision to build something of our own through hard work, belief and close customer relationships.",
   },
   {
     year: "II",
     t: "Our first customer-facing brand",
-    p: "The opening of our first outlet — and the lessons that come from serving real guests, every single day.",
+    p: "The opening of our first outlet, and the lessons that only come from serving real customers every single day.",
   },
   {
     year: "III",
     t: "Expansion into new categories",
-    p: "From food into wellness, beauty, and design — a deliberate move from a single brand into a multi-vertical group.",
+    p: "From hospitality into beauty, wellness, interiors and construction — growth shaped by opportunity, service and trust.",
   },
   {
     year: "IV",
     t: "A growing footprint across Dubai and Sharjah",
-    p: "Multiple destinations across two emirates, a maturing portfolio, and the quiet operating muscle that comes with running brands at scale.",
+    p: "More destinations across two emirates, supported by teams who understand the value of consistency and care.",
   },
   {
     year: "V",
     t: "The next chapter",
-    p: "Selective franchising, regional expansion, and continued investment in talent, systems, and standards.",
+    p: "Thoughtful partnerships, regional growth, and continued investment in people, standards and customer experience.",
   },
 ];
 
 const differences = [
   {
-    h: "Cross-Category Intelligence",
-    p: "Running food, wellness, beauty, and design under one group creates an operating edge no single-vertical operator can develop. What we learn in a grooming studio raises the bar in a dining room. The categories are distinct. The lessons compound.",
+    h: "Family Values. Professional Standards.",
+    p: "At Aanka Group, we combine the personal commitment of a family business with the professionalism and ambition required to build lasting brands.",
   },
   {
-    h: "The Founders Are Still in the Room",
-    p: "Aanka is not a PE rollup or a management company with delegated standards. The same people who conceived each brand still make the calls — on hiring, on design, on pricing, on what we won't compromise. That proximity is the guarantee.",
+    h: "Close to Every Business",
+    p: "Our leadership remains closely involved in every brand, ensuring decisions are guided by long-term relationships, operational excellence and customer satisfaction.",
   },
   {
-    h: "Engineered to Scale",
-    p: "From the first outlet, every concept is built with replication in mind — documented playbooks, portable supply chains, identities that hold in any market. We don't figure out how to scale after the brand succeeds. We design for it from the start.",
+    h: "Built by Entrepreneurs",
+    p: "Aanka Group was built through experience, risk, learning and persistence — not by acquiring disconnected businesses from a distance.",
   },
   {
-    h: "Patience as Strategy",
-    p: "In a market that moves fast, restraint is the rarest advantage. We expand when the unit economics work, the team is ready, and the brand is genuinely prepared — not when the calendar says so. Every brand you see from us passed that test.",
+    h: "Growth with Responsibility",
+    p: "We grow when the team is ready, the customer promise is clear and the brand can uphold the trust people place in it.",
   },
 ];
 
@@ -112,10 +112,10 @@ function AboutPage() {
         eyebrow="01 / About"
         title={
           <>
-            A UAE lifestyle group, <em className="italic">built brand by brand.</em>
+            A family-built group, <em className="italic">grown brand by brand.</em>
           </>
         }
-        intro="Aanka Group is a founder-led portfolio of lifestyle brands across food, wellness, beauty, and design — built with a long view, operated to a single standard, and designed for guests who notice the difference."
+        intro="Aanka Group is a family-built portfolio of customer-focused brands across hospitality, beauty, wellness, interiors and construction — shaped by hard work, service and long-term trust."
         media={{
           src: duoStudio,
           alt: "Aanand Mandelia & Priyanka Agarwal, Co-founders of Aanka Group",
@@ -146,7 +146,7 @@ function AboutPage() {
                 <div className="absolute inset-0 ring-1 ring-inset ring-obsidian/10" />
               </div>
               <figcaption className="mt-4 font-sans text-[10px] uppercase tracking-luxury text-obsidian/55">
-                Built in the UAE — designed to travel.
+                Built in the UAE — rooted in relationships.
               </figcaption>
             </figure>
 
@@ -155,29 +155,34 @@ function AboutPage() {
               style={{ transitionDelay: "120ms" }}
             >
               <h2 className="display-md text-obsidian">
-                The decision to build, <br />
-                not just <em className="italic">observe.</em>
+                Built with care, <br />
+                one relationship at a <em className="italic">time.</em>
               </h2>
 
               <div className="mt-10 measure space-y-6 body-lead text-obsidian/85">
                 <p>
-                  Aanka Group was founded on a straightforward conviction: that
-                  enduring businesses are built with intention, not assembled
-                  for scale.
+                  Aanka Group was founded on a simple belief: when people are
+                  at the heart of every decision, meaningful growth follows.
                 </p>
                 <p>
-                  From a first venture in food, the portfolio has expanded
-                  across four lifestyle sectors — each brand conceived,
-                  financed, and run by the same founding team. The standard
-                  is not a document. It is a habit.
+                  What began as an entrepreneurial vision has evolved into a
+                  diverse portfolio across hospitality, beauty, wellness,
+                  interiors and construction. Each brand serves a different
+                  purpose, but all are held together by integrity, quality,
+                  innovation and exceptional customer experience.
+                </p>
+                <p>
+                  Today, Aanka Group continues to build businesses that create
+                  value, strengthen communities and earn the trust of customers,
+                  employees and partners alike.
                 </p>
               </div>
 
               <blockquote className="mt-12 border-l-2 border-bronze pl-6 measure">
                 <p className="font-serif text-xl italic leading-relaxed text-obsidian/90 md:text-2xl">
-                  "Every decision we make — who to hire, where to open, what
-                  to charge — comes back to one question: will this make the
-                  experience better or worse?"
+                  "Every decision we make comes back to people — the customers
+                  we serve, the teams we build, and the trust we hope to earn
+                  every day."
                 </p>
                 <footer className="mt-5 font-sans text-[10px] uppercase tracking-luxury text-bronze">
                   — Aanand Mandelia &amp; Priyanka Agarwal, Founders
@@ -315,8 +320,8 @@ function AboutPage() {
               className="reveal col-span-12 self-end font-serif text-base font-light leading-relaxed text-alabaster/60 md:col-span-4 md:col-start-9 md:text-lg"
               style={{ transitionDelay: "100ms" }}
             >
-              Not just what we do — but how we think, how we operate,
-              and what we refuse to compromise on.
+              Not just what we do — but how closely we stay connected to the
+              people, places and relationships behind every brand.
             </p>
           </div>
 
@@ -347,7 +352,7 @@ function AboutPage() {
       <CtaBlock
         eyebrow="08 / Collaborate"
         heading={<>Build the next chapter <em className="italic">with us.</em></>}
-        body="From partnerships to careers, Aanka Group welcomes conversations rooted in vision, ambition, and shared standards."
+        body="From partnerships to careers, Aanka Group welcomes conversations rooted in trust, service and shared standards."
         buttonLabel="Get in Touch"
         to="/contact"
       />

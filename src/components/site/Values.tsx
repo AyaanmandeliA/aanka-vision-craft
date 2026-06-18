@@ -2,23 +2,23 @@ import { PulseLine } from "./AankaLogo";
 const values = [
   {
     num: "I",
-    title: "Built for Return",
-    desc: "Every brand is designed from the guest's perspective out — space, service, and detail calibrated so the experience earns the next visit.",
+    title: "Hospitality",
+    desc: "We believe every interaction should leave people feeling welcomed, valued and appreciated.",
   },
   {
     num: "II",
-    title: "Ambition with Discipline",
-    desc: "We grow when the brand, the team, and the unit economics are ready — never when the calendar says so.",
+    title: "Trust",
+    desc: "Strong relationships are built over time through consistency, transparency and integrity.",
   },
   {
     num: "III",
-    title: "Hospitality is the Product",
-    desc: "From dining rooms to grooming chairs to interior projects, the way we treat people is the brand.",
+    title: "Entrepreneurship",
+    desc: "We embrace challenges, seek opportunities and continuously evolve to create lasting value.",
   },
   {
     num: "IV",
-    title: "A Group, Not a Collection",
-    desc: "Each brand is distinct in identity but aligned in ambition — held together by shared people, shared expectations, and one non-negotiable bar.",
+    title: "Excellence",
+    desc: "We are committed to delivering quality and exceeding expectations in everything we do.",
   },
 ];
 
@@ -41,7 +41,7 @@ export function Values() {
             className="reveal col-span-12 measure-narrow self-end mb-16 font-serif text-base font-light leading-relaxed text-alabaster/65 md:col-span-3 md:col-start-10 md:text-lg"
             style={{ transitionDelay: "100ms" }}
           >
-            The operating principles behind every brand we build — the same in every market.
+            The values behind every brand we build — personal, practical and lived every day.
           </p>
         </div>
 

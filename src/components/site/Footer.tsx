@@ -10,9 +10,9 @@ export function Footer() {
         <div className="reveal grid grid-cols-12 gap-6 pb-10 md:pb-14">
           <div className="col-span-12 md:col-span-9">
             <h2 className="font-serif text-4xl font-light leading-[1.05] tracking-tight md:text-6xl lg:text-7xl">
-              Built with <em className="italic text-bronze">Vision.</em>
+              Built with <em className="italic text-bronze">Passion.</em>
               <br />
-              Growing with <em className="italic text-bronze">Purpose.</em>
+              Growing with <em className="italic text-bronze">Trust.</em>
             </h2>
             <Link
               to="/contact"
@@ -36,7 +36,9 @@ export function Footer() {
               AANKA&nbsp;&nbsp;GROUP
             </Link>
             <p className="mt-4 max-w-xs font-serif text-sm font-light leading-relaxed text-alabaster/55">
-              A house of brands across hospitality, wellness, beauty, and design.
+              Built with Passion. Growing with Trust.
+              A family-built portfolio of brands dedicated to delivering exceptional
+              experiences across hospitality, beauty, wellness, interiors and construction.
             </p>
           </div>
 
@@ -97,7 +99,7 @@ export function Footer() {
 
         <div className="flex flex-col items-start justify-between gap-4 py-8 md:flex-row md:items-center">
           <p className="font-sans text-[11px] uppercase tracking-wider-2 text-alabaster/45">
-            © 2024 Aanka Group. Built with Vision. Growing with Purpose.
+            © 2024 Aanka Group. Built with Passion. Growing with Trust.
           </p>
           <p className="font-sans text-[11px] uppercase tracking-wider-2 text-alabaster/45 num-mono">
             UAE — MMXXIV

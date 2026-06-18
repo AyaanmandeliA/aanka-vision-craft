@@ -12,13 +12,13 @@ export const Route = createFileRoute("/media")({
       {
         name: "description",
         content:
-          "Launches, milestones, events, and brand highlights from across the Aanka Group portfolio.",
+          "Launches, milestones, events, and brand moments from across the Aanka Group family.",
       },
       { property: "og:title", content: "Media & News — Aanka Group" },
       {
         property: "og:description",
         content:
-          "Moments that shape the Aanka journey — from store openings to brand launches across the UAE.",
+          "Moments that shape the Aanka journey — from store openings to customer stories and brand milestones across the UAE.",
       },
       { property: "og:image", content: zaikaInterior },
       { name: "twitter:image", content: zaikaInterior },

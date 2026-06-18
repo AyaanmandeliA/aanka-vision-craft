@@ -70,7 +70,7 @@ export function BrandPageShell({ brand }: { brand: Brand }) {
           </div>
           <div className="grid grid-cols-12 gap-x-6 gap-y-10">
             <h2 className="reveal col-span-12 font-serif text-3xl font-light leading-[1.15] tracking-tight md:col-span-5 md:text-5xl">
-              An Experience <em className="italic">Curated</em>
+              An Experience <em className="italic">Built With Care</em>
             </h2>
             <p className="reveal col-span-12 self-end font-serif text-lg font-light leading-relaxed text-obsidian/75 md:col-span-6 md:col-start-7 md:text-xl" style={{ transitionDelay: "100ms" }}>
               {brand.longDesc}

@@ -24,17 +24,23 @@ export function Introduction() {
             style={{ transitionDelay: "150ms" }}
           >
             <p className="body-lead measure text-obsidian/85">
-              Aanka Group is a UAE lifestyle group — a portfolio of brands
-              across food, wellness, beauty, and design, built by founders
-              with a long view and operated to a single exacting standard.
+              Aanka Group was founded on a simple belief: when people are at
+              the heart of every decision, meaningful growth follows.
             </p>
             <p className="mt-6 measure font-sans text-[14px] leading-relaxed text-obsidian/65">
-              Each brand carries a distinct identity. What connects them
-              is invisible to the guest — and non-negotiable to us.
+              What began as an entrepreneurial vision has evolved into a
+              portfolio of customer-focused brands across hospitality, beauty,
+              wellness, interiors and construction. Each brand serves a
+              different purpose, but all are united by integrity, quality,
+              innovation and a commitment to delivering exceptional experiences.
+            </p>
+            <p className="mt-6 measure font-sans text-[14px] leading-relaxed text-obsidian/65">
+              Today, Aanka Group continues to build businesses that create
+              value, strengthen communities and earn the trust of customers,
+              employees and partners alike.
             </p>
 
-            <div className="mt-14 pt-8 relative">
-              <PulseLine className="absolute inset-x-0 top-0 h-4" />
+            <div className="mt-14 border-t border-platinum/60 pt-8">
               <dl className="grid grid-cols-3 gap-6">
               <div>
                 <dt className="font-sans text-[10px] uppercase tracking-luxury text-bronze">
@@ -49,7 +55,7 @@ export function Introduction() {
                   Sectors
                 </dt>
                 <dd className="mt-3 font-serif text-2xl font-light leading-tight text-obsidian md:text-3xl">
-                  Hospitality · Wellness · Beauty · Design
+                  Hospitality · Beauty · Wellness · Interiors · Construction
                 </dd>
               </div>
               <div>

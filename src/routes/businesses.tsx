@@ -18,7 +18,7 @@ export const Route = createFileRoute("/businesses")({
       {
         name: "description",
         content:
-          "A portfolio of brands across food, wellness, beauty, interior design, and construction — all under Aanka Group.",
+          "A family-built portfolio of customer-focused brands across hospitality, beauty, wellness, interiors and construction.",
       },
       { property: "og:title", content: "Our Businesses — Aanka Group Portfolio" },
       {
@@ -35,27 +35,27 @@ export const Route = createFileRoute("/businesses")({
 const verticals = [
   {
     code: "I",
-    name: "Food & Beverage",
+    name: "Hospitality",
     intro:
-      "From vibrant street-food concepts to slow-cooked fine dining, our F&B brands are designed for different moods, moments, and tables. Each one is built around a clear point of view, a distinct kitchen, and a service standard that turns guests into regulars.",
+      "From vibrant street-food concepts to slow-cooked fine dining, our hospitality brands are built around flavour, warmth and the relationships that turn first-time guests into regulars.",
     keys: ["Khau Galli", "House of Zaika"],
     img: zaikaHero,
-    imgAlt: "House of Zaika and Khau Galli — Aanka F&B portfolio",
+    imgAlt: "House of Zaika and Khau Galli — Aanka hospitality portfolio",
   },
   {
     code: "II",
     name: "Wellness & Salons",
     intro:
-      "Modern grooming and beauty houses built around comfort, expertise, and the small rituals that define how people show up. Two flagships — one for gents, one for ladies — sharing a single standard of craft, hygiene, and warm hospitality.",
+      "Modern grooming, beauty and wellness brands built around comfort, expertise and care. Two flagships — one for gents, one for ladies — share the same standard of hygiene, warmth and trust.",
     keys: ["Cutting Edge Gents", "Cutting Edge Ladies"],
     img: ladiesHero,
     imgAlt: "Cutting Edge — Aanka wellness and salons",
   },
   {
     code: "III",
-    name: "Interiors & Design",
+    name: "Interiors",
     intro:
-      "Design-led spaces shaped end-to-end — where function, atmosphere, and detail meet. From concept and material palettes to fit-out and final styling, our interiors practice gives form to the brands we run and the partners we work with.",
+      "Interior spaces shaped with practical thinking, atmosphere and attention to detail. From concept to fit-out, our interiors practice creates places people can feel at home in.",
     keys: ["Deco Vibes"],
     img: decoHero,
     imgAlt: "Deco Vibes — Aanka interiors and design",
@@ -64,7 +64,7 @@ const verticals = [
     code: "IV",
     name: "Construction",
     intro:
-      "Reliable execution and structural quality — the quiet backbone behind every space we shape. From core construction to specialised fit-out, the team brings the same standards of finish that define our customer-facing brands.",
+      "Reliable execution and structural quality — the quiet backbone behind every space we shape. The team brings care, discipline and accountability to every project.",
     keys: ["Aanka Constructions"],
     img: construction,
     imgAlt: "Aanka Constructions",
@@ -74,7 +74,7 @@ const verticals = [
 const portfolioStats = [
   { k: "Dubai & Sharjah", v: "Currently operating" },
   { k: "GCC & beyond", v: "Open for franchise" },
-  { k: "Founder-led", v: "Built, financed, operated" },
+  { k: "Family-built", v: "Founder-led, people-focused" },
 ];
 
 type BrandHref =
@@ -108,11 +108,11 @@ function BusinessesPage() {
             Our <em className="italic">family</em> of brands.
           </>
         }
-        intro="Aanka Group brings together brands across food, wellness, beauty, and interior design — each with a distinct identity, all held to the same shared standard of hospitality, craft, and care."
+        intro="Aanka Group brings together customer-focused brands across hospitality, beauty, wellness, interiors and construction — each with its own identity, all held to the same standard of service, trust and care."
         media={{
           src: zaikaInterior,
           alt: "House of Zaika interior",
-          caption: "A house of brands. One philosophy.",
+          caption: "A family-built portfolio. One standard of care.",
           ratio: "portrait",
         }}
       />
@@ -129,8 +129,9 @@ function BusinessesPage() {
 
           <div className="grid grid-cols-12 gap-x-6">
             <p className="reveal col-span-12 font-serif text-2xl font-light leading-[1.35] tracking-tight text-obsidian/85 md:col-span-8 md:text-3xl lg:text-4xl">
-              Six brands across four sectors — each built to stand on its own,
-              all held to the same founding standard of hospitality, craft, and care.
+              Six brands across four sectors — each built to serve its own
+              customers, all held to the same founding standard of hospitality,
+              quality and trust.
             </p>
           </div>
 
@@ -215,7 +216,7 @@ function BusinessesPage() {
       <CtaBlock
         eyebrow="06 / Partner"
         heading={<>Bring an <em className="italic">Aanka brand</em> to your city.</>}
-        body="Explore franchise opportunities for our flagship F&B and wellness brands across the GCC and beyond."
+        body="Explore franchise opportunities for our flagship hospitality, beauty and wellness brands across the GCC and beyond."
         buttonLabel="Franchise With Us"
         to="/partner"
       />

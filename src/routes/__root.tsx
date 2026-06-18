@@ -39,7 +39,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "Aanka Group is a UAE-based holding building memorable brands across food, wellness, beauty, and design.",
+          "Aanka Group is a family-built business group creating customer-focused brands across hospitality, beauty, wellness, interiors and construction.",
       },
       { name: "author", content: "Aanka Group" },
       { property: "og:type", content: "website" },

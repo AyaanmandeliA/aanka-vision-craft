@@ -17,13 +17,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Aanka Group is a UAE lifestyle group — a curated portfolio of brands across hospitality, wellness, beauty, and design. Built with vision. Grown with purpose.",
+          "Aanka Group is a family-built portfolio of brands across hospitality, beauty, wellness, interiors and construction. Built with Passion. Growing with Trust.",
       },
-      { property: "og:title", content: "Aanka Group — Built with Vision. Grown with Purpose." },
+      { property: "og:title", content: "Aanka Group — Built with Passion. Growing with Trust." },
       {
         property: "og:description",
         content:
-          "A curated portfolio of lifestyle brands across hospitality, wellness, beauty, and design — built in the UAE, designed to last.",
+          "A family-built portfolio of customer-focused brands across hospitality, beauty, wellness, interiors and construction.",
       },
     ],
   }),
@@ -44,7 +44,7 @@ function Index() {
       <CtaBlock
         eyebrow="09 / Collaborate"
         heading={<>Partner with<br /><em className="italic">AANKA Group</em></>}
-        body="We welcome franchise, partnership, and collaboration opportunities with operators who share our long-term view and commitment to quality."
+        body="We welcome franchise, partnership, and collaboration opportunities with people who share our commitment to service, trust and long-term customer relationships."
         buttonLabel="Start a Conversation"
         to="/partner"
       />

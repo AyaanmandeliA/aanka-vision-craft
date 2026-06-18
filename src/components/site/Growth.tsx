@@ -16,17 +16,21 @@ export function Growth() {
               Portfolio growth
             </p>
             <h2 className="mt-5 font-serif text-3xl font-light leading-tight text-obsidian md:text-5xl">
-              Built in Dubai and Sharjah. Open to the world.
+              Built in Dubai and Sharjah. Growing through trust.
             </h2>
           </div>
 
           <div className="col-span-12 grid gap-8 md:col-span-6 md:col-start-7 md:grid-cols-[1fr_auto] md:items-end md:gap-10">
             <div className="max-w-[34rem] space-y-5">
               <p className="font-serif text-lg font-light leading-relaxed text-obsidian/75">
-                Six brands. Two emirates. A portfolio built in Dubai and Sharjah — and designed to grow with intention, not urgency.
+                Six brands. Two emirates. A family-built portfolio shaped by
+                customers who return, teams who care and relationships that
+                last.
               </p>
               <p className="font-serif text-lg font-light leading-relaxed text-obsidian/75">
-                The next phase is selective: deeper UAE penetration, regional franchising, and continued investment in the talent and systems that make each brand worth scaling.
+                The next phase is selective: deeper UAE presence, thoughtful
+                partnerships and continued investment in the people who make
+                each experience worth repeating.
               </p>
             </div>
             <div className="grid grid-cols-3 gap-6 md:w-28 md:grid-cols-1 md:gap-6">

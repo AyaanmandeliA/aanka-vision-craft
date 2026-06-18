@@ -15,7 +15,7 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Get in touch with Aanka Group for business enquiries, partnerships, careers, or general information.",
+          "Get in touch with Aanka Group for partnerships, careers, franchise enquiries, or general information.",
       },
       { property: "og:title", content: "Contact — Aanka Group" },
       {
@@ -40,7 +40,7 @@ function ContactPage() {
             Get in <em className="italic">touch.</em>
           </>
         }
-        intro="Whether you are looking to connect for business enquiries, partnerships, careers, or general information, the Aanka Group team is happy to hear from you — usually within one business day."
+        intro="Whether you are reaching out about partnerships, careers, franchise opportunities or a general question, the Aanka Group team is happy to hear from you."
       />
 
       {/* Contact channels — cards + image */}
@@ -106,8 +106,8 @@ function ContactPage() {
                 Send us a <em className="italic">message.</em>
               </h2>
               <p className="reveal mt-8 max-w-md font-serif text-lg font-light leading-relaxed text-alabaster/70">
-                Tell us a little about what you're looking for. We'll route your
-                enquiry to the right person at Aanka Group.
+                Tell us a little about what you're looking for. We'll make sure
+                your enquiry reaches the right person at Aanka Group.
               </p>
 
               <dl className="mt-14 space-y-8 border-t border-alabaster/15 pt-8">

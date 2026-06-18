@@ -2,23 +2,23 @@ import { PulseLine } from "./AankaLogo";
 const verticals = [
   {
     code: "I",
-    name: "Food & Beverage",
-    desc: "Restaurant concepts created to serve diverse tastes, moments, and dining experiences.",
+    name: "Hospitality",
+    desc: "Hospitality brands created around flavour, familiarity and the feeling of being well looked after.",
   },
   {
     code: "II",
     name: "Wellness & Salons",
-    desc: "Modern grooming and beauty brands built around comfort, expertise, and personal care.",
+    desc: "Beauty and wellness spaces built around comfort, expertise and personal care.",
   },
   {
     code: "III",
-    name: "Interiors & Design",
-    desc: "Design-led solutions that bring together functionality, aesthetics, and thoughtful execution.",
+    name: "Interiors",
+    desc: "Interior solutions shaped with care, practical thinking and attention to how people live and work.",
   },
   {
     code: "IV",
     name: "Construction",
-    desc: "A business vertical focused on building with reliability, intent, and long-term value.",
+    desc: "Construction work grounded in reliability, quality and long-term relationships.",
   },
 ];
 
@@ -39,7 +39,9 @@ export function Verticals() {
             One <em className="italic">Point of View.</em>
           </h2>
           <p className="col-span-12 self-end font-serif text-lg font-light leading-relaxed text-obsidian/70 md:col-span-4 md:col-start-9">
-            Hospitality, wellness, beauty, and design — each vertical chosen for its depth, its scalability, and its relevance to how people live in the modern UAE.
+            Hospitality, beauty, wellness, interiors and construction — each
+            chosen because it touches real people, real spaces and everyday
+            experiences.
           </p>
         </div>
 

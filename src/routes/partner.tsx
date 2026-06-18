@@ -23,7 +23,7 @@ export const Route = createFileRoute("/partner")({
       {
         property: "og:description",
         content:
-          "Proven concepts. Operational playbooks. UAE pedigree. Franchise opportunities across hospitality, wellness, and beauty.",
+          "Franchise opportunities with a family-built portfolio of hospitality, beauty and wellness brands.",
       },
       { property: "og:image", content: khaugalli },
       { name: "twitter:image", content: khaugalli },
@@ -35,20 +35,20 @@ const franchisableBrands = brands.filter((b) => b.franchisable);
 
 const pillars = [
   {
-    h: "Proven Concepts",
-    p: "Brands that have been built, tested, and refined in one of the world's most demanding hospitality markets.",
+    h: "Brands Built by Operators",
+    p: "Brands shaped through real customer feedback, day-to-day service and the discipline of running businesses ourselves.",
   },
   {
-    h: "Operational Playbooks",
-    p: "Documented systems for kitchen, service, supply chain, and customer experience — designed to travel.",
+    h: "Practical Operating Support",
+    p: "Clear systems for service, supply chain, training and customer experience — built from what we have learned on the ground.",
   },
   {
     h: "Brand & Marketing Support",
-    p: "Identity guidelines, launch playbooks, and ongoing creative support to keep the brand consistent in every market.",
+    p: "Identity guidelines, launch support and ongoing creative input to help each brand feel consistent without losing local warmth.",
   },
   {
-    h: "UAE Pedigree",
-    p: "A group built in the UAE — with the standards, standards-of-finish, and standards-of-service that come with that.",
+    h: "Family Values",
+    p: "A group built in the UAE with a long-term view, close founder involvement and a deep respect for customer trust.",
   },
 ];
 
@@ -64,7 +64,7 @@ const territories = [
 
 const process = [
   { num: "01", h: "Inquiry", p: "Submit your details and brand of interest through the form." },
-  { num: "02", h: "Discovery Call", p: "A 30-minute conversation to align on market, vision, and fit." },
+  { num: "02", h: "Discovery Call", p: "A 30-minute conversation to understand the market, the customer and the fit." },
   { num: "03", h: "Proposal", p: "Receive a full franchise proposal with terms and timelines." },
   { num: "04", h: "Onboarding", p: "Site selection, training, fit-out, and launch — supported end-to-end." },
 ];
@@ -101,7 +101,7 @@ function PartnerPage() {
             to your city.
           </>
         }
-        intro="Aanka Group is opening selective franchise opportunities for its hospitality and wellness brands. If you bring local insight, capital, and a serious commitment to the customer — we'd like to hear from you."
+        intro="Aanka Group is opening selective franchise opportunities for its hospitality, beauty and wellness brands. If you bring local insight, commitment and genuine respect for the customer, we'd like to hear from you."
         media={{
           src: khaugalli,
           alt: "Khau Galli — a flagship Aanka franchise concept",
@@ -170,7 +170,7 @@ function PartnerPage() {
           </div>
 
           <h2 className="reveal mb-16 font-serif text-3xl font-light leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
-            What you get when you <em className="italic">franchise with us.</em>
+            Family Values. <em className="italic">Professional Standards.</em>
           </h2>
 
           <ol className="border-t border-alabaster/10">
@@ -231,8 +231,9 @@ function PartnerPage() {
                 className="reveal mt-8 max-w-md font-serif text-base font-light leading-relaxed text-obsidian/70 md:text-lg"
                 style={{ transitionDelay: "100ms" }}
               >
-                We work with a small number of partners per market. Below is an
-                indicative view — final allocation is reviewed brand-by-brand.
+                We work with a small number of partners per market so each
+                relationship receives the attention it deserves. Final allocation
+                is reviewed brand by brand.
               </p>
 
               <ul className="mt-12 divide-y divide-platinum/60 border-y border-platinum/60">

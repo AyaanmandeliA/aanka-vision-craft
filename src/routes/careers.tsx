@@ -13,13 +13,13 @@ export const Route = createFileRoute("/careers")({
       {
         name: "description",
         content:
-          "Build your future with Aanka Group across hospitality, wellness, beauty, design, and construction in the UAE.",
+          "Build your future with Aanka Group across hospitality, beauty, wellness, interiors and construction in the UAE.",
       },
       { property: "og:title", content: "Careers — Aanka Group" },
       {
         property: "og:description",
         content:
-          "A growing multi-brand group creating opportunities for ambitious people across lifestyle categories.",
+          "A family-built business group creating opportunities for people who care about service, craft and customer experience.",
       },
       { property: "og:image", content: ladiesHero },
       { name: "twitter:image", content: ladiesHero },
@@ -29,16 +29,16 @@ export const Route = createFileRoute("/careers")({
 
 const reasons = [
   {
-    h: "Be part of a growing multi-brand group",
-    p: "Work alongside teams shaping a portfolio of lifestyle brands under one shared standard — and learn how a multi-vertical group actually runs, day to day.",
+    h: "Be part of a family-built group",
+    p: "Work alongside teams shaping customer-focused brands under one shared standard of service, trust and care.",
   },
   {
     h: "Work across exciting lifestyle categories",
-    p: "From food and wellness to interiors and design, every day touches a different discipline — and every project sharpens a different skill.",
+    p: "From hospitality and wellness to interiors and construction, every day touches a different discipline and every project sharpens a different skill.",
   },
   {
     h: "Grow with a business that values progress",
-    p: "Ambition is met with structure, mentorship, and meaningful responsibility. We promote from within and invest in the people who invest in the work.",
+    p: "Ambition is met with structure, mentorship and meaningful responsibility. We invest in people who invest care in the work.",
   },
   {
     h: "An environment shaped by people",
@@ -59,7 +59,7 @@ function CareersPage() {
             <em className="italic">with Aanka Group.</em>
           </>
         }
-        intro="As Aanka Group continues to grow across industries, we continue to create opportunities for people who want to be part of a dynamic, evolving business journey — across food, wellness, beauty, design, and construction."
+        intro="As Aanka Group continues to grow, we create opportunities for people who want to be part of a family-built business shaped by hospitality, trust and customer experience."
         media={{
           src: ladiesHero,
           alt: "Aanka Group — Cutting Edge Ladies",
@@ -138,8 +138,9 @@ function CareersPage() {
                 className="reveal mt-8 max-w-xl font-serif text-lg font-light leading-relaxed text-obsidian/75"
                 style={{ transitionDelay: "100ms" }}
               >
-                Apply for current opportunities, or share your profile for future
-                openings across our brands. We review every application personally.
+                Apply for current opportunities, or share your profile for
+                future openings across our brands. Every application is reviewed
+                with care by our team.
               </p>
 
               <form className="mt-12 grid grid-cols-12 gap-6">

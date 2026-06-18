@@ -48,7 +48,7 @@ function LocationsPage() {
             A network <em className="italic">across the UAE.</em>
           </>
         }
-        intro="From DMCC to the wider Emirates, Aanka Group brands continue to grow across destinations that matter. Explore our presence on the map, then drop into the venue nearest to you."
+        intro="From Dubai to Sharjah, Aanka Group brands continue to grow through the communities and customers who trust us. Explore our presence on the map, then visit the venue nearest to you."
         media={{
           src: hero,
           alt: "The UAE — home to Aanka Group",

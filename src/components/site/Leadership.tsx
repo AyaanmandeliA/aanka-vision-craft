@@ -1,5 +1,5 @@
-import aanand from "@/assets/brands/founders/aanand.webp";
-import duoStudio from "@/assets/brands/founders/duo-studio-2.jpeg";
+import aanand from "@/assets/leader-1.jpg";
+import priyanka from "@/assets/brands/founders/priyanka.webp";
 import { PulseLine } from "./AankaLogo";
 
 const leaders = [
@@ -7,13 +7,13 @@ const leaders = [
     img: aanand,
     name: "Aanand Mandelia",
     role: "Co-founder",
-    bio: "A Chartered Accountant and entrepreneur whose career began in professional services before he chose to build businesses of his own. Driven by a belief in long-term value creation, he helped lay the foundations of what would become Aanka Group. Today, he leads the group's strategic direction, expansion, and growth initiatives — combining financial discipline with an entrepreneurial mindset and a relentless focus on execution.",
+    bio: "A Chartered Accountant and entrepreneur whose career began in professional services before he chose to build businesses of his own. His approach combines financial discipline with the instincts of an operator who cares deeply about customers, teams and long-term trust.",
   },
   {
-    img: duoStudio,
+    img: priyanka,
     name: "Priyanka Agarwal",
     role: "Co-founder",
-    bio: "A Chartered Accountant whose expertise in finance, operations, and business management has been instrumental in shaping Aanka Group. As co-founder, she has played a key role in transforming ideas into scalable businesses while maintaining a strong focus on quality, culture, and customer experience. Her attention to detail and long-term perspective continue to guide the group's growth across multiple industries.",
+    bio: "A Chartered Accountant whose expertise in finance, operations and business management has helped shape Aanka Group from the inside. Her attention to detail, care for people and long-term perspective continue to guide the group's culture and customer experience.",
   },
 ];
 
@@ -30,10 +30,10 @@ export function Leadership() {
 
         <div className="reveal mb-20 grid grid-cols-12 gap-6">
           <h2 className="col-span-12 font-serif text-3xl font-light leading-[1.1] tracking-tight md:col-span-8 md:text-5xl lg:text-6xl">
-            Leadership That <em className="italic">Inspires</em>
+            Leadership That <em className="italic">Stays Close</em>
           </h2>
           <p className="col-span-12 self-end font-serif text-lg font-light leading-relaxed text-obsidian/65 md:col-span-3 md:col-start-10">
-            The minds shaping every chapter of Aanka Group.
+            The founders shaping every chapter of Aanka Group with care, discipline and trust.
           </p>
         </div>
 

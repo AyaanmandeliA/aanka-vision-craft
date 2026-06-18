@@ -48,17 +48,17 @@ export function Hero() {
         <h1
           className="mx-auto max-w-[900px] font-serif text-4xl font-light leading-[1.08] text-alabaster md:text-6xl lg:text-7xl"
         >
-          Built with <em className="italic">vision.</em>
+          Built with <em className="italic">Passion.</em>
           <br />
-          Grown with <em className="italic">purpose.</em>
+          Growing with <em className="italic">Trust.</em>
         </h1>
 
         <p
           className="measure mx-auto mt-8 font-serif text-lg font-light leading-relaxed text-alabaster/75 md:text-xl"
         >
-          A curated portfolio of lifestyle brands across hospitality,
-          wellness, beauty, and design — built in the UAE, designed to last,
-          and run with one shared standard of care.
+          Aanka Group is a family-built portfolio of brands spanning
+          hospitality, beauty, wellness, interiors and construction, united by
+          a commitment to excellence, trust and exceptional customer experiences.
         </p>
 
         <div
@@ -79,7 +79,7 @@ export function Hero() {
         <PulseLine className="h-3 w-full opacity-70" />
         <div className="mx-auto flex max-w-[1440px] items-center justify-between px-6 py-5 font-sans text-[10px] uppercase tracking-luxury text-alabaster/55 md:px-12">
           <span className="num-mono">Aanka Group</span>
-          <span className="hidden md:block">Built by Family · Driven by Excellence</span>
+          <span className="hidden md:block">Built with Passion · Growing with Trust</span>
           <span className="num-mono">UAE · Est. 2014</span>
         </div>
       </div>
