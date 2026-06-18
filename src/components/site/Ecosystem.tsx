@@ -1,6 +1,5 @@
 import { brands, type Brand } from "./brand-data";
 import { ArrowUpRight } from "lucide-react";
-import { Link } from "@tanstack/react-router";
 import { PulseLine } from "./AankaLogo";
 
 export function Ecosystem() {
@@ -20,9 +19,8 @@ export function Ecosystem() {
             Built on <em className="italic">trust.</em>
           </h2>
           <p className="col-span-12 measure-narrow self-end font-serif text-base font-light leading-relaxed text-obsidian/70 md:col-span-3 md:col-start-10 md:text-lg">
-            Each brand has its own identity, its own customers, and its own
-            daily rhythm — held together by service, care and the trust we earn
-            over time.
+            Each brand has its own identity, its own customers, and its own daily rhythm — held
+            together by service, care and the trust we earn over time.
           </p>
         </div>
 
@@ -38,11 +36,14 @@ export function Ecosystem() {
 }
 
 function BrandCard({ brand, delay }: { brand: Brand; delay: number }) {
+  const dest = brand.href ?? brandHrefForSlug(brand.slug);
+  const isExternal = dest.startsWith("http");
+
   return (
-    <Link
-      // Each brand has its own static route under /businesses/<slug>
-      // so we map slug -> typed `to` value.
-      to={brandHrefForSlug(brand.slug)}
+    <a
+      href={dest}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
       className="reveal group relative block overflow-hidden bg-obsidian"
       style={{ transitionDelay: `${delay}ms` }}
     >
@@ -91,7 +92,7 @@ function BrandCard({ brand, delay }: { brand: Brand; delay: number }) {
           </div>
         </div>
       </div>
-    </Link>
+    </a>
   );
 }
 

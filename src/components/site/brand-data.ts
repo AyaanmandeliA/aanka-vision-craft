@@ -147,6 +147,7 @@ export const brands: Brand[] = [
     img: constImg,
     gallery: [constImg],
     locations: ["Dubai", "Sharjah"],
+    href: "https://aankacontracting.com/",
     span: "lg:col-span-4",
     franchisable: false,
   },
