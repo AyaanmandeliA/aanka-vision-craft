@@ -1,5 +1,4 @@
 import type { MapPinData } from "@/components/site/UaeMap";
-import khau1 from "@/assets/brands/khau/storefront.jpg";
 import khau2 from "@/assets/brands/khau/store-2.jpg";
 import khau3 from "@/assets/brands/khau/store-3.jpg";
 import khauFood1 from "@/assets/brands/khau/food-1.jpg";
@@ -34,17 +33,6 @@ export type Venue = {
 };
 
 export const venues: Venue[] = [
-  {
-    brand: "Khau Galli",
-    area: "JLT — Cluster T",
-    emirate: "Dubai",
-    address: "Fortune Executive, Lake Level, Cluster T, JLT, Dubai",
-    phone: "+971 4 589 6525",
-    hours: "Daily · 10:00 – 23:00",
-    mapsHref: "https://maps.google.com/?q=Khau+Galli+JLT+Cluster+T+Dubai",
-    img: khau1,
-    pin: { x: 36, y: 60 },
-  },
   {
     brand: "Khau Galli",
     area: "Ibn Battuta Mall",

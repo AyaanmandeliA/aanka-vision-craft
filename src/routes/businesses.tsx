@@ -1,14 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useReveal } from "@/hooks/use-reveal";
-import { PageHeader, CtaBlock } from "@/components/site/PageShell";
+import { CtaBlock } from "@/components/site/PageShell";
 import { brands, type Brand } from "@/components/site/brand-data";
 import { ArrowUpRight } from "lucide-react";
 import { PulseLine } from "@/components/site/AankaLogo";
 import zaikaInterior from "@/assets/brands/zaika-interior.jpg";
-import zaikaHero from "@/assets/brand-zaika.jpg";
-import ladiesHero from "@/assets/brand-ladies.jpg";
-import decoHero from "@/assets/brand-deco.jpg";
-import construction from "@/assets/brand-construction.jpg";
+import aankaLogo from "@/assets/brand-logos/aanka-group.jpg";
+import khauLogo from "@/assets/brand-logos/khau-galli.png";
+import zaikaLogo from "@/assets/brand-logos/house-of-zaika.jpg";
+import gentsLogo from "@/assets/brand-logos/cutting-edge-gents.png";
+import ladiesLogo from "@/assets/brand-logos/cutting-edge-ladies.png";
+import decoLogo from "@/assets/brand-logos/deco-vibes.png";
 
 export const Route = createFileRoute("/businesses")({
   component: BusinessesPage,
@@ -39,8 +41,6 @@ const verticals = [
     intro:
       "From vibrant street-food concepts to slow-cooked fine dining, our hospitality brands are built around flavour, warmth and the relationships that turn first-time guests into regulars.",
     keys: ["Khau Galli", "House of Zaika"],
-    img: zaikaHero,
-    imgAlt: "House of Zaika and Khau Galli — Aanka hospitality portfolio",
   },
   {
     code: "II",
@@ -48,8 +48,6 @@ const verticals = [
     intro:
       "Modern grooming, beauty and wellness brands built around comfort, expertise and care. Two flagships — one for gents, one for ladies — share the same standard of hygiene, warmth and trust.",
     keys: ["Cutting Edge Gents", "Cutting Edge Ladies"],
-    img: ladiesHero,
-    imgAlt: "Cutting Edge — Aanka wellness and salons",
   },
   {
     code: "III",
@@ -57,8 +55,6 @@ const verticals = [
     intro:
       "Interior spaces shaped with practical thinking, atmosphere and attention to detail. From concept to fit-out, our interiors practice creates places people can feel at home in.",
     keys: ["Deco Vibes"],
-    img: decoHero,
-    imgAlt: "Deco Vibes — Aanka interiors and design",
   },
   {
     code: "IV",
@@ -66,9 +62,16 @@ const verticals = [
     intro:
       "Reliable execution and structural quality — the quiet backbone behind every space we shape. The team brings care, discipline and accountability to every project.",
     keys: ["Aanka Constructions"],
-    img: construction,
-    imgAlt: "Aanka Constructions",
   },
+];
+
+const businessLogos = [
+  { name: "Aanka Group", img: aankaLogo },
+  { name: "Khau Galli", img: khauLogo },
+  { name: "House of Zaika", img: zaikaLogo },
+  { name: "Cutting Edge Gents", img: gentsLogo },
+  { name: "Cutting Edge Ladies", img: ladiesLogo },
+  { name: "Deco Vibes", img: decoLogo },
 ];
 
 const portfolioStats = [
@@ -101,21 +104,7 @@ function BusinessesPage() {
   useReveal();
   return (
     <>
-      <PageHeader
-        eyebrow="01 / Portfolio"
-        title={
-          <>
-            Our <em className="italic">family</em> of brands.
-          </>
-        }
-        intro="Aanka Group brings together customer-focused brands across hospitality, beauty, wellness, interiors and construction — each with its own identity, all held to the same standard of service, trust and care."
-        media={{
-          src: zaikaInterior,
-          alt: "House of Zaika interior",
-          caption: "A family-built portfolio. One standard of care.",
-          ratio: "portrait",
-        }}
-      />
+      <BusinessesHero />
 
       {/* Lead-in: bridging paragraph + stat strip */}
       <section className="bg-alabaster text-obsidian">
@@ -174,19 +163,7 @@ function BusinessesPage() {
               </div>
 
               <div className="grid grid-cols-12 gap-x-6 gap-y-12">
-                <figure className="reveal col-span-12 md:col-span-4">
-                  <div className="relative aspect-[4/5] overflow-hidden bg-obsidian">
-                    <img
-                      src={v.img}
-                      alt={v.imgAlt}
-                      loading="lazy"
-                      className="img-scale h-full w-full object-cover"
-                    />
-                    <div className="absolute inset-0 ring-1 ring-inset ring-obsidian/10" />
-                  </div>
-                </figure>
-
-                <div className="col-span-12 md:col-span-7 md:col-start-6">
+                <div className="col-span-12 lg:col-span-10">
                   <h3 className="reveal font-serif text-3xl font-light leading-[1.1] tracking-tight md:text-5xl">
                     <span className="mr-4 font-serif italic text-bronze num-mono text-2xl md:text-3xl">
                       {v.code}
@@ -221,6 +198,72 @@ function BusinessesPage() {
         to="/partner"
       />
     </>
+  );
+}
+
+function BusinessesHero() {
+  const logoLoop = [...businessLogos, ...businessLogos];
+
+  return (
+    <section className="bg-alabaster text-obsidian">
+      <div className="mx-auto max-w-[1440px] px-6 pt-24 pb-16 md:px-12 md:pt-36 md:pb-24">
+        <div className="mb-12 flex items-center gap-6 md:mb-16">
+          <span className="font-sans text-[10px] uppercase tracking-luxury text-bronze num-mono">
+            01 / Portfolio
+          </span>
+          <PulseLine variant="muted" className="h-4 flex-1" />
+        </div>
+
+        <div className="grid grid-cols-12 gap-x-6 gap-y-12">
+          <div className="col-span-12">
+            <h1 className="reveal display-lg text-obsidian">
+              Our <em className="italic">family</em> of brands.
+            </h1>
+            <p
+              className="reveal measure-wide mt-10 body-lead text-obsidian/75"
+              style={{ transitionDelay: "120ms" }}
+            >
+              Aanka Group brings together customer-focused brands across
+              hospitality, beauty, wellness, interiors and construction — each
+              with its own identity, all held to the same standard of service,
+              trust and care.
+            </p>
+          </div>
+
+          <figure
+            className="reveal col-span-12"
+            style={{ transitionDelay: "160ms" }}
+          >
+            <div className="marquee-pause relative h-44 overflow-hidden bg-ivory md:h-56">
+              <div className="absolute inset-0 ring-1 ring-inset ring-obsidian/10" />
+              <div className="flex h-full items-center overflow-hidden py-6">
+                <div
+                  className="animate-marquee flex w-max items-center gap-5"
+                  style={{ animationDuration: "42s" }}
+                >
+                  {[...logoLoop, ...businessLogos].map((logo, index) => (
+                    <div
+                      key={`${logo.name}-${index}`}
+                      className="flex h-28 w-52 shrink-0 items-center justify-center border border-platinum/40 bg-alabaster px-7 shadow-[0_18px_45px_rgba(20,20,20,0.06)] md:h-32 md:w-64"
+                    >
+                      <img
+                        src={logo.img}
+                        alt={`${logo.name} logo`}
+                        loading="eager"
+                        className="max-h-20 max-w-full object-contain md:max-h-24"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <figcaption className="mt-4 font-sans text-[10px] uppercase tracking-luxury text-obsidian/55">
+              A family-built portfolio. One standard of care.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
   );
 }
 
