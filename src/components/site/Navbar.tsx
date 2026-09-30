@@ -14,7 +14,7 @@ const links = [
   { label: "Contact", to: "/contact" as const },
 ];
 
-const staffPortalUrl = "https://aanka-peopleos-production.ayaanmandelia2011.chatgpt.site";
+const staffPortalUrl = "https://people.aankagroup.com";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
