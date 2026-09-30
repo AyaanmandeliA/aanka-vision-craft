@@ -14,6 +14,8 @@ const links = [
   { label: "Contact", to: "/contact" as const },
 ];
 
+const staffPortalUrl = "https://aanka-peopleos-production.ayaanmandelia2011.chatgpt.site";
+
 export function Navbar() {
   const [open, setOpen] = useState(false);
 
@@ -67,6 +69,14 @@ export function Navbar() {
               </span>
             </Link>
           ))}
+          <a
+            href={staffPortalUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-bronze px-4 py-2 font-sans text-[10px] font-medium uppercase tracking-luxury text-alabaster transition-colors hover:bg-bronze"
+          >
+            Staff Portal
+          </a>
         </nav>
 
         <button
@@ -91,6 +101,15 @@ export function Navbar() {
                 {l.label}
               </Link>
             ))}
+            <a
+              href={staffPortalUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+              className="mt-4 border border-bronze px-4 py-3 text-center font-sans text-[11px] font-medium uppercase tracking-luxury text-alabaster transition-colors hover:bg-bronze"
+            >
+              Staff Portal
+            </a>
             <div className="mt-6 border-t border-alabaster/10 pt-6">
               <a
                 href="tel:+971507847968"
